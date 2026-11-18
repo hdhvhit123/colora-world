@@ -8,6 +8,7 @@ import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
@@ -162,7 +163,7 @@ fun CollectionScreen(state: AppState) {
     Box(Modifier.fillMaxSize().safeDrawingPadding()) {
         Column(Modifier.fillMaxSize()) {
             TopBar(t("collection.title"), { state.back() }, t("back"))
-            Row(Modifier.padding(horizontal = D.gutter), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+            Row(Modifier.padding(horizontal = D.gutter).horizontalScroll(rememberScrollState()), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                 Chip(t("collection.art"), tab == "art", icon = Ic.Crayon) { tab = "art" }
                 Chip(t("collection.characters"), tab == "chr", icon = Ic.Character) { tab = "chr" }
                 Chip(t("collection.scenes"), tab == "scenes", icon = Ic.World) { tab = "scenes" }

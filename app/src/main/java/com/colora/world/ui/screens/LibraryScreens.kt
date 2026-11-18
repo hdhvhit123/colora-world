@@ -1,5 +1,8 @@
 package com.colora.world.ui.screens
 
+import androidx.compose.ui.graphics.drawscope.drawIntoCanvas
+import androidx.compose.ui.graphics.nativeCanvas
+
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
@@ -88,7 +91,14 @@ fun HomeScreen(state: AppState) {
         val wide = maxWidth > maxHeight && maxWidth > 640.dp
         val hero: @Composable (Modifier) -> Unit = { mod ->
             Panel(mod, color = C.paper, padding = PaddingValues(0.dp), shape = RoundedCornerShape(D.panelRadius)) {
-                AssetThumb("thumbs/world.garden.webp", null, Modifier.fillMaxSize(), androidx.compose.ui.layout.ContentScale.Crop)
+                val painter = remember { g.content.world("garden")?.let { com.colora.world.render.WorldPainter(it) } }
+                androidx.compose.foundation.Canvas(Modifier.fillMaxSize()) {
+                    val p = painter ?: return@Canvas
+                    // vector world, cropped to fill and anchored on the ground so it stays crisp on tablets
+                    val k = maxOf(size.width / p.width * 1.25f, size.height / p.height * 0.55f)
+                    val top = (size.height / k - p.height).coerceAtLeast(0f)
+                    drawIntoCanvas { cv -> val nc = cv.nativeCanvas; val sv = nc.save(); nc.translate((size.width - p.width * k) / 2f, size.height - p.height * k); nc.scale(k, k); p.draw(nc, 0f, false, parallax = false, extraTop = top); nc.restoreToCount(sv) }
+                }
                 val r = recent
                 Box(Modifier.fillMaxSize().padding(14.dp)) {
                     if (r != null) {

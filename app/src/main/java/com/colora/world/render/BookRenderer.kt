@@ -93,7 +93,10 @@ class BookRenderer(private val g: AppGraph, private val pid: String, private val
                     if (p != null) {
                         // fill the box (crop the sides) so the scene reads as a full illustration
                         val k = maxOf(r.width() / p.width, r.height() / p.height)
-                        c.translate((r.width() - p.width * k) / 2f, (r.height() - p.height * k) / 2f); c.scale(k, k)
+                        // centre the crop on where the child placed things
+                        val cx = if (scene.objects.isEmpty()) 0.5f else scene.objects.map { it.transform.x }.average().toFloat()
+                        val tx = (r.width() / 2f - cx * p.width * k).coerceIn(r.width() - p.width * k, 0f)
+                        c.translate(tx, (r.height() - p.height * k) / 2f); c.scale(k, k)
                         snap.draw(c)
                     }
                 }

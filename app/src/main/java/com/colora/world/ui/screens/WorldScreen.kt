@@ -448,6 +448,12 @@ fun WorldPickerScreen(state: AppState, s: Screen.WorldPicker) {
 @Composable
 fun RevealScreen(state: AppState, docId: String) {
     val g = LocalContext.current.graph
+    // optional take-turns reminder for families sharing one device (parent setting)
+    LaunchedEffect(docId) {
+        if (g.settings.v.turnReminder && withContext(Dispatchers.IO) { g.library.profiles().size } > 1) {
+            kotlinx.coroutines.delay(2500); state.showToast(com.colora.world.ui.Strings.get(state.lang, "turn.next"))
+        }
+    }
     val visual by produceState<ToyVisual?>(null, docId) {
         value = withContext(Dispatchers.IO) {
             val ptr = g.library.store.pointer(state.pid, docId) ?: return@withContext null

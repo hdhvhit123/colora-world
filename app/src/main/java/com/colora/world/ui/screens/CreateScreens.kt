@@ -84,8 +84,8 @@ fun LabScreen(state: AppState) {
                 Panel(mod, shape = RoundedCornerShape(D.panelRadius)) {
                     Column(horizontalAlignment = Alignment.CenterHorizontally) {
                         Row(horizontalArrangement = Arrangement.spacedBy(14.dp)) {
-                            listOf(ColorMixer.RED to 0xFFEE4036.toInt(), ColorMixer.YELLOW to 0xFFFFD933.toInt(), ColorMixer.BLUE to 0xFF3373D9.toInt()).forEach { (ryb, col) ->
-                                Pot(Color(col), "+") { addDrop(ryb) }
+                            listOf(Triple(ColorMixer.RED, 0xFFEE4036.toInt(), "red"), Triple(ColorMixer.YELLOW, 0xFFFFD933.toInt(), "yellow"), Triple(ColorMixer.BLUE, 0xFF3373D9.toInt(), "blue")).forEach { (ryb, col, nm) ->
+                                Pot(Color(col), t("color.$nm")) { addDrop(ryb) }
                             }
                             Pot(Color.White, t("lab.white")) { white = (white + 0.2f).coerceAtMost(0.8f) }
                         }
@@ -312,10 +312,12 @@ fun BookScreen(state: AppState, bookId: String) {
                     Box(Modifier.size(44.dp).pressable { update(b.copy(coverColor = c.toInt())) }.clip(CircleShape).background(Color(c.toInt())).border(if (b.coverColor == c.toInt()) 4.dp else 2.dp, if (b.coverColor == c.toInt()) C.focus else C.line, CircleShape))
                 }
             }
-            LazyRow(Modifier.fillMaxWidth().weight(1f), contentPadding = PaddingValues(D.gutter), horizontalArrangement = Arrangement.spacedBy(14.dp)) {
+            BoxWithConstraints(Modifier.fillMaxWidth().weight(1f)) {
+            val pageW = ((maxHeight - 120.dp) * 0.72f).coerceIn(180.dp, 440.dp)
+            LazyRow(Modifier.fillMaxSize(), contentPadding = PaddingValues(D.gutter), horizontalArrangement = Arrangement.spacedBy(14.dp)) {
                 items(b.pages.size) { i ->
                     val page = b.pages[i]
-                    Column(Modifier.width(260.dp)) {
+                    Column(Modifier.width(pageW)) {
                         PageView(state, b, i, Modifier.fillMaxWidth().aspectRatio(0.72f))
                         Row(Modifier.padding(top = 6.dp), horizontalArrangement = Arrangement.spacedBy(4.dp)) {
                             RoundIcon(Ic.Left, "←", size = 44.dp, enabled = i > 0) { val l = b.pages.toMutableList(); val p = l.removeAt(i); l.add(i - 1, p); update(b.copy(pages = l)) }
@@ -330,10 +332,11 @@ fun BookScreen(state: AppState, bookId: String) {
                     }
                 }
                 if (b.pages.size < 12) item {
-                    Box(Modifier.width(200.dp).aspectRatio(0.72f).pressable { picking = -1 }.clip(RoundedCornerShape(20.dp)).background(C.butter).border(2.dp, C.line, RoundedCornerShape(20.dp)), contentAlignment = Alignment.Center) {
+                    Box(Modifier.width(pageW * 0.7f).aspectRatio(0.72f).pressable { picking = -1 }.clip(RoundedCornerShape(20.dp)).background(C.butter).border(2.dp, C.line, RoundedCornerShape(20.dp)), contentAlignment = Alignment.Center) {
                         Column(horizontalAlignment = Alignment.CenterHorizontally) { ColoraIcon(Ic.Plus, size = 48.dp); Text(t("book.add_page"), style = T.label) }
                     }
                 }
+            }
             }
         }
         removed?.let { (i, p) ->
