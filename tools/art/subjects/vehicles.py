@@ -83,16 +83,15 @@ def airplane():
 
 def bicycle():
     a = Art("vehicles.bicycle")
-    a.part("body", pivot=(512, 700))
     for name, cx in (("wheel_b", 280), ("wheel_f", 760)):
-        a.part(name, parent="body", pivot=(cx, 700), motion="spin", amp=360)
+        a.part(name, parent="frame", pivot=(cx, 700), motion="spin", amp=360)
         a.region(f"{name}_tire", diff(circle(cx, 700, 160), circle(cx, 700, 126)), DGREY)
         a.region(f"{name}_rim", diff(circle(cx, 700, 126), circle(cx, 700, 112)), GREY)
         a.ink(circle(cx, 700, 14))
         for k in range(8):
             t = math.radians(k * 45)
             a.line([(cx, 700), (cx + 112 * math.cos(t), 700 + 112 * math.sin(t))], 4)
-    a.part("frame", parent="body", pivot=(512, 700))
+    a.part("frame", pivot=(512, 700))
     frame = union(thick([(280, 700), (470, 700), (620, 480), (400, 480), (280, 700)], 30), thick([(470, 700), (400, 480), (380, 420)], 30), thick([(620, 480), (760, 700)], 30), thick([(640, 420), (600, 380)], 26))
     a.region("frame", frame, TURQ)
     a.region("seat", blob([(320, 400), (430, 390), (440, 420), (330, 430)]), BROWN)

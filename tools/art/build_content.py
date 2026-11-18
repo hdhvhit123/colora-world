@@ -224,3 +224,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+    if "--templates-only" not in sys.argv:
+        import build_extras
+        build_extras.main()

@@ -19,3 +19,6 @@ tasks.register<JavaExec>("validateContent") {
     mainClass.set("com.colora.world.tools.ValidateContentKt")
     args(contentDir.asFile.absolutePath, "FULL")
 }
+tasks.test {
+    systemProperty("colora.content", contentDir.asFile.absolutePath)
+}

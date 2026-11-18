@@ -1515,7 +1515,7 @@
   {
    "path": "templates/vehicles.bicycle.json",
    "size": 14600,
-   "sha256": "a8717df8138f6a6d652b4c2064367aada08a17a4d015d311b4ab0da4cf079654"
+   "sha256": "ee8ec7749369ea77dfa552001e609a726c47007524b9605f6dc47b36d7c83522"
   },
   {
    "path": "templates/vehicles.boat.json",
