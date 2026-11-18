@@ -178,7 +178,8 @@ fun ParentScreen(state: AppState) {
     val g = ctx.graph
     val scope = rememberCoroutineScope()
     val v by g.settings.values.collectAsState()
-    var profiles by remember { mutableStateOf<List<ChildProfile>>(emptyList()) }
+    // a handful of tiny JSON files: read directly so the list is there on the first frame
+    var profiles by remember { mutableStateOf(g.library.profiles()) }
     var trash by remember { mutableStateOf<List<TrashRecord>>(emptyList()) }
     var stats by remember { mutableStateOf(listOf(0, 0, 0)) }
     var storage by remember { mutableLongStateOf(0L) }
