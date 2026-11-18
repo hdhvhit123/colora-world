@@ -1,0 +1,147 @@
+{
+ "method": "score = mean(silhouette IoU, dilated line-art IoU) on 96px renders normalised to content bounds",
+ "rule": "violation when silhouette IoU >= 0.9 AND line-art IoU >= 0.6 (same outline AND same inner drawing)",
+ "top20": [
+  {
+   "score": 0.718,
+   "silhouetteIoU": 0.929,
+   "lineArtIoU": 0.508,
+   "a": "vehicles.bus",
+   "b": "vehicles.camper"
+  },
+  {
+   "score": 0.651,
+   "silhouetteIoU": 0.759,
+   "lineArtIoU": 0.544,
+   "a": "family.caregiver",
+   "b": "family.father"
+  },
+  {
+   "score": 0.626,
+   "silhouetteIoU": 0.727,
+   "lineArtIoU": 0.525,
+   "a": "family.father",
+   "b": "jobs.doctor"
+  },
+  {
+   "score": 0.622,
+   "silhouetteIoU": 0.94,
+   "lineArtIoU": 0.303,
+   "a": "food.bread",
+   "b": "home_city.library"
+  },
+  {
+   "score": 0.608,
+   "silhouetteIoU": 0.92,
+   "lineArtIoU": 0.295,
+   "a": "food.bread",
+   "b": "home_city.shop"
+  },
+  {
+   "score": 0.6,
+   "silhouetteIoU": 0.748,
+   "lineArtIoU": 0.452,
+   "a": "flowers.marigold",
+   "b": "flowers.sunflower"
+  },
+  {
+   "score": 0.591,
+   "silhouetteIoU": 0.848,
+   "lineArtIoU": 0.333,
+   "a": "dinosaurs.fossil",
+   "b": "vehicles.camper"
+  },
+  {
+   "score": 0.591,
+   "silhouetteIoU": 0.793,
+   "lineArtIoU": 0.39,
+   "a": "animals.cat",
+   "b": "animals.lion"
+  },
+  {
+   "score": 0.588,
+   "silhouetteIoU": 0.682,
+   "lineArtIoU": 0.494,
+   "a": "nature.rainbow",
+   "b": "vehicles.bicycle"
+  },
+  {
+   "score": 0.577,
+   "silhouetteIoU": 0.701,
+   "lineArtIoU": 0.453,
+   "a": "flowers.hydrangea",
+   "b": "flowers.marigold"
+  },
+  {
+   "score": 0.575,
+   "silhouetteIoU": 0.874,
+   "lineArtIoU": 0.276,
+   "a": "home_city.library",
+   "b": "home_city.shop"
+  },
+  {
+   "score": 0.575,
+   "silhouetteIoU": 0.687,
+   "lineArtIoU": 0.463,
+   "a": "family.caregiver",
+   "b": "jobs.doctor"
+  },
+  {
+   "score": 0.573,
+   "silhouetteIoU": 0.835,
+   "lineArtIoU": 0.311,
+   "a": "dinosaurs.fossil",
+   "b": "vehicles.bus"
+  },
+  {
+   "score": 0.573,
+   "silhouetteIoU": 0.601,
+   "lineArtIoU": 0.546,
+   "a": "flowers.daisy",
+   "b": "flowers.sunflower"
+  },
+  {
+   "score": 0.565,
+   "silhouetteIoU": 0.853,
+   "lineArtIoU": 0.277,
+   "a": "celebrations.gift",
+   "b": "home_city.house"
+  },
+  {
+   "score": 0.564,
+   "silhouetteIoU": 0.701,
+   "lineArtIoU": 0.427,
+   "a": "ocean.seashell",
+   "b": "ocean.turtle"
+  },
+  {
+   "score": 0.564,
+   "silhouetteIoU": 0.692,
+   "lineArtIoU": 0.435,
+   "a": "family.father",
+   "b": "family.grandparent"
+  },
+  {
+   "score": 0.56,
+   "silhouetteIoU": 0.677,
+   "lineArtIoU": 0.444,
+   "a": "family.mother",
+   "b": "jobs.doctor"
+  },
+  {
+   "score": 0.557,
+   "silhouetteIoU": 0.821,
+   "lineArtIoU": 0.292,
+   "a": "food.cake",
+   "b": "home_city.house"
+  },
+  {
+   "score": 0.557,
+   "silhouetteIoU": 0.667,
+   "lineArtIoU": 0.447,
+   "a": "machines.cement_mixer",
+   "b": "ocean.seashell"
+  }
+ ],
+ "violations": []
+}

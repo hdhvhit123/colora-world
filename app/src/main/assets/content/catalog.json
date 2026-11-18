@@ -1,0 +1,2961 @@
+{
+ "schemaVersion": 1,
+ "contentVersion": 1,
+ "topics": [
+  {
+   "id": "animals",
+   "labelKey": "topic.animals",
+   "templates": [
+    "animals.cat",
+    "animals.dog",
+    "animals.rabbit",
+    "animals.elephant",
+    "animals.giraffe",
+    "animals.bird",
+    "animals.lion",
+    "animals.panda",
+    "animals.monkey",
+    "animals.sheep",
+    "animals.horse",
+    "animals.butterfly"
+   ],
+   "coverTemplate": "animals.cat",
+   "pack": "pack_nature_plus"
+  },
+  {
+   "id": "flowers",
+   "labelKey": "topic.flowers",
+   "templates": [
+    "flowers.sunflower",
+    "flowers.rose",
+    "flowers.lotus",
+    "flowers.tulip",
+    "flowers.daisy",
+    "flowers.hibiscus",
+    "flowers.lily",
+    "flowers.orchid",
+    "flowers.lavender",
+    "flowers.daffodil",
+    "flowers.marigold",
+    "flowers.hydrangea"
+   ],
+   "coverTemplate": "flowers.sunflower",
+   "pack": "pack_nature_plus"
+  },
+  {
+   "id": "nature",
+   "labelKey": "topic.nature",
+   "templates": [
+    "nature.tree",
+    "nature.sun",
+    "nature.cloud",
+    "nature.rainbow",
+    "nature.mountain",
+    "nature.pond",
+    "nature.waterfall",
+    "nature.mushroom",
+    "nature.leaf",
+    "nature.moon",
+    "nature.rain",
+    "nature.island"
+   ],
+   "coverTemplate": "nature.tree",
+   "pack": "pack_nature_plus"
+  },
+  {
+   "id": "family",
+   "labelKey": "topic.family",
+   "templates": [
+    "family.child",
+    "family.caregiver",
+    "family.mother",
+    "family.father",
+    "family.grandparent",
+    "family.sibling",
+    "family.reading",
+    "family.cooking",
+    "family.gardening",
+    "family.picnic",
+    "family.petcare",
+    "family.celebrate"
+   ],
+   "coverTemplate": "family.child",
+   "pack": "pack_everyday_plus"
+  },
+  {
+   "id": "machines",
+   "labelKey": "topic.machines",
+   "templates": [
+    "machines.excavator",
+    "machines.crane",
+    "machines.tractor",
+    "machines.robot",
+    "machines.bulldozer",
+    "machines.cement_mixer",
+    "machines.road_roller",
+    "machines.forklift",
+    "machines.harvester",
+    "machines.windmill",
+    "machines.conveyor",
+    "machines.submarine_robot"
+   ],
+   "coverTemplate": "machines.excavator",
+   "pack": "pack_everyday_plus"
+  },
+  {
+   "id": "vehicles",
+   "labelKey": "topic.vehicles",
+   "templates": [
+    "vehicles.car",
+    "vehicles.train",
+    "vehicles.airplane",
+    "vehicles.bicycle",
+    "vehicles.bus",
+    "vehicles.boat",
+    "vehicles.tram",
+    "vehicles.hot_air_balloon",
+    "vehicles.helicopter",
+    "vehicles.sailboat",
+    "vehicles.scooter",
+    "vehicles.camper"
+   ],
+   "coverTemplate": "vehicles.car",
+   "pack": "pack_everyday_plus"
+  },
+  {
+   "id": "ocean",
+   "labelKey": "topic.ocean",
+   "templates": [
+    "ocean.clownfish",
+    "ocean.turtle",
+    "ocean.dolphin",
+    "ocean.octopus",
+    "ocean.seahorse",
+    "ocean.coral",
+    "ocean.whale",
+    "ocean.starfish",
+    "ocean.crab",
+    "ocean.jellyfish",
+    "ocean.seashell",
+    "ocean.submarine"
+   ],
+   "coverTemplate": "ocean.clownfish",
+   "pack": "pack_nature_plus"
+  },
+  {
+   "id": "dinosaurs",
+   "labelKey": "topic.dinosaurs",
+   "templates": [
+    "dinosaurs.triceratops",
+    "dinosaurs.stegosaurus",
+    "dinosaurs.brachiosaurus",
+    "dinosaurs.tyrannosaurus",
+    "dinosaurs.ankylosaurus",
+    "dinosaurs.parasaurolophus",
+    "dinosaurs.diplodocus",
+    "dinosaurs.spinosaurus",
+    "dinosaurs.iguanodon",
+    "dinosaurs.pachycephalosaurus",
+    "dinosaurs.egg",
+    "dinosaurs.fossil"
+   ],
+   "coverTemplate": "dinosaurs.triceratops",
+   "pack": "pack_nature_plus"
+  },
+  {
+   "id": "space",
+   "labelKey": "topic.space",
+   "templates": [
+    "space.rocket",
+    "space.planet",
+    "space.astronaut",
+    "space.satellite",
+    "space.moon_rover",
+    "space.star",
+    "space.station",
+    "space.comet",
+    "space.ringed_planet",
+    "space.telescope",
+    "space.alien_friend",
+    "space.galaxy"
+   ],
+   "coverTemplate": "space.rocket",
+   "pack": "pack_imagination_plus"
+  },
+  {
+   "id": "food",
+   "labelKey": "topic.food",
+   "templates": [
+    "food.apple",
+    "food.banana",
+    "food.carrot",
+    "food.strawberry",
+    "food.bread",
+    "food.cake",
+    "food.watermelon",
+    "food.broccoli",
+    "food.soup",
+    "food.sandwich",
+    "food.dumpling",
+    "food.fruit_bowl"
+   ],
+   "coverTemplate": "food.apple",
+   "pack": "pack_everyday_plus"
+  },
+  {
+   "id": "home_city",
+   "labelKey": "topic.home_city",
+   "templates": [
+    "home_city.house",
+    "home_city.school",
+    "home_city.park",
+    "home_city.bed",
+    "home_city.table",
+    "home_city.chair",
+    "home_city.bridge",
+    "home_city.library",
+    "home_city.shop",
+    "home_city.lamp",
+    "home_city.playground",
+    "home_city.fountain"
+   ],
+   "coverTemplate": "home_city.house",
+   "pack": "pack_everyday_plus"
+  },
+  {
+   "id": "fantasy",
+   "labelKey": "topic.fantasy",
+   "templates": [
+    "fantasy.dragon",
+    "fantasy.unicorn",
+    "fantasy.castle",
+    "fantasy.fairy_house",
+    "fantasy.magic_tree",
+    "fantasy.friendly_monster",
+    "fantasy.flying_cat",
+    "fantasy.cloud_house",
+    "fantasy.magic_carpet",
+    "fantasy.crystal",
+    "fantasy.wand",
+    "fantasy.story_gate"
+   ],
+   "coverTemplate": "fantasy.dragon",
+   "pack": "pack_imagination_plus"
+  },
+  {
+   "id": "jobs",
+   "labelKey": "topic.jobs",
+   "templates": [
+    "jobs.doctor",
+    "jobs.chef",
+    "jobs.gardener",
+    "jobs.firefighter",
+    "jobs.teacher",
+    "jobs.builder",
+    "jobs.artist",
+    "jobs.astronaut",
+    "jobs.farmer",
+    "jobs.veterinarian",
+    "jobs.scientist",
+    "jobs.musician"
+   ],
+   "coverTemplate": "jobs.doctor",
+   "pack": "pack_everyday_plus"
+  },
+  {
+   "id": "celebrations",
+   "labelKey": "topic.celebrations",
+   "templates": [
+    "celebrations.birthday_cake",
+    "celebrations.balloons",
+    "celebrations.gift",
+    "celebrations.bunting",
+    "celebrations.greeting_card",
+    "celebrations.paper_lantern",
+    "celebrations.spring_blossom",
+    "celebrations.lantern_festival",
+    "celebrations.winter_tree",
+    "celebrations.festival_lights",
+    "celebrations.kite_festival",
+    "celebrations.family_banner"
+   ],
+   "coverTemplate": "celebrations.birthday_cake",
+   "pack": "pack_imagination_plus"
+  }
+ ],
+ "templates": [
+  {
+   "id": "animals.cat",
+   "topicId": "animals",
+   "index": 0,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "medium",
+   "regions": 13,
+   "preset": "pet_walk",
+   "capabilities": [
+    "passenger",
+    "carryable"
+   ],
+   "file": "templates/animals.cat.json",
+   "thumb": "thumbs/animals.cat.webp"
+  },
+  {
+   "id": "animals.dog",
+   "topicId": "animals",
+   "index": 1,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "medium",
+   "regions": 14,
+   "preset": "pet_walk",
+   "capabilities": [
+    "passenger",
+    "carryable"
+   ],
+   "file": "templates/animals.dog.json",
+   "thumb": "thumbs/animals.dog.webp"
+  },
+  {
+   "id": "animals.rabbit",
+   "topicId": "animals",
+   "index": 2,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "medium",
+   "regions": 14,
+   "preset": "pet_walk",
+   "capabilities": [
+    "passenger",
+    "carryable"
+   ],
+   "file": "templates/animals.rabbit.json",
+   "thumb": "thumbs/animals.rabbit.webp"
+  },
+  {
+   "id": "animals.elephant",
+   "topicId": "animals",
+   "index": 3,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "medium",
+   "regions": 10,
+   "preset": "pet_walk",
+   "capabilities": [
+    "passenger",
+    "rideable"
+   ],
+   "file": "templates/animals.elephant.json",
+   "thumb": "thumbs/animals.elephant.webp"
+  },
+  {
+   "id": "animals.giraffe",
+   "topicId": "animals",
+   "index": 4,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "detailed",
+   "regions": 24,
+   "preset": "pet_walk",
+   "capabilities": [
+    "passenger",
+    "carryable"
+   ],
+   "file": "templates/animals.giraffe.json",
+   "thumb": "thumbs/animals.giraffe.webp"
+  },
+  {
+   "id": "animals.bird",
+   "topicId": "animals",
+   "index": 5,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "medium",
+   "regions": 11,
+   "preset": "bird_fly",
+   "capabilities": [
+    "flying",
+    "passenger",
+    "carryable"
+   ],
+   "file": "templates/animals.bird.json",
+   "thumb": "thumbs/animals.bird.webp"
+  },
+  {
+   "id": "animals.lion",
+   "topicId": "animals",
+   "index": 6,
+   "tier": "expansion",
+   "packId": "pack_nature_plus",
+   "difficulty": "medium",
+   "regions": 13,
+   "preset": "pet_walk",
+   "capabilities": [
+    "passenger",
+    "carryable"
+   ],
+   "file": "templates/animals.lion.json",
+   "thumb": "thumbs/animals.lion.webp"
+  },
+  {
+   "id": "animals.panda",
+   "topicId": "animals",
+   "index": 7,
+   "tier": "expansion",
+   "packId": "pack_nature_plus",
+   "difficulty": "medium",
+   "regions": 14,
+   "preset": "pet_walk",
+   "capabilities": [
+    "passenger",
+    "carryable"
+   ],
+   "file": "templates/animals.panda.json",
+   "thumb": "thumbs/animals.panda.webp"
+  },
+  {
+   "id": "animals.monkey",
+   "topicId": "animals",
+   "index": 8,
+   "tier": "expansion",
+   "packId": "pack_nature_plus",
+   "difficulty": "detailed",
+   "regions": 19,
+   "preset": "pet_walk",
+   "capabilities": [
+    "passenger",
+    "carryable"
+   ],
+   "file": "templates/animals.monkey.json",
+   "thumb": "thumbs/animals.monkey.webp"
+  },
+  {
+   "id": "animals.sheep",
+   "topicId": "animals",
+   "index": 9,
+   "tier": "expansion",
+   "packId": "pack_nature_plus",
+   "difficulty": "medium",
+   "regions": 11,
+   "preset": "pet_walk",
+   "capabilities": [
+    "passenger",
+    "carryable"
+   ],
+   "file": "templates/animals.sheep.json",
+   "thumb": "thumbs/animals.sheep.webp"
+  },
+  {
+   "id": "animals.horse",
+   "topicId": "animals",
+   "index": 10,
+   "tier": "expansion",
+   "packId": "pack_nature_plus",
+   "difficulty": "medium",
+   "regions": 15,
+   "preset": "pet_walk",
+   "capabilities": [
+    "passenger",
+    "rideable"
+   ],
+   "file": "templates/animals.horse.json",
+   "thumb": "thumbs/animals.horse.webp"
+  },
+  {
+   "id": "animals.butterfly",
+   "topicId": "animals",
+   "index": 11,
+   "tier": "expansion",
+   "packId": "pack_nature_plus",
+   "difficulty": "medium",
+   "regions": 12,
+   "preset": "bird_fly",
+   "capabilities": [
+    "flying",
+    "carryable"
+   ],
+   "file": "templates/animals.butterfly.json",
+   "thumb": "thumbs/animals.butterfly.webp"
+  },
+  {
+   "id": "flowers.sunflower",
+   "topicId": "flowers",
+   "index": 0,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "detailed",
+   "regions": 19,
+   "preset": "flower_bloom",
+   "capabilities": [
+    "plantable",
+    "waterable",
+    "carryable"
+   ],
+   "file": "templates/flowers.sunflower.json",
+   "thumb": "thumbs/flowers.sunflower.webp"
+  },
+  {
+   "id": "flowers.rose",
+   "topicId": "flowers",
+   "index": 1,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "medium",
+   "regions": 11,
+   "preset": "flower_bloom",
+   "capabilities": [
+    "plantable",
+    "waterable",
+    "carryable"
+   ],
+   "file": "templates/flowers.rose.json",
+   "thumb": "thumbs/flowers.rose.webp"
+  },
+  {
+   "id": "flowers.lotus",
+   "topicId": "flowers",
+   "index": 2,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "medium",
+   "regions": 11,
+   "preset": "flower_bloom",
+   "capabilities": [
+    "plantable",
+    "waterable",
+    "carryable"
+   ],
+   "file": "templates/flowers.lotus.json",
+   "thumb": "thumbs/flowers.lotus.webp"
+  },
+  {
+   "id": "flowers.tulip",
+   "topicId": "flowers",
+   "index": 3,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "simple",
+   "regions": 7,
+   "preset": "flower_bloom",
+   "capabilities": [
+    "plantable",
+    "waterable",
+    "carryable"
+   ],
+   "file": "templates/flowers.tulip.json",
+   "thumb": "thumbs/flowers.tulip.webp"
+  },
+  {
+   "id": "flowers.daisy",
+   "topicId": "flowers",
+   "index": 4,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "detailed",
+   "regions": 22,
+   "preset": "flower_bloom",
+   "capabilities": [
+    "plantable",
+    "waterable",
+    "carryable"
+   ],
+   "file": "templates/flowers.daisy.json",
+   "thumb": "thumbs/flowers.daisy.webp"
+  },
+  {
+   "id": "flowers.hibiscus",
+   "topicId": "flowers",
+   "index": 5,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "medium",
+   "regions": 14,
+   "preset": "flower_bloom",
+   "capabilities": [
+    "plantable",
+    "waterable",
+    "carryable"
+   ],
+   "file": "templates/flowers.hibiscus.json",
+   "thumb": "thumbs/flowers.hibiscus.webp"
+  },
+  {
+   "id": "flowers.lily",
+   "topicId": "flowers",
+   "index": 6,
+   "tier": "expansion",
+   "packId": "pack_nature_plus",
+   "difficulty": "medium",
+   "regions": 13,
+   "preset": "flower_bloom",
+   "capabilities": [
+    "plantable",
+    "waterable",
+    "carryable"
+   ],
+   "file": "templates/flowers.lily.json",
+   "thumb": "thumbs/flowers.lily.webp"
+  },
+  {
+   "id": "flowers.orchid",
+   "topicId": "flowers",
+   "index": 7,
+   "tier": "expansion",
+   "packId": "pack_nature_plus",
+   "difficulty": "medium",
+   "regions": 14,
+   "preset": "flower_bloom",
+   "capabilities": [
+    "plantable",
+    "waterable",
+    "carryable"
+   ],
+   "file": "templates/flowers.orchid.json",
+   "thumb": "thumbs/flowers.orchid.webp"
+  },
+  {
+   "id": "flowers.lavender",
+   "topicId": "flowers",
+   "index": 8,
+   "tier": "expansion",
+   "packId": "pack_nature_plus",
+   "difficulty": "medium",
+   "regions": 15,
+   "preset": "flower_bloom",
+   "capabilities": [
+    "plantable",
+    "waterable",
+    "carryable"
+   ],
+   "file": "templates/flowers.lavender.json",
+   "thumb": "thumbs/flowers.lavender.webp"
+  },
+  {
+   "id": "flowers.daffodil",
+   "topicId": "flowers",
+   "index": 9,
+   "tier": "expansion",
+   "packId": "pack_nature_plus",
+   "difficulty": "medium",
+   "regions": 11,
+   "preset": "flower_bloom",
+   "capabilities": [
+    "plantable",
+    "waterable",
+    "carryable"
+   ],
+   "file": "templates/flowers.daffodil.json",
+   "thumb": "thumbs/flowers.daffodil.webp"
+  },
+  {
+   "id": "flowers.marigold",
+   "topicId": "flowers",
+   "index": 10,
+   "tier": "expansion",
+   "packId": "pack_nature_plus",
+   "difficulty": "simple",
+   "regions": 7,
+   "preset": "flower_bloom",
+   "capabilities": [
+    "plantable",
+    "waterable",
+    "carryable"
+   ],
+   "file": "templates/flowers.marigold.json",
+   "thumb": "thumbs/flowers.marigold.webp"
+  },
+  {
+   "id": "flowers.hydrangea",
+   "topicId": "flowers",
+   "index": 11,
+   "tier": "expansion",
+   "packId": "pack_nature_plus",
+   "difficulty": "detailed",
+   "regions": 24,
+   "preset": "flower_bloom",
+   "capabilities": [
+    "plantable",
+    "waterable",
+    "carryable"
+   ],
+   "file": "templates/flowers.hydrangea.json",
+   "thumb": "thumbs/flowers.hydrangea.webp"
+  },
+  {
+   "id": "nature.tree",
+   "topicId": "nature",
+   "index": 0,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "medium",
+   "regions": 11,
+   "preset": "nature_react",
+   "capabilities": [
+    "plantable",
+    "waterable"
+   ],
+   "file": "templates/nature.tree.json",
+   "thumb": "thumbs/nature.tree.webp"
+  },
+  {
+   "id": "nature.sun",
+   "topicId": "nature",
+   "index": 1,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "medium",
+   "regions": 14,
+   "preset": "nature_react",
+   "capabilities": [
+    "sky",
+    "mood_day"
+   ],
+   "file": "templates/nature.sun.json",
+   "thumb": "thumbs/nature.sun.webp"
+  },
+  {
+   "id": "nature.cloud",
+   "topicId": "nature",
+   "index": 2,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "simple",
+   "regions": 4,
+   "preset": "nature_react",
+   "capabilities": [
+    "sky",
+    "mood_cloudy"
+   ],
+   "file": "templates/nature.cloud.json",
+   "thumb": "thumbs/nature.cloud.webp"
+  },
+  {
+   "id": "nature.rainbow",
+   "topicId": "nature",
+   "index": 3,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "simple",
+   "regions": 8,
+   "preset": "nature_react",
+   "capabilities": [
+    "sky",
+    "mood_rainbow"
+   ],
+   "file": "templates/nature.rainbow.json",
+   "thumb": "thumbs/nature.rainbow.webp"
+  },
+  {
+   "id": "nature.mountain",
+   "topicId": "nature",
+   "index": 4,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "simple",
+   "regions": 7,
+   "preset": "nature_react",
+   "capabilities": [
+    "decor"
+   ],
+   "file": "templates/nature.mountain.json",
+   "thumb": "thumbs/nature.mountain.webp"
+  },
+  {
+   "id": "nature.pond",
+   "topicId": "nature",
+   "index": 5,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "medium",
+   "regions": 10,
+   "preset": "nature_react",
+   "capabilities": [
+    "water_body",
+    "decor"
+   ],
+   "file": "templates/nature.pond.json",
+   "thumb": "thumbs/nature.pond.webp"
+  },
+  {
+   "id": "nature.waterfall",
+   "topicId": "nature",
+   "index": 6,
+   "tier": "expansion",
+   "packId": "pack_nature_plus",
+   "difficulty": "simple",
+   "regions": 8,
+   "preset": "nature_react",
+   "capabilities": [
+    "water_body",
+    "decor"
+   ],
+   "file": "templates/nature.waterfall.json",
+   "thumb": "thumbs/nature.waterfall.webp"
+  },
+  {
+   "id": "nature.mushroom",
+   "topicId": "nature",
+   "index": 7,
+   "tier": "expansion",
+   "packId": "pack_nature_plus",
+   "difficulty": "medium",
+   "regions": 11,
+   "preset": "nature_react",
+   "capabilities": [
+    "plantable",
+    "carryable"
+   ],
+   "file": "templates/nature.mushroom.json",
+   "thumb": "thumbs/nature.mushroom.webp"
+  },
+  {
+   "id": "nature.leaf",
+   "topicId": "nature",
+   "index": 8,
+   "tier": "expansion",
+   "packId": "pack_nature_plus",
+   "difficulty": "simple",
+   "regions": 4,
+   "preset": "nature_react",
+   "capabilities": [
+    "carryable"
+   ],
+   "file": "templates/nature.leaf.json",
+   "thumb": "thumbs/nature.leaf.webp"
+  },
+  {
+   "id": "nature.moon",
+   "topicId": "nature",
+   "index": 9,
+   "tier": "expansion",
+   "packId": "pack_nature_plus",
+   "difficulty": "simple",
+   "regions": 6,
+   "preset": "nature_react",
+   "capabilities": [
+    "sky",
+    "mood_night"
+   ],
+   "file": "templates/nature.moon.json",
+   "thumb": "thumbs/nature.moon.webp"
+  },
+  {
+   "id": "nature.rain",
+   "topicId": "nature",
+   "index": 10,
+   "tier": "expansion",
+   "packId": "pack_nature_plus",
+   "difficulty": "simple",
+   "regions": 8,
+   "preset": "nature_react",
+   "capabilities": [
+    "sky",
+    "mood_rain"
+   ],
+   "file": "templates/nature.rain.json",
+   "thumb": "thumbs/nature.rain.webp"
+  },
+  {
+   "id": "nature.island",
+   "topicId": "nature",
+   "index": 11,
+   "tier": "expansion",
+   "packId": "pack_nature_plus",
+   "difficulty": "medium",
+   "regions": 11,
+   "preset": "nature_react",
+   "capabilities": [
+    "water_body",
+    "decor"
+   ],
+   "file": "templates/nature.island.json",
+   "thumb": "thumbs/nature.island.webp"
+  },
+  {
+   "id": "family.child",
+   "topicId": "family",
+   "index": 0,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "detailed",
+   "regions": 19,
+   "preset": "family_wave",
+   "capabilities": [
+    "passenger",
+    "seatable"
+   ],
+   "file": "templates/family.child.json",
+   "thumb": "thumbs/family.child.webp"
+  },
+  {
+   "id": "family.caregiver",
+   "topicId": "family",
+   "index": 1,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "medium",
+   "regions": 18,
+   "preset": "family_wave",
+   "capabilities": [
+    "passenger",
+    "seatable"
+   ],
+   "file": "templates/family.caregiver.json",
+   "thumb": "thumbs/family.caregiver.webp"
+  },
+  {
+   "id": "family.mother",
+   "topicId": "family",
+   "index": 2,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "detailed",
+   "regions": 20,
+   "preset": "family_wave",
+   "capabilities": [
+    "passenger",
+    "seatable"
+   ],
+   "file": "templates/family.mother.json",
+   "thumb": "thumbs/family.mother.webp"
+  },
+  {
+   "id": "family.father",
+   "topicId": "family",
+   "index": 3,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "detailed",
+   "regions": 22,
+   "preset": "family_wave",
+   "capabilities": [
+    "passenger",
+    "seatable"
+   ],
+   "file": "templates/family.father.json",
+   "thumb": "thumbs/family.father.webp"
+  },
+  {
+   "id": "family.grandparent",
+   "topicId": "family",
+   "index": 4,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "detailed",
+   "regions": 19,
+   "preset": "family_wave",
+   "capabilities": [
+    "passenger",
+    "seatable"
+   ],
+   "file": "templates/family.grandparent.json",
+   "thumb": "thumbs/family.grandparent.webp"
+  },
+  {
+   "id": "family.sibling",
+   "topicId": "family",
+   "index": 5,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "detailed",
+   "regions": 27,
+   "preset": "family_wave",
+   "capabilities": [
+    "passenger",
+    "seatable"
+   ],
+   "file": "templates/family.sibling.json",
+   "thumb": "thumbs/family.sibling.webp"
+  },
+  {
+   "id": "family.reading",
+   "topicId": "family",
+   "index": 6,
+   "tier": "expansion",
+   "packId": "pack_everyday_plus",
+   "difficulty": "medium",
+   "regions": 17,
+   "preset": "family_wave",
+   "capabilities": [
+    "passenger",
+    "seatable"
+   ],
+   "file": "templates/family.reading.json",
+   "thumb": "thumbs/family.reading.webp"
+  },
+  {
+   "id": "family.cooking",
+   "topicId": "family",
+   "index": 7,
+   "tier": "expansion",
+   "packId": "pack_everyday_plus",
+   "difficulty": "detailed",
+   "regions": 23,
+   "preset": "family_wave",
+   "capabilities": [
+    "passenger",
+    "seatable"
+   ],
+   "file": "templates/family.cooking.json",
+   "thumb": "thumbs/family.cooking.webp"
+  },
+  {
+   "id": "family.gardening",
+   "topicId": "family",
+   "index": 8,
+   "tier": "expansion",
+   "packId": "pack_everyday_plus",
+   "difficulty": "detailed",
+   "regions": 30,
+   "preset": "family_wave",
+   "capabilities": [
+    "passenger",
+    "seatable"
+   ],
+   "file": "templates/family.gardening.json",
+   "thumb": "thumbs/family.gardening.webp"
+  },
+  {
+   "id": "family.picnic",
+   "topicId": "family",
+   "index": 9,
+   "tier": "expansion",
+   "packId": "pack_everyday_plus",
+   "difficulty": "medium",
+   "regions": 13,
+   "preset": "home_decor",
+   "capabilities": [
+    "surface",
+    "decor"
+   ],
+   "file": "templates/family.picnic.json",
+   "thumb": "thumbs/family.picnic.webp"
+  },
+  {
+   "id": "family.petcare",
+   "topicId": "family",
+   "index": 10,
+   "tier": "expansion",
+   "packId": "pack_everyday_plus",
+   "difficulty": "detailed",
+   "regions": 23,
+   "preset": "family_wave",
+   "capabilities": [
+    "passenger",
+    "seatable"
+   ],
+   "file": "templates/family.petcare.json",
+   "thumb": "thumbs/family.petcare.webp"
+  },
+  {
+   "id": "family.celebrate",
+   "topicId": "family",
+   "index": 11,
+   "tier": "expansion",
+   "packId": "pack_everyday_plus",
+   "difficulty": "detailed",
+   "regions": 23,
+   "preset": "family_wave",
+   "capabilities": [
+    "passenger",
+    "seatable"
+   ],
+   "file": "templates/family.celebrate.json",
+   "thumb": "thumbs/family.celebrate.webp"
+  },
+  {
+   "id": "machines.excavator",
+   "topicId": "machines",
+   "index": 0,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "medium",
+   "regions": 18,
+   "preset": "machine_work",
+   "capabilities": [
+    "carrier"
+   ],
+   "file": "templates/machines.excavator.json",
+   "thumb": "thumbs/machines.excavator.webp"
+  },
+  {
+   "id": "machines.crane",
+   "topicId": "machines",
+   "index": 1,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "medium",
+   "regions": 11,
+   "preset": "machine_work",
+   "capabilities": [
+    "carrier"
+   ],
+   "file": "templates/machines.crane.json",
+   "thumb": "thumbs/machines.crane.webp"
+  },
+  {
+   "id": "machines.tractor",
+   "topicId": "machines",
+   "index": 2,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "detailed",
+   "regions": 25,
+   "preset": "machine_work",
+   "capabilities": [
+    "carrier",
+    "rideable"
+   ],
+   "file": "templates/machines.tractor.json",
+   "thumb": "thumbs/machines.tractor.webp"
+  },
+  {
+   "id": "machines.robot",
+   "topicId": "machines",
+   "index": 3,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "detailed",
+   "regions": 21,
+   "preset": "robot_dance",
+   "capabilities": [
+    "passenger",
+    "carrier",
+    "carryable"
+   ],
+   "file": "templates/machines.robot.json",
+   "thumb": "thumbs/machines.robot.webp"
+  },
+  {
+   "id": "machines.bulldozer",
+   "topicId": "machines",
+   "index": 4,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "medium",
+   "regions": 12,
+   "preset": "machine_work",
+   "capabilities": [
+    "carrier"
+   ],
+   "file": "templates/machines.bulldozer.json",
+   "thumb": "thumbs/machines.bulldozer.webp"
+  },
+  {
+   "id": "machines.cement_mixer",
+   "topicId": "machines",
+   "index": 5,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "medium",
+   "regions": 15,
+   "preset": "machine_work",
+   "capabilities": [
+    "carrier"
+   ],
+   "file": "templates/machines.cement_mixer.json",
+   "thumb": "thumbs/machines.cement_mixer.webp"
+  },
+  {
+   "id": "machines.road_roller",
+   "topicId": "machines",
+   "index": 6,
+   "tier": "expansion",
+   "packId": "pack_everyday_plus",
+   "difficulty": "medium",
+   "regions": 9,
+   "preset": "machine_work",
+   "capabilities": [
+    "carrier"
+   ],
+   "file": "templates/machines.road_roller.json",
+   "thumb": "thumbs/machines.road_roller.webp"
+  },
+  {
+   "id": "machines.forklift",
+   "topicId": "machines",
+   "index": 7,
+   "tier": "expansion",
+   "packId": "pack_everyday_plus",
+   "difficulty": "medium",
+   "regions": 14,
+   "preset": "machine_work",
+   "capabilities": [
+    "carrier"
+   ],
+   "file": "templates/machines.forklift.json",
+   "thumb": "thumbs/machines.forklift.webp"
+  },
+  {
+   "id": "machines.harvester",
+   "topicId": "machines",
+   "index": 8,
+   "tier": "expansion",
+   "packId": "pack_everyday_plus",
+   "difficulty": "medium",
+   "regions": 11,
+   "preset": "machine_work",
+   "capabilities": [
+    "carrier"
+   ],
+   "file": "templates/machines.harvester.json",
+   "thumb": "thumbs/machines.harvester.webp"
+  },
+  {
+   "id": "machines.windmill",
+   "topicId": "machines",
+   "index": 9,
+   "tier": "expansion",
+   "packId": "pack_everyday_plus",
+   "difficulty": "medium",
+   "regions": 10,
+   "preset": "machine_work",
+   "capabilities": [
+    "decor"
+   ],
+   "file": "templates/machines.windmill.json",
+   "thumb": "thumbs/machines.windmill.webp"
+  },
+  {
+   "id": "machines.conveyor",
+   "topicId": "machines",
+   "index": 10,
+   "tier": "expansion",
+   "packId": "pack_everyday_plus",
+   "difficulty": "medium",
+   "regions": 15,
+   "preset": "machine_work",
+   "capabilities": [
+    "carrier",
+    "decor"
+   ],
+   "file": "templates/machines.conveyor.json",
+   "thumb": "thumbs/machines.conveyor.webp"
+  },
+  {
+   "id": "machines.submarine_robot",
+   "topicId": "machines",
+   "index": 11,
+   "tier": "expansion",
+   "packId": "pack_everyday_plus",
+   "difficulty": "medium",
+   "regions": 15,
+   "preset": "ocean_swim",
+   "capabilities": [
+    "aquatic",
+    "carrier",
+    "rideable"
+   ],
+   "file": "templates/machines.submarine_robot.json",
+   "thumb": "thumbs/machines.submarine_robot.webp"
+  },
+  {
+   "id": "vehicles.car",
+   "topicId": "vehicles",
+   "index": 0,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "medium",
+   "regions": 11,
+   "preset": "vehicle_ride",
+   "capabilities": [
+    "rideable"
+   ],
+   "file": "templates/vehicles.car.json",
+   "thumb": "thumbs/vehicles.car.webp"
+  },
+  {
+   "id": "vehicles.train",
+   "topicId": "vehicles",
+   "index": 1,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "detailed",
+   "regions": 19,
+   "preset": "vehicle_ride",
+   "capabilities": [
+    "rideable"
+   ],
+   "file": "templates/vehicles.train.json",
+   "thumb": "thumbs/vehicles.train.webp"
+  },
+  {
+   "id": "vehicles.airplane",
+   "topicId": "vehicles",
+   "index": 2,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "medium",
+   "regions": 15,
+   "preset": "vehicle_ride",
+   "capabilities": [
+    "rideable",
+    "flying"
+   ],
+   "file": "templates/vehicles.airplane.json",
+   "thumb": "thumbs/vehicles.airplane.webp"
+  },
+  {
+   "id": "vehicles.bicycle",
+   "topicId": "vehicles",
+   "index": 3,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "medium",
+   "regions": 9,
+   "preset": "vehicle_ride",
+   "capabilities": [
+    "rideable"
+   ],
+   "file": "templates/vehicles.bicycle.json",
+   "thumb": "thumbs/vehicles.bicycle.webp"
+  },
+  {
+   "id": "vehicles.bus",
+   "topicId": "vehicles",
+   "index": 4,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "medium",
+   "regions": 15,
+   "preset": "vehicle_ride",
+   "capabilities": [
+    "rideable"
+   ],
+   "file": "templates/vehicles.bus.json",
+   "thumb": "thumbs/vehicles.bus.webp"
+  },
+  {
+   "id": "vehicles.boat",
+   "topicId": "vehicles",
+   "index": 5,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "medium",
+   "regions": 10,
+   "preset": "vehicle_ride",
+   "capabilities": [
+    "rideable",
+    "aquatic"
+   ],
+   "file": "templates/vehicles.boat.json",
+   "thumb": "thumbs/vehicles.boat.webp"
+  },
+  {
+   "id": "vehicles.tram",
+   "topicId": "vehicles",
+   "index": 6,
+   "tier": "expansion",
+   "packId": "pack_everyday_plus",
+   "difficulty": "medium",
+   "regions": 15,
+   "preset": "vehicle_ride",
+   "capabilities": [
+    "rideable"
+   ],
+   "file": "templates/vehicles.tram.json",
+   "thumb": "thumbs/vehicles.tram.webp"
+  },
+  {
+   "id": "vehicles.hot_air_balloon",
+   "topicId": "vehicles",
+   "index": 7,
+   "tier": "expansion",
+   "packId": "pack_everyday_plus",
+   "difficulty": "medium",
+   "regions": 11,
+   "preset": "vehicle_ride",
+   "capabilities": [
+    "rideable",
+    "flying"
+   ],
+   "file": "templates/vehicles.hot_air_balloon.json",
+   "thumb": "thumbs/vehicles.hot_air_balloon.webp"
+  },
+  {
+   "id": "vehicles.helicopter",
+   "topicId": "vehicles",
+   "index": 8,
+   "tier": "expansion",
+   "packId": "pack_everyday_plus",
+   "difficulty": "medium",
+   "regions": 10,
+   "preset": "vehicle_ride",
+   "capabilities": [
+    "rideable",
+    "flying"
+   ],
+   "file": "templates/vehicles.helicopter.json",
+   "thumb": "thumbs/vehicles.helicopter.webp"
+  },
+  {
+   "id": "vehicles.sailboat",
+   "topicId": "vehicles",
+   "index": 9,
+   "tier": "expansion",
+   "packId": "pack_everyday_plus",
+   "difficulty": "simple",
+   "regions": 8,
+   "preset": "vehicle_ride",
+   "capabilities": [
+    "rideable",
+    "aquatic"
+   ],
+   "file": "templates/vehicles.sailboat.json",
+   "thumb": "thumbs/vehicles.sailboat.webp"
+  },
+  {
+   "id": "vehicles.scooter",
+   "topicId": "vehicles",
+   "index": 10,
+   "tier": "expansion",
+   "packId": "pack_everyday_plus",
+   "difficulty": "medium",
+   "regions": 11,
+   "preset": "vehicle_ride",
+   "capabilities": [
+    "rideable"
+   ],
+   "file": "templates/vehicles.scooter.json",
+   "thumb": "thumbs/vehicles.scooter.webp"
+  },
+  {
+   "id": "vehicles.camper",
+   "topicId": "vehicles",
+   "index": 11,
+   "tier": "expansion",
+   "packId": "pack_everyday_plus",
+   "difficulty": "medium",
+   "regions": 18,
+   "preset": "vehicle_ride",
+   "capabilities": [
+    "rideable"
+   ],
+   "file": "templates/vehicles.camper.json",
+   "thumb": "thumbs/vehicles.camper.webp"
+  },
+  {
+   "id": "ocean.clownfish",
+   "topicId": "ocean",
+   "index": 0,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "simple",
+   "regions": 7,
+   "preset": "ocean_swim",
+   "capabilities": [
+    "aquatic",
+    "carryable"
+   ],
+   "file": "templates/ocean.clownfish.json",
+   "thumb": "thumbs/ocean.clownfish.webp"
+  },
+  {
+   "id": "ocean.turtle",
+   "topicId": "ocean",
+   "index": 1,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "medium",
+   "regions": 15,
+   "preset": "ocean_swim",
+   "capabilities": [
+    "aquatic",
+    "rideable"
+   ],
+   "file": "templates/ocean.turtle.json",
+   "thumb": "thumbs/ocean.turtle.webp"
+  },
+  {
+   "id": "ocean.dolphin",
+   "topicId": "ocean",
+   "index": 2,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "simple",
+   "regions": 7,
+   "preset": "ocean_swim",
+   "capabilities": [
+    "aquatic",
+    "rideable"
+   ],
+   "file": "templates/ocean.dolphin.json",
+   "thumb": "thumbs/ocean.dolphin.webp"
+  },
+  {
+   "id": "ocean.octopus",
+   "topicId": "ocean",
+   "index": 3,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "medium",
+   "regions": 10,
+   "preset": "ocean_swim",
+   "capabilities": [
+    "aquatic",
+    "carryable"
+   ],
+   "file": "templates/ocean.octopus.json",
+   "thumb": "thumbs/ocean.octopus.webp"
+  },
+  {
+   "id": "ocean.seahorse",
+   "topicId": "ocean",
+   "index": 4,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "medium",
+   "regions": 9,
+   "preset": "ocean_swim",
+   "capabilities": [
+    "aquatic",
+    "carryable"
+   ],
+   "file": "templates/ocean.seahorse.json",
+   "thumb": "thumbs/ocean.seahorse.webp"
+  },
+  {
+   "id": "ocean.coral",
+   "topicId": "ocean",
+   "index": 5,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "simple",
+   "regions": 7,
+   "preset": "home_decor",
+   "capabilities": [
+    "aquatic",
+    "decor"
+   ],
+   "file": "templates/ocean.coral.json",
+   "thumb": "thumbs/ocean.coral.webp"
+  },
+  {
+   "id": "ocean.whale",
+   "topicId": "ocean",
+   "index": 6,
+   "tier": "expansion",
+   "packId": "pack_nature_plus",
+   "difficulty": "simple",
+   "regions": 5,
+   "preset": "ocean_swim",
+   "capabilities": [
+    "aquatic",
+    "rideable"
+   ],
+   "file": "templates/ocean.whale.json",
+   "thumb": "thumbs/ocean.whale.webp"
+  },
+  {
+   "id": "ocean.starfish",
+   "topicId": "ocean",
+   "index": 7,
+   "tier": "expansion",
+   "packId": "pack_nature_plus",
+   "difficulty": "medium",
+   "regions": 12,
+   "preset": "ocean_swim",
+   "capabilities": [
+    "aquatic",
+    "carryable"
+   ],
+   "file": "templates/ocean.starfish.json",
+   "thumb": "thumbs/ocean.starfish.webp"
+  },
+  {
+   "id": "ocean.crab",
+   "topicId": "ocean",
+   "index": 8,
+   "tier": "expansion",
+   "packId": "pack_nature_plus",
+   "difficulty": "medium",
+   "regions": 16,
+   "preset": "ocean_swim",
+   "capabilities": [
+    "aquatic",
+    "carryable"
+   ],
+   "file": "templates/ocean.crab.json",
+   "thumb": "thumbs/ocean.crab.webp"
+  },
+  {
+   "id": "ocean.jellyfish",
+   "topicId": "ocean",
+   "index": 9,
+   "tier": "expansion",
+   "packId": "pack_nature_plus",
+   "difficulty": "simple",
+   "regions": 7,
+   "preset": "ocean_swim",
+   "capabilities": [
+    "aquatic",
+    "carryable"
+   ],
+   "file": "templates/ocean.jellyfish.json",
+   "thumb": "thumbs/ocean.jellyfish.webp"
+  },
+  {
+   "id": "ocean.seashell",
+   "topicId": "ocean",
+   "index": 10,
+   "tier": "expansion",
+   "packId": "pack_nature_plus",
+   "difficulty": "medium",
+   "regions": 9,
+   "preset": "home_decor",
+   "capabilities": [
+    "aquatic",
+    "carryable"
+   ],
+   "file": "templates/ocean.seashell.json",
+   "thumb": "thumbs/ocean.seashell.webp"
+  },
+  {
+   "id": "ocean.submarine",
+   "topicId": "ocean",
+   "index": 11,
+   "tier": "expansion",
+   "packId": "pack_nature_plus",
+   "difficulty": "medium",
+   "regions": 14,
+   "preset": "vehicle_ride",
+   "capabilities": [
+    "aquatic",
+    "rideable"
+   ],
+   "file": "templates/ocean.submarine.json",
+   "thumb": "thumbs/ocean.submarine.webp"
+  },
+  {
+   "id": "dinosaurs.triceratops",
+   "topicId": "dinosaurs",
+   "index": 0,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "medium",
+   "regions": 14,
+   "preset": "dino_play",
+   "capabilities": [
+    "passenger"
+   ],
+   "file": "templates/dinosaurs.triceratops.json",
+   "thumb": "thumbs/dinosaurs.triceratops.webp"
+  },
+  {
+   "id": "dinosaurs.stegosaurus",
+   "topicId": "dinosaurs",
+   "index": 1,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "medium",
+   "regions": 15,
+   "preset": "dino_play",
+   "capabilities": [
+    "passenger"
+   ],
+   "file": "templates/dinosaurs.stegosaurus.json",
+   "thumb": "thumbs/dinosaurs.stegosaurus.webp"
+  },
+  {
+   "id": "dinosaurs.brachiosaurus",
+   "topicId": "dinosaurs",
+   "index": 2,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "medium",
+   "regions": 11,
+   "preset": "dino_play",
+   "capabilities": [
+    "passenger",
+    "rideable"
+   ],
+   "file": "templates/dinosaurs.brachiosaurus.json",
+   "thumb": "thumbs/dinosaurs.brachiosaurus.webp"
+  },
+  {
+   "id": "dinosaurs.tyrannosaurus",
+   "topicId": "dinosaurs",
+   "index": 3,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "medium",
+   "regions": 18,
+   "preset": "dino_play",
+   "capabilities": [
+    "passenger"
+   ],
+   "file": "templates/dinosaurs.tyrannosaurus.json",
+   "thumb": "thumbs/dinosaurs.tyrannosaurus.webp"
+  },
+  {
+   "id": "dinosaurs.ankylosaurus",
+   "topicId": "dinosaurs",
+   "index": 4,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "detailed",
+   "regions": 19,
+   "preset": "dino_play",
+   "capabilities": [
+    "passenger"
+   ],
+   "file": "templates/dinosaurs.ankylosaurus.json",
+   "thumb": "thumbs/dinosaurs.ankylosaurus.webp"
+  },
+  {
+   "id": "dinosaurs.parasaurolophus",
+   "topicId": "dinosaurs",
+   "index": 5,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "medium",
+   "regions": 14,
+   "preset": "dino_play",
+   "capabilities": [
+    "passenger"
+   ],
+   "file": "templates/dinosaurs.parasaurolophus.json",
+   "thumb": "thumbs/dinosaurs.parasaurolophus.webp"
+  },
+  {
+   "id": "dinosaurs.diplodocus",
+   "topicId": "dinosaurs",
+   "index": 6,
+   "tier": "expansion",
+   "packId": "pack_nature_plus",
+   "difficulty": "medium",
+   "regions": 11,
+   "preset": "dino_play",
+   "capabilities": [
+    "passenger"
+   ],
+   "file": "templates/dinosaurs.diplodocus.json",
+   "thumb": "thumbs/dinosaurs.diplodocus.webp"
+  },
+  {
+   "id": "dinosaurs.spinosaurus",
+   "topicId": "dinosaurs",
+   "index": 7,
+   "tier": "expansion",
+   "packId": "pack_nature_plus",
+   "difficulty": "medium",
+   "regions": 12,
+   "preset": "dino_play",
+   "capabilities": [
+    "passenger"
+   ],
+   "file": "templates/dinosaurs.spinosaurus.json",
+   "thumb": "thumbs/dinosaurs.spinosaurus.webp"
+  },
+  {
+   "id": "dinosaurs.iguanodon",
+   "topicId": "dinosaurs",
+   "index": 8,
+   "tier": "expansion",
+   "packId": "pack_nature_plus",
+   "difficulty": "medium",
+   "regions": 16,
+   "preset": "dino_play",
+   "capabilities": [
+    "passenger"
+   ],
+   "file": "templates/dinosaurs.iguanodon.json",
+   "thumb": "thumbs/dinosaurs.iguanodon.webp"
+  },
+  {
+   "id": "dinosaurs.pachycephalosaurus",
+   "topicId": "dinosaurs",
+   "index": 9,
+   "tier": "expansion",
+   "packId": "pack_nature_plus",
+   "difficulty": "medium",
+   "regions": 17,
+   "preset": "dino_play",
+   "capabilities": [
+    "passenger"
+   ],
+   "file": "templates/dinosaurs.pachycephalosaurus.json",
+   "thumb": "thumbs/dinosaurs.pachycephalosaurus.webp"
+  },
+  {
+   "id": "dinosaurs.egg",
+   "topicId": "dinosaurs",
+   "index": 10,
+   "tier": "expansion",
+   "packId": "pack_nature_plus",
+   "difficulty": "medium",
+   "regions": 9,
+   "preset": "home_decor",
+   "capabilities": [
+    "carryable"
+   ],
+   "file": "templates/dinosaurs.egg.json",
+   "thumb": "thumbs/dinosaurs.egg.webp"
+  },
+  {
+   "id": "dinosaurs.fossil",
+   "topicId": "dinosaurs",
+   "index": 11,
+   "tier": "expansion",
+   "packId": "pack_nature_plus",
+   "difficulty": "medium",
+   "regions": 14,
+   "preset": "home_decor",
+   "capabilities": [
+    "carryable",
+    "decor"
+   ],
+   "file": "templates/dinosaurs.fossil.json",
+   "thumb": "thumbs/dinosaurs.fossil.webp"
+  },
+  {
+   "id": "space.rocket",
+   "topicId": "space",
+   "index": 0,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "medium",
+   "regions": 11,
+   "preset": "space_explore",
+   "capabilities": [
+    "rideable",
+    "flying"
+   ],
+   "file": "templates/space.rocket.json",
+   "thumb": "thumbs/space.rocket.webp"
+  },
+  {
+   "id": "space.planet",
+   "topicId": "space",
+   "index": 1,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "simple",
+   "regions": 7,
+   "preset": "space_explore",
+   "capabilities": [
+    "sky",
+    "decor"
+   ],
+   "file": "templates/space.planet.json",
+   "thumb": "thumbs/space.planet.webp"
+  },
+  {
+   "id": "space.astronaut",
+   "topicId": "space",
+   "index": 2,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "detailed",
+   "regions": 19,
+   "preset": "family_wave",
+   "capabilities": [
+    "passenger",
+    "seatable"
+   ],
+   "file": "templates/space.astronaut.json",
+   "thumb": "thumbs/space.astronaut.webp"
+  },
+  {
+   "id": "space.satellite",
+   "topicId": "space",
+   "index": 3,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "simple",
+   "regions": 8,
+   "preset": "space_explore",
+   "capabilities": [
+    "flying",
+    "carryable"
+   ],
+   "file": "templates/space.satellite.json",
+   "thumb": "thumbs/space.satellite.webp"
+  },
+  {
+   "id": "space.moon_rover",
+   "topicId": "space",
+   "index": 4,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "medium",
+   "regions": 16,
+   "preset": "vehicle_ride",
+   "capabilities": [
+    "rideable"
+   ],
+   "file": "templates/space.moon_rover.json",
+   "thumb": "thumbs/space.moon_rover.webp"
+  },
+  {
+   "id": "space.star",
+   "topicId": "space",
+   "index": 5,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "simple",
+   "regions": 5,
+   "preset": "space_explore",
+   "capabilities": [
+    "sky",
+    "carryable"
+   ],
+   "file": "templates/space.star.json",
+   "thumb": "thumbs/space.star.webp"
+  },
+  {
+   "id": "space.station",
+   "topicId": "space",
+   "index": 6,
+   "tier": "expansion",
+   "packId": "pack_imagination_plus",
+   "difficulty": "medium",
+   "regions": 14,
+   "preset": "space_explore",
+   "capabilities": [
+    "decor",
+    "flying"
+   ],
+   "file": "templates/space.station.json",
+   "thumb": "thumbs/space.station.webp"
+  },
+  {
+   "id": "space.comet",
+   "topicId": "space",
+   "index": 7,
+   "tier": "expansion",
+   "packId": "pack_imagination_plus",
+   "difficulty": "simple",
+   "regions": 5,
+   "preset": "space_explore",
+   "capabilities": [
+    "sky",
+    "flying"
+   ],
+   "file": "templates/space.comet.json",
+   "thumb": "thumbs/space.comet.webp"
+  },
+  {
+   "id": "space.ringed_planet",
+   "topicId": "space",
+   "index": 8,
+   "tier": "expansion",
+   "packId": "pack_imagination_plus",
+   "difficulty": "simple",
+   "regions": 7,
+   "preset": "space_explore",
+   "capabilities": [
+    "sky",
+    "decor"
+   ],
+   "file": "templates/space.ringed_planet.json",
+   "thumb": "thumbs/space.ringed_planet.webp"
+  },
+  {
+   "id": "space.telescope",
+   "topicId": "space",
+   "index": 9,
+   "tier": "expansion",
+   "packId": "pack_imagination_plus",
+   "difficulty": "medium",
+   "regions": 11,
+   "preset": "home_decor",
+   "capabilities": [
+    "decor",
+    "carryable"
+   ],
+   "file": "templates/space.telescope.json",
+   "thumb": "thumbs/space.telescope.webp"
+  },
+  {
+   "id": "space.alien_friend",
+   "topicId": "space",
+   "index": 10,
+   "tier": "expansion",
+   "packId": "pack_imagination_plus",
+   "difficulty": "medium",
+   "regions": 12,
+   "preset": "dino_play",
+   "capabilities": [
+    "passenger"
+   ],
+   "file": "templates/space.alien_friend.json",
+   "thumb": "thumbs/space.alien_friend.webp"
+  },
+  {
+   "id": "space.galaxy",
+   "topicId": "space",
+   "index": 11,
+   "tier": "expansion",
+   "packId": "pack_imagination_plus",
+   "difficulty": "medium",
+   "regions": 10,
+   "preset": "space_explore",
+   "capabilities": [
+    "sky",
+    "decor"
+   ],
+   "file": "templates/space.galaxy.json",
+   "thumb": "thumbs/space.galaxy.webp"
+  },
+  {
+   "id": "food.apple",
+   "topicId": "food",
+   "index": 0,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "simple",
+   "regions": 4,
+   "preset": "food_serve",
+   "capabilities": [
+    "table_item",
+    "carryable"
+   ],
+   "file": "templates/food.apple.json",
+   "thumb": "thumbs/food.apple.webp"
+  },
+  {
+   "id": "food.banana",
+   "topicId": "food",
+   "index": 1,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "simple",
+   "regions": 4,
+   "preset": "food_serve",
+   "capabilities": [
+    "table_item",
+    "carryable"
+   ],
+   "file": "templates/food.banana.json",
+   "thumb": "thumbs/food.banana.webp"
+  },
+  {
+   "id": "food.carrot",
+   "topicId": "food",
+   "index": 2,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "simple",
+   "regions": 4,
+   "preset": "food_serve",
+   "capabilities": [
+    "table_item",
+    "carryable"
+   ],
+   "file": "templates/food.carrot.json",
+   "thumb": "thumbs/food.carrot.webp"
+  },
+  {
+   "id": "food.strawberry",
+   "topicId": "food",
+   "index": 3,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "medium",
+   "regions": 10,
+   "preset": "food_serve",
+   "capabilities": [
+    "table_item",
+    "carryable"
+   ],
+   "file": "templates/food.strawberry.json",
+   "thumb": "thumbs/food.strawberry.webp"
+  },
+  {
+   "id": "food.bread",
+   "topicId": "food",
+   "index": 4,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "simple",
+   "regions": 5,
+   "preset": "food_serve",
+   "capabilities": [
+    "table_item",
+    "carryable"
+   ],
+   "file": "templates/food.bread.json",
+   "thumb": "thumbs/food.bread.webp"
+  },
+  {
+   "id": "food.cake",
+   "topicId": "food",
+   "index": 5,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "medium",
+   "regions": 10,
+   "preset": "food_serve",
+   "capabilities": [
+    "table_item",
+    "carryable"
+   ],
+   "file": "templates/food.cake.json",
+   "thumb": "thumbs/food.cake.webp"
+  },
+  {
+   "id": "food.watermelon",
+   "topicId": "food",
+   "index": 6,
+   "tier": "expansion",
+   "packId": "pack_everyday_plus",
+   "difficulty": "simple",
+   "regions": 4,
+   "preset": "food_serve",
+   "capabilities": [
+    "table_item",
+    "carryable"
+   ],
+   "file": "templates/food.watermelon.json",
+   "thumb": "thumbs/food.watermelon.webp"
+  },
+  {
+   "id": "food.broccoli",
+   "topicId": "food",
+   "index": 7,
+   "tier": "expansion",
+   "packId": "pack_everyday_plus",
+   "difficulty": "simple",
+   "regions": 6,
+   "preset": "food_serve",
+   "capabilities": [
+    "table_item",
+    "carryable"
+   ],
+   "file": "templates/food.broccoli.json",
+   "thumb": "thumbs/food.broccoli.webp"
+  },
+  {
+   "id": "food.soup",
+   "topicId": "food",
+   "index": 8,
+   "tier": "expansion",
+   "packId": "pack_everyday_plus",
+   "difficulty": "medium",
+   "regions": 14,
+   "preset": "food_serve",
+   "capabilities": [
+    "table_item",
+    "carryable"
+   ],
+   "file": "templates/food.soup.json",
+   "thumb": "thumbs/food.soup.webp"
+  },
+  {
+   "id": "food.sandwich",
+   "topicId": "food",
+   "index": 9,
+   "tier": "expansion",
+   "packId": "pack_everyday_plus",
+   "difficulty": "simple",
+   "regions": 6,
+   "preset": "food_serve",
+   "capabilities": [
+    "table_item",
+    "carryable"
+   ],
+   "file": "templates/food.sandwich.json",
+   "thumb": "thumbs/food.sandwich.webp"
+  },
+  {
+   "id": "food.dumpling",
+   "topicId": "food",
+   "index": 10,
+   "tier": "expansion",
+   "packId": "pack_everyday_plus",
+   "difficulty": "simple",
+   "regions": 4,
+   "preset": "food_serve",
+   "capabilities": [
+    "table_item",
+    "carryable"
+   ],
+   "file": "templates/food.dumpling.json",
+   "thumb": "thumbs/food.dumpling.webp"
+  },
+  {
+   "id": "food.fruit_bowl",
+   "topicId": "food",
+   "index": 11,
+   "tier": "expansion",
+   "packId": "pack_everyday_plus",
+   "difficulty": "medium",
+   "regions": 11,
+   "preset": "food_serve",
+   "capabilities": [
+    "table_item",
+    "carryable"
+   ],
+   "file": "templates/food.fruit_bowl.json",
+   "thumb": "thumbs/food.fruit_bowl.webp"
+  },
+  {
+   "id": "home_city.house",
+   "topicId": "home_city",
+   "index": 0,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "medium",
+   "regions": 10,
+   "preset": "home_decor",
+   "capabilities": [
+    "decor",
+    "door",
+    "light"
+   ],
+   "file": "templates/home_city.house.json",
+   "thumb": "thumbs/home_city.house.webp"
+  },
+  {
+   "id": "home_city.school",
+   "topicId": "home_city",
+   "index": 1,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "detailed",
+   "regions": 19,
+   "preset": "home_decor",
+   "capabilities": [
+    "decor"
+   ],
+   "file": "templates/home_city.school.json",
+   "thumb": "thumbs/home_city.school.webp"
+  },
+  {
+   "id": "home_city.park",
+   "topicId": "home_city",
+   "index": 2,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "medium",
+   "regions": 11,
+   "preset": "home_decor",
+   "capabilities": [
+    "seat_furniture",
+    "decor"
+   ],
+   "file": "templates/home_city.park.json",
+   "thumb": "thumbs/home_city.park.webp"
+  },
+  {
+   "id": "home_city.bed",
+   "topicId": "home_city",
+   "index": 3,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "medium",
+   "regions": 10,
+   "preset": "home_decor",
+   "capabilities": [
+    "seat_furniture",
+    "decor"
+   ],
+   "file": "templates/home_city.bed.json",
+   "thumb": "thumbs/home_city.bed.webp"
+  },
+  {
+   "id": "home_city.table",
+   "topicId": "home_city",
+   "index": 4,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "medium",
+   "regions": 10,
+   "preset": "home_decor",
+   "capabilities": [
+    "surface",
+    "carryable"
+   ],
+   "file": "templates/home_city.table.json",
+   "thumb": "thumbs/home_city.table.webp"
+  },
+  {
+   "id": "home_city.chair",
+   "topicId": "home_city",
+   "index": 5,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "simple",
+   "regions": 7,
+   "preset": "home_decor",
+   "capabilities": [
+    "seat_furniture",
+    "carryable"
+   ],
+   "file": "templates/home_city.chair.json",
+   "thumb": "thumbs/home_city.chair.webp"
+  },
+  {
+   "id": "home_city.bridge",
+   "topicId": "home_city",
+   "index": 6,
+   "tier": "expansion",
+   "packId": "pack_everyday_plus",
+   "difficulty": "simple",
+   "regions": 6,
+   "preset": "home_decor",
+   "capabilities": [
+    "decor",
+    "bridge"
+   ],
+   "file": "templates/home_city.bridge.json",
+   "thumb": "thumbs/home_city.bridge.webp"
+  },
+  {
+   "id": "home_city.library",
+   "topicId": "home_city",
+   "index": 7,
+   "tier": "expansion",
+   "packId": "pack_everyday_plus",
+   "difficulty": "medium",
+   "regions": 13,
+   "preset": "home_decor",
+   "capabilities": [
+    "decor"
+   ],
+   "file": "templates/home_city.library.json",
+   "thumb": "thumbs/home_city.library.webp"
+  },
+  {
+   "id": "home_city.shop",
+   "topicId": "home_city",
+   "index": 8,
+   "tier": "expansion",
+   "packId": "pack_everyday_plus",
+   "difficulty": "medium",
+   "regions": 17,
+   "preset": "home_decor",
+   "capabilities": [
+    "decor"
+   ],
+   "file": "templates/home_city.shop.json",
+   "thumb": "thumbs/home_city.shop.webp"
+  },
+  {
+   "id": "home_city.lamp",
+   "topicId": "home_city",
+   "index": 9,
+   "tier": "expansion",
+   "packId": "pack_everyday_plus",
+   "difficulty": "medium",
+   "regions": 9,
+   "preset": "home_decor",
+   "capabilities": [
+    "light",
+    "carryable"
+   ],
+   "file": "templates/home_city.lamp.json",
+   "thumb": "thumbs/home_city.lamp.webp"
+  },
+  {
+   "id": "home_city.playground",
+   "topicId": "home_city",
+   "index": 10,
+   "tier": "expansion",
+   "packId": "pack_everyday_plus",
+   "difficulty": "simple",
+   "regions": 8,
+   "preset": "home_decor",
+   "capabilities": [
+    "decor"
+   ],
+   "file": "templates/home_city.playground.json",
+   "thumb": "thumbs/home_city.playground.webp"
+  },
+  {
+   "id": "home_city.fountain",
+   "topicId": "home_city",
+   "index": 11,
+   "tier": "expansion",
+   "packId": "pack_everyday_plus",
+   "difficulty": "simple",
+   "regions": 8,
+   "preset": "home_decor",
+   "capabilities": [
+    "water_body",
+    "decor"
+   ],
+   "file": "templates/home_city.fountain.json",
+   "thumb": "thumbs/home_city.fountain.webp"
+  },
+  {
+   "id": "fantasy.dragon",
+   "topicId": "fantasy",
+   "index": 0,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "medium",
+   "regions": 15,
+   "preset": "fantasy_magic",
+   "capabilities": [
+    "flying",
+    "rideable",
+    "passenger"
+   ],
+   "file": "templates/fantasy.dragon.json",
+   "thumb": "thumbs/fantasy.dragon.webp"
+  },
+  {
+   "id": "fantasy.unicorn",
+   "topicId": "fantasy",
+   "index": 1,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "medium",
+   "regions": 17,
+   "preset": "pet_walk",
+   "capabilities": [
+    "rideable",
+    "passenger"
+   ],
+   "file": "templates/fantasy.unicorn.json",
+   "thumb": "thumbs/fantasy.unicorn.webp"
+  },
+  {
+   "id": "fantasy.castle",
+   "topicId": "fantasy",
+   "index": 2,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "medium",
+   "regions": 15,
+   "preset": "home_decor",
+   "capabilities": [
+    "decor",
+    "door"
+   ],
+   "file": "templates/fantasy.castle.json",
+   "thumb": "thumbs/fantasy.castle.webp"
+  },
+  {
+   "id": "fantasy.fairy_house",
+   "topicId": "fantasy",
+   "index": 3,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "medium",
+   "regions": 12,
+   "preset": "home_decor",
+   "capabilities": [
+    "decor",
+    "door",
+    "light"
+   ],
+   "file": "templates/fantasy.fairy_house.json",
+   "thumb": "thumbs/fantasy.fairy_house.webp"
+  },
+  {
+   "id": "fantasy.magic_tree",
+   "topicId": "fantasy",
+   "index": 4,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "medium",
+   "regions": 10,
+   "preset": "nature_react",
+   "capabilities": [
+    "plantable",
+    "waterable"
+   ],
+   "file": "templates/fantasy.magic_tree.json",
+   "thumb": "thumbs/fantasy.magic_tree.webp"
+  },
+  {
+   "id": "fantasy.friendly_monster",
+   "topicId": "fantasy",
+   "index": 5,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "medium",
+   "regions": 12,
+   "preset": "dino_play",
+   "capabilities": [
+    "passenger"
+   ],
+   "file": "templates/fantasy.friendly_monster.json",
+   "thumb": "thumbs/fantasy.friendly_monster.webp"
+  },
+  {
+   "id": "fantasy.flying_cat",
+   "topicId": "fantasy",
+   "index": 6,
+   "tier": "expansion",
+   "packId": "pack_imagination_plus",
+   "difficulty": "medium",
+   "regions": 12,
+   "preset": "bird_fly",
+   "capabilities": [
+    "flying",
+    "passenger"
+   ],
+   "file": "templates/fantasy.flying_cat.json",
+   "thumb": "thumbs/fantasy.flying_cat.webp"
+  },
+  {
+   "id": "fantasy.cloud_house",
+   "topicId": "fantasy",
+   "index": 7,
+   "tier": "expansion",
+   "packId": "pack_imagination_plus",
+   "difficulty": "simple",
+   "regions": 8,
+   "preset": "fantasy_magic",
+   "capabilities": [
+    "decor",
+    "flying"
+   ],
+   "file": "templates/fantasy.cloud_house.json",
+   "thumb": "thumbs/fantasy.cloud_house.webp"
+  },
+  {
+   "id": "fantasy.magic_carpet",
+   "topicId": "fantasy",
+   "index": 8,
+   "tier": "expansion",
+   "packId": "pack_imagination_plus",
+   "difficulty": "simple",
+   "regions": 8,
+   "preset": "fantasy_magic",
+   "capabilities": [
+    "flying",
+    "rideable"
+   ],
+   "file": "templates/fantasy.magic_carpet.json",
+   "thumb": "thumbs/fantasy.magic_carpet.webp"
+  },
+  {
+   "id": "fantasy.crystal",
+   "topicId": "fantasy",
+   "index": 9,
+   "tier": "expansion",
+   "packId": "pack_imagination_plus",
+   "difficulty": "simple",
+   "regions": 8,
+   "preset": "fantasy_magic",
+   "capabilities": [
+    "carryable"
+   ],
+   "file": "templates/fantasy.crystal.json",
+   "thumb": "thumbs/fantasy.crystal.webp"
+  },
+  {
+   "id": "fantasy.wand",
+   "topicId": "fantasy",
+   "index": 10,
+   "tier": "expansion",
+   "packId": "pack_imagination_plus",
+   "difficulty": "simple",
+   "regions": 8,
+   "preset": "fantasy_magic",
+   "capabilities": [
+    "carryable"
+   ],
+   "file": "templates/fantasy.wand.json",
+   "thumb": "thumbs/fantasy.wand.webp"
+  },
+  {
+   "id": "fantasy.story_gate",
+   "topicId": "fantasy",
+   "index": 11,
+   "tier": "expansion",
+   "packId": "pack_imagination_plus",
+   "difficulty": "medium",
+   "regions": 11,
+   "preset": "fantasy_magic",
+   "capabilities": [
+    "decor"
+   ],
+   "file": "templates/fantasy.story_gate.json",
+   "thumb": "thumbs/fantasy.story_gate.webp"
+  },
+  {
+   "id": "jobs.doctor",
+   "topicId": "jobs",
+   "index": 0,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "detailed",
+   "regions": 25,
+   "preset": "family_wave",
+   "capabilities": [
+    "passenger",
+    "seatable"
+   ],
+   "file": "templates/jobs.doctor.json",
+   "thumb": "thumbs/jobs.doctor.webp"
+  },
+  {
+   "id": "jobs.chef",
+   "topicId": "jobs",
+   "index": 1,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "detailed",
+   "regions": 20,
+   "preset": "family_wave",
+   "capabilities": [
+    "passenger",
+    "seatable"
+   ],
+   "file": "templates/jobs.chef.json",
+   "thumb": "thumbs/jobs.chef.webp"
+  },
+  {
+   "id": "jobs.gardener",
+   "topicId": "jobs",
+   "index": 2,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "detailed",
+   "regions": 22,
+   "preset": "family_wave",
+   "capabilities": [
+    "passenger",
+    "seatable"
+   ],
+   "file": "templates/jobs.gardener.json",
+   "thumb": "thumbs/jobs.gardener.webp"
+  },
+  {
+   "id": "jobs.firefighter",
+   "topicId": "jobs",
+   "index": 3,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "detailed",
+   "regions": 22,
+   "preset": "family_wave",
+   "capabilities": [
+    "passenger",
+    "seatable"
+   ],
+   "file": "templates/jobs.firefighter.json",
+   "thumb": "thumbs/jobs.firefighter.webp"
+  },
+  {
+   "id": "jobs.teacher",
+   "topicId": "jobs",
+   "index": 4,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "detailed",
+   "regions": 25,
+   "preset": "family_wave",
+   "capabilities": [
+    "passenger",
+    "seatable"
+   ],
+   "file": "templates/jobs.teacher.json",
+   "thumb": "thumbs/jobs.teacher.webp"
+  },
+  {
+   "id": "jobs.builder",
+   "topicId": "jobs",
+   "index": 5,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "detailed",
+   "regions": 21,
+   "preset": "family_wave",
+   "capabilities": [
+    "passenger",
+    "seatable"
+   ],
+   "file": "templates/jobs.builder.json",
+   "thumb": "thumbs/jobs.builder.webp"
+  },
+  {
+   "id": "jobs.artist",
+   "topicId": "jobs",
+   "index": 6,
+   "tier": "expansion",
+   "packId": "pack_everyday_plus",
+   "difficulty": "detailed",
+   "regions": 29,
+   "preset": "family_wave",
+   "capabilities": [
+    "passenger",
+    "seatable"
+   ],
+   "file": "templates/jobs.artist.json",
+   "thumb": "thumbs/jobs.artist.webp"
+  },
+  {
+   "id": "jobs.astronaut",
+   "topicId": "jobs",
+   "index": 7,
+   "tier": "expansion",
+   "packId": "pack_everyday_plus",
+   "difficulty": "detailed",
+   "regions": 23,
+   "preset": "family_wave",
+   "capabilities": [
+    "passenger",
+    "seatable"
+   ],
+   "file": "templates/jobs.astronaut.json",
+   "thumb": "thumbs/jobs.astronaut.webp"
+  },
+  {
+   "id": "jobs.farmer",
+   "topicId": "jobs",
+   "index": 8,
+   "tier": "expansion",
+   "packId": "pack_everyday_plus",
+   "difficulty": "detailed",
+   "regions": 24,
+   "preset": "family_wave",
+   "capabilities": [
+    "passenger",
+    "seatable"
+   ],
+   "file": "templates/jobs.farmer.json",
+   "thumb": "thumbs/jobs.farmer.webp"
+  },
+  {
+   "id": "jobs.veterinarian",
+   "topicId": "jobs",
+   "index": 9,
+   "tier": "expansion",
+   "packId": "pack_everyday_plus",
+   "difficulty": "detailed",
+   "regions": 21,
+   "preset": "family_wave",
+   "capabilities": [
+    "passenger",
+    "seatable"
+   ],
+   "file": "templates/jobs.veterinarian.json",
+   "thumb": "thumbs/jobs.veterinarian.webp"
+  },
+  {
+   "id": "jobs.scientist",
+   "topicId": "jobs",
+   "index": 10,
+   "tier": "expansion",
+   "packId": "pack_everyday_plus",
+   "difficulty": "detailed",
+   "regions": 23,
+   "preset": "family_wave",
+   "capabilities": [
+    "passenger",
+    "seatable"
+   ],
+   "file": "templates/jobs.scientist.json",
+   "thumb": "thumbs/jobs.scientist.webp"
+  },
+  {
+   "id": "jobs.musician",
+   "topicId": "jobs",
+   "index": 11,
+   "tier": "expansion",
+   "packId": "pack_everyday_plus",
+   "difficulty": "detailed",
+   "regions": 21,
+   "preset": "family_wave",
+   "capabilities": [
+    "passenger",
+    "seatable"
+   ],
+   "file": "templates/jobs.musician.json",
+   "thumb": "thumbs/jobs.musician.webp"
+  },
+  {
+   "id": "celebrations.birthday_cake",
+   "topicId": "celebrations",
+   "index": 0,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "medium",
+   "regions": 16,
+   "preset": "celebration",
+   "capabilities": [
+    "table_item",
+    "candles"
+   ],
+   "file": "templates/celebrations.birthday_cake.json",
+   "thumb": "thumbs/celebrations.birthday_cake.webp"
+  },
+  {
+   "id": "celebrations.balloons",
+   "topicId": "celebrations",
+   "index": 1,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "medium",
+   "regions": 11,
+   "preset": "celebration",
+   "capabilities": [
+    "table_item",
+    "carryable"
+   ],
+   "file": "templates/celebrations.balloons.json",
+   "thumb": "thumbs/celebrations.balloons.webp"
+  },
+  {
+   "id": "celebrations.gift",
+   "topicId": "celebrations",
+   "index": 2,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "medium",
+   "regions": 12,
+   "preset": "celebration",
+   "capabilities": [
+    "table_item",
+    "carryable",
+    "openable"
+   ],
+   "file": "templates/celebrations.gift.json",
+   "thumb": "thumbs/celebrations.gift.webp"
+  },
+  {
+   "id": "celebrations.bunting",
+   "topicId": "celebrations",
+   "index": 3,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "medium",
+   "regions": 12,
+   "preset": "celebration",
+   "capabilities": [
+    "decor",
+    "hangable"
+   ],
+   "file": "templates/celebrations.bunting.json",
+   "thumb": "thumbs/celebrations.bunting.webp"
+  },
+  {
+   "id": "celebrations.greeting_card",
+   "topicId": "celebrations",
+   "index": 4,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "simple",
+   "regions": 7,
+   "preset": "celebration",
+   "capabilities": [
+    "carryable",
+    "openable"
+   ],
+   "file": "templates/celebrations.greeting_card.json",
+   "thumb": "thumbs/celebrations.greeting_card.webp"
+  },
+  {
+   "id": "celebrations.paper_lantern",
+   "topicId": "celebrations",
+   "index": 5,
+   "tier": "base",
+   "packId": "base",
+   "difficulty": "simple",
+   "regions": 6,
+   "preset": "celebration",
+   "capabilities": [
+    "hangable",
+    "light",
+    "carryable"
+   ],
+   "file": "templates/celebrations.paper_lantern.json",
+   "thumb": "thumbs/celebrations.paper_lantern.webp"
+  },
+  {
+   "id": "celebrations.spring_blossom",
+   "topicId": "celebrations",
+   "index": 6,
+   "tier": "expansion",
+   "packId": "pack_imagination_plus",
+   "difficulty": "medium",
+   "regions": 12,
+   "preset": "celebration",
+   "capabilities": [
+    "table_item",
+    "decor"
+   ],
+   "file": "templates/celebrations.spring_blossom.json",
+   "thumb": "thumbs/celebrations.spring_blossom.webp"
+  },
+  {
+   "id": "celebrations.lantern_festival",
+   "topicId": "celebrations",
+   "index": 7,
+   "tier": "expansion",
+   "packId": "pack_imagination_plus",
+   "difficulty": "medium",
+   "regions": 10,
+   "preset": "celebration",
+   "capabilities": [
+    "light",
+    "carryable"
+   ],
+   "file": "templates/celebrations.lantern_festival.json",
+   "thumb": "thumbs/celebrations.lantern_festival.webp"
+  },
+  {
+   "id": "celebrations.winter_tree",
+   "topicId": "celebrations",
+   "index": 8,
+   "tier": "expansion",
+   "packId": "pack_imagination_plus",
+   "difficulty": "medium",
+   "regions": 14,
+   "preset": "celebration",
+   "capabilities": [
+    "plantable",
+    "decor",
+    "light"
+   ],
+   "file": "templates/celebrations.winter_tree.json",
+   "thumb": "thumbs/celebrations.winter_tree.webp"
+  },
+  {
+   "id": "celebrations.festival_lights",
+   "topicId": "celebrations",
+   "index": 9,
+   "tier": "expansion",
+   "packId": "pack_imagination_plus",
+   "difficulty": "detailed",
+   "regions": 24,
+   "preset": "celebration",
+   "capabilities": [
+    "decor",
+    "hangable",
+    "light"
+   ],
+   "file": "templates/celebrations.festival_lights.json",
+   "thumb": "thumbs/celebrations.festival_lights.webp"
+  },
+  {
+   "id": "celebrations.kite_festival",
+   "topicId": "celebrations",
+   "index": 10,
+   "tier": "expansion",
+   "packId": "pack_imagination_plus",
+   "difficulty": "simple",
+   "regions": 8,
+   "preset": "celebration",
+   "capabilities": [
+    "flying",
+    "carryable"
+   ],
+   "file": "templates/celebrations.kite_festival.json",
+   "thumb": "thumbs/celebrations.kite_festival.webp"
+  },
+  {
+   "id": "celebrations.family_banner",
+   "topicId": "celebrations",
+   "index": 11,
+   "tier": "expansion",
+   "packId": "pack_imagination_plus",
+   "difficulty": "medium",
+   "regions": 11,
+   "preset": "celebration",
+   "capabilities": [
+    "decor",
+    "hangable"
+   ],
+   "file": "templates/celebrations.family_banner.json",
+   "thumb": "thumbs/celebrations.family_banner.webp"
+  }
+ ]
+}
