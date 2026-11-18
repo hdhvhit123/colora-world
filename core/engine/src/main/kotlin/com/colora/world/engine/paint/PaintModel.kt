@@ -79,13 +79,10 @@ data class PaintState(
 
 object PaintReducer {
     fun apply(state: PaintState, cmd: PaintCommand): PaintState = when (cmd) {
-        is PaintCommand.FillRegion -> {
-            // A new base fill restores paper erased inside that region so the
-            // child sees the colour they just chose everywhere in it.
-            val hidden = state.clearedStrokeIds.toMutableSet()
-            state.strokes.forEachIndexed { i, s -> if (s.brush == BrushId.ERASER && s.clipRegionId == cmd.regionId) hidden += i }
-            state.copy(fills = state.fills + (cmd.regionId to cmd.color), clearedStrokeIds = hidden)
-        }
+        // Fills are the base colour under the paint layer; the eraser removes brush
+        // strokes only (renderers apply it with DST_OUT inside the stroke layer), so a
+        // new fill never resurrects strokes the child erased (ADR-016).
+        is PaintCommand.FillRegion -> state.copy(fills = state.fills + (cmd.regionId to cmd.color))
         is PaintCommand.AddStroke -> state.copy(strokes = state.strokes + cmd.stroke)
         is PaintCommand.AddSticker -> state.copy(stickers = LinkedHashMap(state.stickers).apply { put(cmd.sticker.instanceId, cmd.sticker) })
         is PaintCommand.TransformSticker -> {

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Colora" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">@color/bg_cream</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+    <color name="bg_cream">#FFF8EF</color>
+    <color name="brand_coral">#FF786D</color>
+</resources>

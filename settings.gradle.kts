@@ -21,6 +21,9 @@ dependencyResolutionManagement {
                 includeGroupByRegex("androidx.*")
             }
         }
+        // Google's Maven Central mirror first: large artifacts on repo1 redirect to a CDN
+        // host some sandboxed build environments cannot reach.
+        maven("https://maven-central.storage-download.googleapis.com/maven2/")
         mavenCentral()
     }
 }
