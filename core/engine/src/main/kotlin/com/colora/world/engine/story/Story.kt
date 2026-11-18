@@ -12,8 +12,11 @@ data class Matcher(
     val fallbacks: List<String> = emptyList(),
     val capability: String? = null,
 ) {
+    /** An empty matcher accepts anything (e.g. "save your scene"). */
+    val isAny: Boolean get() = templates.isEmpty() && fallbacks.isEmpty() && capability == null
+
     fun matches(templateId: String, caps: Set<String>): Boolean =
-        templateId in templates || templateId in fallbacks || (capability != null && capability in caps)
+        isAny || templateId in templates || templateId in fallbacks || (capability != null && capability in caps)
 }
 
 @Serializable
@@ -49,6 +52,8 @@ data class SceneEvent(
     val targetTemplateId: String? = null,
     val targetCaps: Set<String> = emptySet(),
     val action: String? = null,
+    /** Distinguishes repeated events of one object, e.g. which waypoint was reached. */
+    val detail: String? = null,
 )
 
 @Serializable
@@ -71,7 +76,11 @@ object StoryRuntime {
         if (p.completed) return p
         val step = currentStep(def, p) ?: return p.copy(completed = true)
         if (!matches(step, e)) return p
-        val key = if (step.event == StoryEvent.MOOD || step.event == StoryEvent.MOVE) "${e.objectId}:${e.action}" else e.objectId
+        val key = when (step.event) {
+            StoryEvent.MOOD, StoryEvent.MOVE -> "${e.objectId}:${e.action}:${e.detail ?: ""}"
+            StoryEvent.INTERACT -> "${e.objectId}:${e.action}"
+            else -> e.objectId
+        }
         val got = p.matched[step.id].orEmpty()
         if (key in got) return p
         val now = got + key
@@ -122,5 +131,5 @@ object FreePathResolver {
     }
 
     private fun resolvable(m: Matcher, free: Collection<String>, capsOf: (String) -> Set<String>): Boolean =
-        free.any { it in m.templates || it in m.fallbacks || (m.capability != null && m.capability in capsOf(it)) }
+        m.isAny || free.any { it in m.templates || it in m.fallbacks || (m.capability != null && m.capability in capsOf(it)) }
 }

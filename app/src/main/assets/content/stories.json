@@ -1,0 +1,1924 @@
+{
+ "schemaVersion": 1,
+ "stories": [
+  {
+   "id": "ST-01",
+   "titleKey": "story.st01.title",
+   "worldId": "garden",
+   "steps": [
+    {
+     "id": "ride",
+     "textKey": "story.st01.ride",
+     "event": "ATTACH",
+     "subject": {
+      "templates": [
+       "animals.rabbit"
+      ],
+      "fallbacks": [],
+      "capability": "passenger"
+     },
+     "target": {
+      "templates": [
+       "vehicles.car"
+      ],
+      "fallbacks": [],
+      "capability": "rideable"
+     },
+     "action": null,
+     "count": 1
+    },
+    {
+     "id": "arrive",
+     "textKey": "story.st01.arrive",
+     "event": "PLACE",
+     "subject": {
+      "templates": [
+       "family.picnic"
+      ],
+      "fallbacks": [
+       "prop.picnic_mat"
+      ],
+      "capability": null
+     },
+     "target": null,
+     "action": null,
+     "count": 1
+    },
+    {
+     "id": "food",
+     "textKey": "story.st01.food",
+     "event": "ATTACH",
+     "subject": {
+      "templates": [
+       "food.apple",
+       "food.banana",
+       "food.bread",
+       "food.cake",
+       "food.strawberry",
+       "food.carrot"
+      ],
+      "fallbacks": [
+       "prop.food_plate"
+      ],
+      "capability": "table_item"
+     },
+     "target": {
+      "templates": [
+       "family.picnic"
+      ],
+      "fallbacks": [
+       "prop.picnic_mat",
+       "prop.basket"
+      ],
+      "capability": null
+     },
+     "action": null,
+     "count": 2
+    }
+   ],
+   "reward": "book_page",
+   "iconTemplates": [
+    "animals.rabbit",
+    "vehicles.car"
+   ]
+  },
+  {
+   "id": "ST-02",
+   "titleKey": "story.st02.title",
+   "worldId": "garden",
+   "steps": [
+    {
+     "id": "cat",
+     "textKey": "story.st02.cat",
+     "event": "PLACE",
+     "subject": {
+      "templates": [
+       "animals.cat"
+      ],
+      "fallbacks": [],
+      "capability": "passenger"
+     },
+     "target": null,
+     "action": null,
+     "count": 1
+    },
+    {
+     "id": "dog",
+     "textKey": "story.st02.dog",
+     "event": "PLACE",
+     "subject": {
+      "templates": [
+       "animals.dog"
+      ],
+      "fallbacks": [],
+      "capability": "passenger"
+     },
+     "target": null,
+     "action": null,
+     "count": 1
+    },
+    {
+     "id": "plant",
+     "textKey": "story.st02.plant",
+     "event": "INTERACT",
+     "subject": {
+      "templates": [
+       "flowers.sunflower",
+       "flowers.rose",
+       "flowers.lotus",
+       "flowers.tulip",
+       "flowers.daisy",
+       "flowers.hibiscus"
+      ],
+      "fallbacks": [],
+      "capability": "plantable"
+     },
+     "target": null,
+     "action": "plant",
+     "count": 1
+    },
+    {
+     "id": "hello",
+     "textKey": "story.st02.hello",
+     "event": "INTERACT",
+     "subject": {
+      "templates": [],
+      "fallbacks": [],
+      "capability": "passenger"
+     },
+     "target": null,
+     "action": "tap",
+     "count": 2
+    }
+   ],
+   "reward": "sticker:sticker.nature.flower",
+   "iconTemplates": [
+    "animals.cat",
+    "animals.dog"
+   ]
+  },
+  {
+   "id": "ST-03",
+   "titleKey": "story.st03.title",
+   "worldId": "garden",
+   "steps": [
+    {
+     "id": "plant",
+     "textKey": "story.st03.plant",
+     "event": "INTERACT",
+     "subject": {
+      "templates": [
+       "flowers.sunflower",
+       "flowers.rose",
+       "flowers.lotus",
+       "flowers.tulip",
+       "flowers.daisy",
+       "flowers.hibiscus"
+      ],
+      "fallbacks": [],
+      "capability": "plantable"
+     },
+     "target": null,
+     "action": "plant",
+     "count": 3
+    },
+    {
+     "id": "water",
+     "textKey": "story.st03.water",
+     "event": "INTERACT",
+     "subject": {
+      "templates": [],
+      "fallbacks": [
+       "prop.watering_can"
+      ],
+      "capability": "plantable"
+     },
+     "target": null,
+     "action": "water",
+     "count": 3
+    }
+   ],
+   "reward": "book_page",
+   "iconTemplates": [
+    "flowers.tulip",
+    "flowers.sunflower"
+   ]
+  },
+  {
+   "id": "ST-04",
+   "titleKey": "story.st04.title",
+   "worldId": "celebration",
+   "steps": [
+    {
+     "id": "pick",
+     "textKey": "story.st04.pick",
+     "event": "ATTACH",
+     "subject": {
+      "templates": [
+       "flowers.sunflower",
+       "flowers.rose",
+       "flowers.lotus",
+       "flowers.tulip",
+       "flowers.daisy",
+       "flowers.hibiscus"
+      ],
+      "fallbacks": [],
+      "capability": "plantable"
+     },
+     "target": {
+      "templates": [],
+      "fallbacks": [
+       "prop.bouquet_wrap"
+      ],
+      "capability": "bouquet"
+     },
+     "action": null,
+     "count": 3
+    },
+    {
+     "id": "family",
+     "textKey": "story.st04.family",
+     "event": "PLACE",
+     "subject": {
+      "templates": [
+       "family.caregiver",
+       "family.mother",
+       "family.father",
+       "family.grandparent"
+      ],
+      "fallbacks": [],
+      "capability": null
+     },
+     "target": null,
+     "action": null,
+     "count": 1
+    },
+    {
+     "id": "give",
+     "textKey": "story.st04.give",
+     "event": "ATTACH",
+     "subject": {
+      "templates": [],
+      "fallbacks": [
+       "prop.bouquet_wrap"
+      ],
+      "capability": "bouquet"
+     },
+     "target": {
+      "templates": [
+       "family.caregiver"
+      ],
+      "fallbacks": [],
+      "capability": null
+     },
+     "action": null,
+     "count": 1
+    }
+   ],
+   "reward": "book_page",
+   "iconTemplates": [
+    "flowers.rose",
+    "family.caregiver"
+   ]
+  },
+  {
+   "id": "ST-05",
+   "titleKey": "story.st05.title",
+   "worldId": "garden",
+   "steps": [
+    {
+     "id": "tree",
+     "textKey": "story.st05.tree",
+     "event": "PLACE",
+     "subject": {
+      "templates": [
+       "nature.tree"
+      ],
+      "fallbacks": [],
+      "capability": "plantable"
+     },
+     "target": null,
+     "action": null,
+     "count": 1
+    },
+    {
+     "id": "sky",
+     "textKey": "story.st05.sky",
+     "event": "PLACE",
+     "subject": {
+      "templates": [
+       "nature.sun",
+       "nature.cloud"
+      ],
+      "fallbacks": [],
+      "capability": "sky"
+     },
+     "target": null,
+     "action": null,
+     "count": 2
+    },
+    {
+     "id": "mood",
+     "textKey": "story.st05.mood",
+     "event": "MOOD",
+     "subject": {
+      "templates": [],
+      "fallbacks": [],
+      "capability": null
+     },
+     "target": null,
+     "action": "any",
+     "count": 1
+    },
+    {
+     "id": "save",
+     "textKey": "story.st05.save",
+     "event": "INTERACT",
+     "subject": {
+      "templates": [],
+      "fallbacks": [],
+      "capability": null
+     },
+     "target": null,
+     "action": "save",
+     "count": 1
+    }
+   ],
+   "reward": "book_page",
+   "iconTemplates": [
+    "nature.sun",
+    "nature.cloud"
+   ]
+  },
+  {
+   "id": "ST-06",
+   "titleKey": "story.st06.title",
+   "worldId": "garden",
+   "steps": [
+    {
+     "id": "pond",
+     "textKey": "story.st06.pond",
+     "event": "PLACE",
+     "subject": {
+      "templates": [
+       "nature.pond"
+      ],
+      "fallbacks": [],
+      "capability": "water_body"
+     },
+     "target": null,
+     "action": null,
+     "count": 1
+    },
+    {
+     "id": "bridge",
+     "textKey": "story.st06.bridge",
+     "event": "PLACE",
+     "subject": {
+      "templates": [
+       "home_city.bridge"
+      ],
+      "fallbacks": [
+       "prop.bridge"
+      ],
+      "capability": "bridge"
+     },
+     "target": null,
+     "action": null,
+     "count": 1
+    },
+    {
+     "id": "cross",
+     "textKey": "story.st06.cross",
+     "event": "MOVE",
+     "subject": {
+      "templates": [],
+      "fallbacks": [],
+      "capability": "passenger"
+     },
+     "target": null,
+     "action": "cross",
+     "count": 1
+    }
+   ],
+   "reward": "sticker:sticker.weather.raindrop",
+   "iconTemplates": [
+    "nature.pond",
+    "home_city.bridge"
+   ]
+  },
+  {
+   "id": "ST-07",
+   "titleKey": "story.st07.title",
+   "worldId": "town",
+   "steps": [
+    {
+     "id": "chair",
+     "textKey": "story.st07.chair",
+     "event": "PLACE",
+     "subject": {
+      "templates": [
+       "home_city.chair"
+      ],
+      "fallbacks": [
+       "prop.chair"
+      ],
+      "capability": "seat_furniture"
+     },
+     "target": null,
+     "action": null,
+     "count": 1
+    },
+    {
+     "id": "sit",
+     "textKey": "story.st07.sit",
+     "event": "ATTACH",
+     "subject": {
+      "templates": [
+       "family.reading",
+       "family.caregiver"
+      ],
+      "fallbacks": [],
+      "capability": "seatable"
+     },
+     "target": {
+      "templates": [
+       "home_city.chair"
+      ],
+      "fallbacks": [
+       "prop.chair"
+      ],
+      "capability": "seat_furniture"
+     },
+     "action": null,
+     "count": 1
+    },
+    {
+     "id": "book",
+     "textKey": "story.st07.book",
+     "event": "INTERACT",
+     "subject": {
+      "templates": [],
+      "fallbacks": [
+       "prop.book"
+      ],
+      "capability": "readable"
+     },
+     "target": null,
+     "action": "open",
+     "count": 1
+    }
+   ],
+   "reward": "book_page",
+   "iconTemplates": [
+    "family.reading",
+    "home_city.chair"
+   ]
+  },
+  {
+   "id": "ST-08",
+   "titleKey": "story.st08.title",
+   "worldId": "town",
+   "steps": [
+    {
+     "id": "table",
+     "textKey": "story.st08.table",
+     "event": "PLACE",
+     "subject": {
+      "templates": [
+       "home_city.table"
+      ],
+      "fallbacks": [
+       "prop.table"
+      ],
+      "capability": null
+     },
+     "target": null,
+     "action": null,
+     "count": 1
+    },
+    {
+     "id": "food",
+     "textKey": "story.st08.food",
+     "event": "ATTACH",
+     "subject": {
+      "templates": [
+       "food.apple",
+       "food.banana",
+       "food.bread",
+       "food.cake",
+       "food.strawberry",
+       "food.carrot"
+      ],
+      "fallbacks": [
+       "prop.food_plate"
+      ],
+      "capability": "table_item"
+     },
+     "target": {
+      "templates": [
+       "home_city.table"
+      ],
+      "fallbacks": [
+       "prop.table"
+      ],
+      "capability": null
+     },
+     "action": null,
+     "count": 2
+    },
+    {
+     "id": "sit",
+     "textKey": "story.st08.sit",
+     "event": "ATTACH",
+     "subject": {
+      "templates": [
+       "family.caregiver",
+       "family.mother",
+       "family.father",
+       "family.grandparent",
+       "family.child",
+       "family.sibling"
+      ],
+      "fallbacks": [],
+      "capability": "seatable"
+     },
+     "target": {
+      "templates": [
+       "home_city.table"
+      ],
+      "fallbacks": [
+       "prop.table"
+      ],
+      "capability": null
+     },
+     "action": null,
+     "count": 2
+    }
+   ],
+   "reward": "book_page",
+   "iconTemplates": [
+    "home_city.table",
+    "food.bread"
+   ]
+  },
+  {
+   "id": "ST-09",
+   "titleKey": "story.st09.title",
+   "worldId": "garden",
+   "steps": [
+    {
+     "id": "dig",
+     "textKey": "story.st09.dig",
+     "event": "PLACE",
+     "subject": {
+      "templates": [
+       "machines.excavator"
+      ],
+      "fallbacks": [],
+      "capability": "carrier"
+     },
+     "target": null,
+     "action": null,
+     "count": 1
+    },
+    {
+     "id": "carry",
+     "textKey": "story.st09.carry",
+     "event": "ATTACH",
+     "subject": {
+      "templates": [],
+      "fallbacks": [
+       "prop.soil_block"
+      ],
+      "capability": "soil"
+     },
+     "target": {
+      "templates": [
+       "machines.excavator"
+      ],
+      "fallbacks": [],
+      "capability": "carrier"
+     },
+     "action": null,
+     "count": 3
+    },
+    {
+     "id": "plant",
+     "textKey": "story.st09.plant",
+     "event": "INTERACT",
+     "subject": {
+      "templates": [
+       "flowers.sunflower",
+       "flowers.rose",
+       "flowers.lotus",
+       "flowers.tulip",
+       "flowers.daisy",
+       "flowers.hibiscus"
+      ],
+      "fallbacks": [],
+      "capability": "plantable"
+     },
+     "target": null,
+     "action": "plant",
+     "count": 1
+    }
+   ],
+   "reward": "sticker:sticker.nature.clover",
+   "iconTemplates": [
+    "machines.excavator"
+   ]
+  },
+  {
+   "id": "ST-10",
+   "titleKey": "story.st10.title",
+   "worldId": "town",
+   "steps": [
+    {
+     "id": "robot",
+     "textKey": "story.st10.robot",
+     "event": "PLACE",
+     "subject": {
+      "templates": [
+       "machines.robot"
+      ],
+      "fallbacks": [],
+      "capability": "carrier"
+     },
+     "target": null,
+     "action": null,
+     "count": 1
+    },
+    {
+     "id": "tidy",
+     "textKey": "story.st10.tidy",
+     "event": "ATTACH",
+     "subject": {
+      "templates": [],
+      "fallbacks": [
+       "prop.book",
+       "prop.basket",
+       "prop.gift_toy",
+       "prop.leaf"
+      ],
+      "capability": "carryable"
+     },
+     "target": {
+      "templates": [
+       "machines.robot"
+      ],
+      "fallbacks": [],
+      "capability": "carrier"
+     },
+     "action": null,
+     "count": 3
+    }
+   ],
+   "reward": "sticker:sticker.sparkle.star",
+   "iconTemplates": [
+    "machines.robot"
+   ]
+  },
+  {
+   "id": "ST-11",
+   "titleKey": "story.st11.title",
+   "worldId": "town",
+   "steps": [
+    {
+     "id": "bus",
+     "textKey": "story.st11.bus",
+     "event": "PLACE",
+     "subject": {
+      "templates": [
+       "vehicles.bus"
+      ],
+      "fallbacks": [],
+      "capability": "rideable"
+     },
+     "target": null,
+     "action": null,
+     "count": 1
+    },
+    {
+     "id": "board",
+     "textKey": "story.st11.board",
+     "event": "ATTACH",
+     "subject": {
+      "templates": [],
+      "fallbacks": [],
+      "capability": "passenger"
+     },
+     "target": {
+      "templates": [
+       "vehicles.bus"
+      ],
+      "fallbacks": [],
+      "capability": "rideable"
+     },
+     "action": null,
+     "count": 2
+    },
+    {
+     "id": "park",
+     "textKey": "story.st11.park",
+     "event": "MOVE",
+     "subject": {
+      "templates": [
+       "vehicles.bus"
+      ],
+      "fallbacks": [],
+      "capability": "rideable"
+     },
+     "target": null,
+     "action": "arrive",
+     "count": 1
+    }
+   ],
+   "reward": "book_page",
+   "iconTemplates": [
+    "vehicles.bus"
+   ]
+  },
+  {
+   "id": "ST-12",
+   "titleKey": "story.st12.title",
+   "worldId": "town",
+   "steps": [
+    {
+     "id": "house",
+     "textKey": "story.st12.house",
+     "event": "PLACE",
+     "subject": {
+      "templates": [
+       "home_city.house"
+      ],
+      "fallbacks": [
+       "prop.house"
+      ],
+      "capability": "door"
+     },
+     "target": null,
+     "action": null,
+     "count": 1
+    },
+    {
+     "id": "train",
+     "textKey": "story.st12.train",
+     "event": "PLACE",
+     "subject": {
+      "templates": [
+       "vehicles.train"
+      ],
+      "fallbacks": [],
+      "capability": "rideable"
+     },
+     "target": null,
+     "action": null,
+     "count": 1
+    },
+    {
+     "id": "stops",
+     "textKey": "story.st12.stops",
+     "event": "MOVE",
+     "subject": {
+      "templates": [
+       "vehicles.train"
+      ],
+      "fallbacks": [],
+      "capability": "rideable"
+     },
+     "target": null,
+     "action": "waypoint",
+     "count": 2
+    },
+    {
+     "id": "loop",
+     "textKey": "story.st12.loop",
+     "event": "MOVE",
+     "subject": {
+      "templates": [
+       "vehicles.train"
+      ],
+      "fallbacks": [],
+      "capability": "rideable"
+     },
+     "target": null,
+     "action": "loop",
+     "count": 1
+    }
+   ],
+   "reward": "book_page",
+   "iconTemplates": [
+    "vehicles.train",
+    "home_city.house"
+   ]
+  },
+  {
+   "id": "ST-13",
+   "titleKey": "story.st13.title",
+   "worldId": "ocean",
+   "steps": [
+    {
+     "id": "coral",
+     "textKey": "story.st13.coral",
+     "event": "PLACE",
+     "subject": {
+      "templates": [
+       "ocean.coral"
+      ],
+      "fallbacks": [],
+      "capability": null
+     },
+     "target": null,
+     "action": null,
+     "count": 1
+    },
+    {
+     "id": "fish",
+     "textKey": "story.st13.fish",
+     "event": "PLACE",
+     "subject": {
+      "templates": [
+       "ocean.clownfish",
+       "ocean.turtle"
+      ],
+      "fallbacks": [],
+      "capability": "aquatic"
+     },
+     "target": null,
+     "action": null,
+     "count": 2
+    },
+    {
+     "id": "swim",
+     "textKey": "story.st13.swim",
+     "event": "INTERACT",
+     "subject": {
+      "templates": [],
+      "fallbacks": [],
+      "capability": "aquatic"
+     },
+     "target": null,
+     "action": "swim",
+     "count": 1
+    }
+   ],
+   "reward": "book_page",
+   "iconTemplates": [
+    "ocean.coral",
+    "ocean.clownfish"
+   ]
+  },
+  {
+   "id": "ST-14",
+   "titleKey": "story.st14.title",
+   "worldId": "ocean",
+   "steps": [
+    {
+     "id": "sub",
+     "textKey": "story.st14.sub",
+     "event": "PLACE",
+     "subject": {
+      "templates": [
+       "ocean.submarine"
+      ],
+      "fallbacks": [
+       "vehicles.boat",
+       "prop.exploration_window"
+      ],
+      "capability": "rideable"
+     },
+     "target": null,
+     "action": null,
+     "count": 1
+    },
+    {
+     "id": "route",
+     "textKey": "story.st14.route",
+     "event": "MOVE",
+     "subject": {
+      "templates": [
+       "ocean.submarine"
+      ],
+      "fallbacks": [
+       "vehicles.boat",
+       "prop.exploration_window"
+      ],
+      "capability": "rideable"
+     },
+     "target": null,
+     "action": "waypoint",
+     "count": 3
+    },
+    {
+     "id": "look",
+     "textKey": "story.st14.look",
+     "event": "INTERACT",
+     "subject": {
+      "templates": [],
+      "fallbacks": [],
+      "capability": "aquatic"
+     },
+     "target": null,
+     "action": "tap",
+     "count": 3
+    }
+   ],
+   "reward": "sticker:sticker.friends.fish",
+   "iconTemplates": [
+    "ocean.submarine"
+   ]
+  },
+  {
+   "id": "ST-15",
+   "titleKey": "story.st15.title",
+   "worldId": "dinosaur",
+   "steps": [
+    {
+     "id": "dinos",
+     "textKey": "story.st15.dinos",
+     "event": "PLACE",
+     "subject": {
+      "templates": [
+       "dinosaurs.triceratops",
+       "dinosaurs.stegosaurus",
+       "dinosaurs.brachiosaurus"
+      ],
+      "fallbacks": [],
+      "capability": "passenger"
+     },
+     "target": null,
+     "action": null,
+     "count": 2
+    },
+    {
+     "id": "tree",
+     "textKey": "story.st15.tree",
+     "event": "INTERACT",
+     "subject": {
+      "templates": [
+       "nature.tree"
+      ],
+      "fallbacks": [],
+      "capability": "plantable"
+     },
+     "target": null,
+     "action": "plant",
+     "count": 1
+    },
+    {
+     "id": "lake",
+     "textKey": "story.st15.lake",
+     "event": "MOVE",
+     "subject": {
+      "templates": [],
+      "fallbacks": [],
+      "capability": "passenger"
+     },
+     "target": null,
+     "action": "arrive",
+     "count": 1
+    }
+   ],
+   "reward": "book_page",
+   "iconTemplates": [
+    "dinosaurs.triceratops",
+    "nature.tree"
+   ]
+  },
+  {
+   "id": "ST-16",
+   "titleKey": "story.st16.title",
+   "worldId": "dinosaur",
+   "steps": [
+    {
+     "id": "dino",
+     "textKey": "story.st16.dino",
+     "event": "PLACE",
+     "subject": {
+      "templates": [
+       "dinosaurs.triceratops"
+      ],
+      "fallbacks": [],
+      "capability": "passenger"
+     },
+     "target": null,
+     "action": null,
+     "count": 1
+    },
+    {
+     "id": "follow",
+     "textKey": "story.st16.follow",
+     "event": "MOVE",
+     "subject": {
+      "templates": [
+       "dinosaurs.triceratops"
+      ],
+      "fallbacks": [],
+      "capability": "passenger"
+     },
+     "target": null,
+     "action": "waypoint",
+     "count": 3
+    },
+    {
+     "id": "leaf",
+     "textKey": "story.st16.leaf",
+     "event": "PLACE",
+     "subject": {
+      "templates": [
+       "nature.leaf"
+      ],
+      "fallbacks": [
+       "prop.leaf"
+      ],
+      "capability": null
+     },
+     "target": null,
+     "action": null,
+     "count": 1
+    }
+   ],
+   "reward": "sticker:sticker.nature.acorn",
+   "iconTemplates": [
+    "dinosaurs.triceratops"
+   ]
+  },
+  {
+   "id": "ST-17",
+   "titleKey": "story.st17.title",
+   "worldId": "space",
+   "steps": [
+    {
+     "id": "board",
+     "textKey": "story.st17.board",
+     "event": "ATTACH",
+     "subject": {
+      "templates": [
+       "space.astronaut"
+      ],
+      "fallbacks": [],
+      "capability": "passenger"
+     },
+     "target": {
+      "templates": [
+       "space.rocket"
+      ],
+      "fallbacks": [],
+      "capability": "rideable"
+     },
+     "action": null,
+     "count": 1
+    },
+    {
+     "id": "fly",
+     "textKey": "story.st17.fly",
+     "event": "MOVE",
+     "subject": {
+      "templates": [
+       "space.rocket"
+      ],
+      "fallbacks": [],
+      "capability": "rideable"
+     },
+     "target": null,
+     "action": "arrive",
+     "count": 1
+    },
+    {
+     "id": "home",
+     "textKey": "story.st17.home",
+     "event": "MOVE",
+     "subject": {
+      "templates": [
+       "space.rocket"
+      ],
+      "fallbacks": [],
+      "capability": "rideable"
+     },
+     "target": null,
+     "action": "return",
+     "count": 1
+    }
+   ],
+   "reward": "book_page",
+   "iconTemplates": [
+    "space.rocket",
+    "space.astronaut"
+   ]
+  },
+  {
+   "id": "ST-18",
+   "titleKey": "story.st18.title",
+   "worldId": "space",
+   "steps": [
+    {
+     "id": "planet",
+     "textKey": "story.st18.planet",
+     "event": "PLACE",
+     "subject": {
+      "templates": [
+       "space.planet"
+      ],
+      "fallbacks": [],
+      "capability": "sky"
+     },
+     "target": null,
+     "action": null,
+     "count": 1
+    },
+    {
+     "id": "star",
+     "textKey": "story.st18.star",
+     "event": "PLACE",
+     "subject": {
+      "templates": [
+       "space.star"
+      ],
+      "fallbacks": [],
+      "capability": "sky"
+     },
+     "target": null,
+     "action": null,
+     "count": 1
+    },
+    {
+     "id": "robot",
+     "textKey": "story.st18.robot",
+     "event": "PLACE",
+     "subject": {
+      "templates": [
+       "machines.robot"
+      ],
+      "fallbacks": [],
+      "capability": "carrier"
+     },
+     "target": null,
+     "action": null,
+     "count": 1
+    },
+    {
+     "id": "save",
+     "textKey": "story.st18.save",
+     "event": "INTERACT",
+     "subject": {
+      "templates": [],
+      "fallbacks": [],
+      "capability": null
+     },
+     "target": null,
+     "action": "save",
+     "count": 1
+    }
+   ],
+   "reward": "book_page",
+   "iconTemplates": [
+    "space.planet",
+    "machines.robot"
+   ]
+  },
+  {
+   "id": "ST-19",
+   "titleKey": "story.st19.title",
+   "worldId": "town",
+   "steps": [
+    {
+     "id": "stall",
+     "textKey": "story.st19.stall",
+     "event": "PLACE",
+     "subject": {
+      "templates": [],
+      "fallbacks": [
+       "prop.stall"
+      ],
+      "capability": "surface"
+     },
+     "target": null,
+     "action": null,
+     "count": 1
+    },
+    {
+     "id": "fruit",
+     "textKey": "story.st19.fruit",
+     "event": "ATTACH",
+     "subject": {
+      "templates": [
+       "food.apple",
+       "food.banana",
+       "food.strawberry"
+      ],
+      "fallbacks": [
+       "prop.food_plate"
+      ],
+      "capability": "table_item"
+     },
+     "target": {
+      "templates": [],
+      "fallbacks": [
+       "prop.stall"
+      ],
+      "capability": "surface"
+     },
+     "action": null,
+     "count": 3
+    },
+    {
+     "id": "basket",
+     "textKey": "story.st19.basket",
+     "event": "ATTACH",
+     "subject": {
+      "templates": [],
+      "fallbacks": [
+       "prop.basket"
+      ],
+      "capability": "carryable"
+     },
+     "target": {
+      "templates": [],
+      "fallbacks": [],
+      "capability": "passenger"
+     },
+     "action": null,
+     "count": 1
+    }
+   ],
+   "reward": "sticker:sticker.treats.cherries",
+   "iconTemplates": [
+    "food.apple",
+    "food.banana"
+   ]
+  },
+  {
+   "id": "ST-20",
+   "titleKey": "story.st20.title",
+   "worldId": "celebration",
+   "steps": [
+    {
+     "id": "cake",
+     "textKey": "story.st20.cake",
+     "event": "ATTACH",
+     "subject": {
+      "templates": [
+       "food.cake",
+       "celebrations.birthday_cake"
+      ],
+      "fallbacks": [],
+      "capability": "table_item"
+     },
+     "target": {
+      "templates": [
+       "home_city.table"
+      ],
+      "fallbacks": [
+       "prop.table"
+      ],
+      "capability": null
+     },
+     "action": null,
+     "count": 1
+    },
+    {
+     "id": "food",
+     "textKey": "story.st20.food",
+     "event": "ATTACH",
+     "subject": {
+      "templates": [
+       "food.apple",
+       "food.banana",
+       "food.bread",
+       "food.cake",
+       "food.strawberry",
+       "food.carrot"
+      ],
+      "fallbacks": [
+       "prop.food_plate"
+      ],
+      "capability": "table_item"
+     },
+     "target": {
+      "templates": [
+       "home_city.table"
+      ],
+      "fallbacks": [
+       "prop.table"
+      ],
+      "capability": null
+     },
+     "action": null,
+     "count": 2
+    },
+    {
+     "id": "guests",
+     "textKey": "story.st20.guests",
+     "event": "INTERACT",
+     "subject": {
+      "templates": [],
+      "fallbacks": [],
+      "capability": "passenger"
+     },
+     "target": null,
+     "action": "tap",
+     "count": 2
+    }
+   ],
+   "reward": "book_page",
+   "iconTemplates": [
+    "food.cake"
+   ]
+  },
+  {
+   "id": "ST-21",
+   "titleKey": "story.st21.title",
+   "worldId": "town",
+   "steps": [
+    {
+     "id": "bed",
+     "textKey": "story.st21.bed",
+     "event": "PLACE",
+     "subject": {
+      "templates": [
+       "home_city.bed"
+      ],
+      "fallbacks": [],
+      "capability": "seat_furniture"
+     },
+     "target": null,
+     "action": null,
+     "count": 1
+    },
+    {
+     "id": "chair",
+     "textKey": "story.st21.chair",
+     "event": "PLACE",
+     "subject": {
+      "templates": [
+       "home_city.chair"
+      ],
+      "fallbacks": [
+       "prop.chair"
+      ],
+      "capability": "seat_furniture"
+     },
+     "target": null,
+     "action": null,
+     "count": 1
+    },
+    {
+     "id": "child",
+     "textKey": "story.st21.child",
+     "event": "ATTACH",
+     "subject": {
+      "templates": [
+       "family.child"
+      ],
+      "fallbacks": [],
+      "capability": "seatable"
+     },
+     "target": {
+      "templates": [
+       "home_city.bed",
+       "home_city.chair"
+      ],
+      "fallbacks": [
+       "prop.chair"
+      ],
+      "capability": "seat_furniture"
+     },
+     "action": null,
+     "count": 1
+    }
+   ],
+   "reward": "book_page",
+   "iconTemplates": [
+    "home_city.bed",
+    "family.child"
+   ]
+  },
+  {
+   "id": "ST-22",
+   "titleKey": "story.st22.title",
+   "worldId": "town",
+   "steps": [
+    {
+     "id": "house",
+     "textKey": "story.st22.house",
+     "event": "PLACE",
+     "subject": {
+      "templates": [
+       "home_city.house"
+      ],
+      "fallbacks": [
+       "prop.house"
+      ],
+      "capability": "door"
+     },
+     "target": null,
+     "action": null,
+     "count": 1
+    },
+    {
+     "id": "park",
+     "textKey": "story.st22.park",
+     "event": "PLACE",
+     "subject": {
+      "templates": [
+       "home_city.park"
+      ],
+      "fallbacks": [
+       "prop.park"
+      ],
+      "capability": null
+     },
+     "target": null,
+     "action": null,
+     "count": 1
+    },
+    {
+     "id": "road",
+     "textKey": "story.st22.road",
+     "event": "PLACE",
+     "subject": {
+      "templates": [],
+      "fallbacks": [
+       "prop.path"
+      ],
+      "capability": "path"
+     },
+     "target": null,
+     "action": null,
+     "count": 1
+    },
+    {
+     "id": "drive",
+     "textKey": "story.st22.drive",
+     "event": "MOVE",
+     "subject": {
+      "templates": [
+       "vehicles.car"
+      ],
+      "fallbacks": [],
+      "capability": "rideable"
+     },
+     "target": null,
+     "action": "arrive",
+     "count": 1
+    }
+   ],
+   "reward": "book_page",
+   "iconTemplates": [
+    "home_city.house",
+    "home_city.park"
+   ]
+  },
+  {
+   "id": "ST-23",
+   "titleKey": "story.st23.title",
+   "worldId": "fantasy",
+   "steps": [
+    {
+     "id": "castle",
+     "textKey": "story.st23.castle",
+     "event": "PLACE",
+     "subject": {
+      "templates": [
+       "fantasy.castle"
+      ],
+      "fallbacks": [],
+      "capability": "door"
+     },
+     "target": null,
+     "action": null,
+     "count": 1
+    },
+    {
+     "id": "dragon",
+     "textKey": "story.st23.dragon",
+     "event": "PLACE",
+     "subject": {
+      "templates": [
+       "fantasy.dragon"
+      ],
+      "fallbacks": [],
+      "capability": "flying"
+     },
+     "target": null,
+     "action": null,
+     "count": 1
+    },
+    {
+     "id": "fly",
+     "textKey": "story.st23.fly",
+     "event": "MOVE",
+     "subject": {
+      "templates": [
+       "fantasy.dragon"
+      ],
+      "fallbacks": [],
+      "capability": "flying"
+     },
+     "target": null,
+     "action": "waypoint",
+     "count": 3
+    }
+   ],
+   "reward": "book_page",
+   "iconTemplates": [
+    "fantasy.dragon",
+    "fantasy.castle"
+   ]
+  },
+  {
+   "id": "ST-24",
+   "titleKey": "story.st24.title",
+   "worldId": "fantasy",
+   "steps": [
+    {
+     "id": "house",
+     "textKey": "story.st24.house",
+     "event": "PLACE",
+     "subject": {
+      "templates": [
+       "fantasy.fairy_house"
+      ],
+      "fallbacks": [
+       "prop.house"
+      ],
+      "capability": "door"
+     },
+     "target": null,
+     "action": null,
+     "count": 1
+    },
+    {
+     "id": "flowers",
+     "textKey": "story.st24.flowers",
+     "event": "INTERACT",
+     "subject": {
+      "templates": [
+       "flowers.sunflower",
+       "flowers.rose",
+       "flowers.lotus",
+       "flowers.tulip",
+       "flowers.daisy",
+       "flowers.hibiscus"
+      ],
+      "fallbacks": [],
+      "capability": "plantable"
+     },
+     "target": null,
+     "action": "plant",
+     "count": 2
+    },
+    {
+     "id": "lamp",
+     "textKey": "story.st24.lamp",
+     "event": "INTERACT",
+     "subject": {
+      "templates": [
+       "home_city.lamp"
+      ],
+      "fallbacks": [
+       "prop.lamp"
+      ],
+      "capability": "light"
+     },
+     "target": null,
+     "action": "light",
+     "count": 1
+    }
+   ],
+   "reward": "sticker:sticker.sparkle.twinkle",
+   "iconTemplates": [
+    "fantasy.fairy_house"
+   ]
+  },
+  {
+   "id": "ST-25",
+   "titleKey": "story.st25.title",
+   "worldId": "garden",
+   "steps": [
+    {
+     "id": "tractor",
+     "textKey": "story.st25.tractor",
+     "event": "ATTACH",
+     "subject": {
+      "templates": [
+       "jobs.gardener"
+      ],
+      "fallbacks": [],
+      "capability": "passenger"
+     },
+     "target": {
+      "templates": [
+       "machines.tractor"
+      ],
+      "fallbacks": [],
+      "capability": "rideable"
+     },
+     "action": null,
+     "count": 1
+    },
+    {
+     "id": "pot",
+     "textKey": "story.st25.pot",
+     "event": "ATTACH",
+     "subject": {
+      "templates": [],
+      "fallbacks": [
+       "prop.plant_pot"
+      ],
+      "capability": "plant_target"
+     },
+     "target": {
+      "templates": [
+       "machines.tractor"
+      ],
+      "fallbacks": [],
+      "capability": "carrier"
+     },
+     "action": null,
+     "count": 1
+    },
+    {
+     "id": "plant",
+     "textKey": "story.st25.plant",
+     "event": "INTERACT",
+     "subject": {
+      "templates": [
+       "flowers.sunflower",
+       "flowers.rose",
+       "flowers.lotus",
+       "flowers.tulip",
+       "flowers.daisy",
+       "flowers.hibiscus"
+      ],
+      "fallbacks": [],
+      "capability": "plantable"
+     },
+     "target": null,
+     "action": "plant",
+     "count": 2
+    }
+   ],
+   "reward": "book_page",
+   "iconTemplates": [
+    "jobs.gardener",
+    "machines.tractor"
+   ]
+  },
+  {
+   "id": "ST-26",
+   "titleKey": "story.st26.title",
+   "worldId": "town",
+   "steps": [
+    {
+     "id": "chef",
+     "textKey": "story.st26.chef",
+     "event": "PLACE",
+     "subject": {
+      "templates": [
+       "jobs.chef"
+      ],
+      "fallbacks": [],
+      "capability": "seatable"
+     },
+     "target": null,
+     "action": null,
+     "count": 1
+    },
+    {
+     "id": "table",
+     "textKey": "story.st26.table",
+     "event": "PLACE",
+     "subject": {
+      "templates": [
+       "home_city.table"
+      ],
+      "fallbacks": [
+       "prop.table"
+      ],
+      "capability": null
+     },
+     "target": null,
+     "action": null,
+     "count": 1
+    },
+    {
+     "id": "food",
+     "textKey": "story.st26.food",
+     "event": "ATTACH",
+     "subject": {
+      "templates": [
+       "food.apple",
+       "food.banana",
+       "food.bread",
+       "food.cake",
+       "food.strawberry",
+       "food.carrot"
+      ],
+      "fallbacks": [
+       "prop.food_plate"
+      ],
+      "capability": "table_item"
+     },
+     "target": {
+      "templates": [
+       "home_city.table"
+      ],
+      "fallbacks": [
+       "prop.table"
+      ],
+      "capability": null
+     },
+     "action": null,
+     "count": 3
+    },
+    {
+     "id": "greet",
+     "textKey": "story.st26.greet",
+     "event": "INTERACT",
+     "subject": {
+      "templates": [],
+      "fallbacks": [],
+      "capability": "passenger"
+     },
+     "target": null,
+     "action": "tap",
+     "count": 1
+    }
+   ],
+   "reward": "book_page",
+   "iconTemplates": [
+    "jobs.chef",
+    "home_city.table"
+   ]
+  },
+  {
+   "id": "ST-27",
+   "titleKey": "story.st27.title",
+   "worldId": "celebration",
+   "steps": [
+    {
+     "id": "decorate",
+     "textKey": "story.st27.decorate",
+     "event": "PLACE",
+     "subject": {
+      "templates": [
+       "celebrations.balloons",
+       "celebrations.bunting"
+      ],
+      "fallbacks": [],
+      "capability": "hangable"
+     },
+     "target": null,
+     "action": null,
+     "count": 2
+    },
+    {
+     "id": "cake",
+     "textKey": "story.st27.cake",
+     "event": "ATTACH",
+     "subject": {
+      "templates": [
+       "celebrations.birthday_cake"
+      ],
+      "fallbacks": [
+       "prop.food_plate"
+      ],
+      "capability": "table_item"
+     },
+     "target": {
+      "templates": [
+       "home_city.table"
+      ],
+      "fallbacks": [
+       "prop.table"
+      ],
+      "capability": null
+     },
+     "action": null,
+     "count": 1
+    },
+    {
+     "id": "candles",
+     "textKey": "story.st27.candles",
+     "event": "INTERACT",
+     "subject": {
+      "templates": [
+       "celebrations.birthday_cake"
+      ],
+      "fallbacks": [
+       "prop.food_plate"
+      ],
+      "capability": "table_item"
+     },
+     "target": null,
+     "action": "blow",
+     "count": 1
+    },
+    {
+     "id": "gift",
+     "textKey": "story.st27.gift",
+     "event": "INTERACT",
+     "subject": {
+      "templates": [
+       "celebrations.gift"
+      ],
+      "fallbacks": [
+       "prop.gift_toy"
+      ],
+      "capability": "openable"
+     },
+     "target": null,
+     "action": "open",
+     "count": 1
+    }
+   ],
+   "reward": "book_page",
+   "iconTemplates": [
+    "celebrations.birthday_cake",
+    "celebrations.gift"
+   ]
+  },
+  {
+   "id": "ST-28",
+   "titleKey": "story.st28.title",
+   "worldId": "celebration",
+   "steps": [
+    {
+     "id": "card",
+     "textKey": "story.st28.card",
+     "event": "PLACE",
+     "subject": {
+      "templates": [
+       "celebrations.greeting_card"
+      ],
+      "fallbacks": [],
+      "capability": "openable"
+     },
+     "target": null,
+     "action": null,
+     "count": 1
+    },
+    {
+     "id": "decorate",
+     "textKey": "story.st28.decorate",
+     "event": "INTERACT",
+     "subject": {
+      "templates": [
+       "celebrations.greeting_card"
+      ],
+      "fallbacks": [],
+      "capability": "openable"
+     },
+     "target": null,
+     "action": "sticker",
+     "count": 1
+    },
+    {
+     "id": "give",
+     "textKey": "story.st28.give",
+     "event": "ATTACH",
+     "subject": {
+      "templates": [
+       "celebrations.greeting_card"
+      ],
+      "fallbacks": [],
+      "capability": "carryable"
+     },
+     "target": {
+      "templates": [
+       "family.caregiver",
+       "family.caregiver",
+       "family.mother",
+       "family.father",
+       "family.grandparent"
+      ],
+      "fallbacks": [],
+      "capability": null
+     },
+     "action": null,
+     "count": 1
+    },
+    {
+     "id": "save",
+     "textKey": "story.st28.save",
+     "event": "INTERACT",
+     "subject": {
+      "templates": [],
+      "fallbacks": [],
+      "capability": null
+     },
+     "target": null,
+     "action": "save",
+     "count": 1
+    }
+   ],
+   "reward": "book_page",
+   "iconTemplates": [
+    "celebrations.greeting_card",
+    "family.caregiver"
+   ]
+  }
+ ]
+}

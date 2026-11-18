@@ -1,0 +1,849 @@
+{
+ "schemaVersion": 1,
+ "stageScale": 0.72,
+ "bodies": [
+  {
+   "id": "char.body.bean",
+   "file": "characters/char.body.bean.json",
+   "thumb": "thumbs/char.body.bean.webp",
+   "preset": "hop",
+   "sockets": {
+    "ear_l": {
+     "x": 362,
+     "y": 300,
+     "scale": 1.0,
+     "z": "behind",
+     "rot": -12
+    },
+    "ear_r": {
+     "x": 662,
+     "y": 300,
+     "scale": 1.0,
+     "z": "behind",
+     "rot": 12,
+     "mirror": true
+    },
+    "hat": {
+     "x": 512,
+     "y": 250,
+     "scale": 1.0,
+     "z": "front",
+     "rot": 0
+    },
+    "decor": {
+     "x": 512,
+     "y": 540,
+     "scale": 1.0,
+     "z": "front",
+     "rot": 0
+    },
+    "tail": {
+     "x": 700,
+     "y": 760,
+     "scale": 1.0,
+     "z": "behind",
+     "rot": 0
+    },
+    "wing_l": {
+     "x": 342,
+     "y": 600,
+     "scale": 1.0,
+     "z": "behind",
+     "rot": 0
+    },
+    "wing_r": {
+     "x": 682,
+     "y": 600,
+     "scale": 1.0,
+     "z": "behind",
+     "rot": 0,
+     "mirror": true
+    }
+   },
+   "regions": 3
+  },
+  {
+   "id": "char.body.pear",
+   "file": "characters/char.body.pear.json",
+   "thumb": "thumbs/char.body.pear.webp",
+   "preset": "waddle",
+   "sockets": {
+    "ear_l": {
+     "x": 392,
+     "y": 270,
+     "scale": 0.9,
+     "z": "behind",
+     "rot": -12
+    },
+    "ear_r": {
+     "x": 632,
+     "y": 270,
+     "scale": 0.9,
+     "z": "behind",
+     "rot": 12,
+     "mirror": true
+    },
+    "hat": {
+     "x": 512,
+     "y": 220,
+     "scale": 0.9,
+     "z": "front",
+     "rot": 0
+    },
+    "decor": {
+     "x": 512,
+     "y": 500,
+     "scale": 0.9,
+     "z": "front",
+     "rot": 0
+    },
+    "tail": {
+     "x": 760,
+     "y": 800,
+     "scale": 0.9,
+     "z": "behind",
+     "rot": 0
+    },
+    "wing_l": {
+     "x": 302,
+     "y": 620,
+     "scale": 0.9,
+     "z": "behind",
+     "rot": 0
+    },
+    "wing_r": {
+     "x": 722,
+     "y": 620,
+     "scale": 0.9,
+     "z": "behind",
+     "rot": 0,
+     "mirror": true
+    }
+   },
+   "regions": 5
+  },
+  {
+   "id": "char.body.tall",
+   "file": "characters/char.body.tall.json",
+   "thumb": "thumbs/char.body.tall.webp",
+   "preset": "wave",
+   "sockets": {
+    "ear_l": {
+     "x": 402,
+     "y": 200,
+     "scale": 0.85,
+     "z": "behind",
+     "rot": -12
+    },
+    "ear_r": {
+     "x": 622,
+     "y": 200,
+     "scale": 0.85,
+     "z": "behind",
+     "rot": 12,
+     "mirror": true
+    },
+    "hat": {
+     "x": 512,
+     "y": 150,
+     "scale": 0.85,
+     "z": "front",
+     "rot": 0
+    },
+    "decor": {
+     "x": 512,
+     "y": 430,
+     "scale": 0.85,
+     "z": "front",
+     "rot": 0
+    },
+    "tail": {
+     "x": 650,
+     "y": 820,
+     "scale": 0.85,
+     "z": "behind",
+     "rot": 0
+    },
+    "wing_l": {
+     "x": 312,
+     "y": 560,
+     "scale": 0.85,
+     "z": "behind",
+     "rot": 0
+    },
+    "wing_r": {
+     "x": 712,
+     "y": 560,
+     "scale": 0.85,
+     "z": "behind",
+     "rot": 0,
+     "mirror": true
+    }
+   },
+   "regions": 6
+  },
+  {
+   "id": "char.body.boxy",
+   "file": "characters/char.body.boxy.json",
+   "thumb": "thumbs/char.body.boxy.webp",
+   "preset": "roll",
+   "sockets": {
+    "ear_l": {
+     "x": 342,
+     "y": 280,
+     "scale": 1.0,
+     "z": "behind",
+     "rot": -12
+    },
+    "ear_r": {
+     "x": 682,
+     "y": 280,
+     "scale": 1.0,
+     "z": "behind",
+     "rot": 12,
+     "mirror": true
+    },
+    "hat": {
+     "x": 512,
+     "y": 230,
+     "scale": 1.0,
+     "z": "front",
+     "rot": 0
+    },
+    "decor": {
+     "x": 512,
+     "y": 520,
+     "scale": 1.0,
+     "z": "front",
+     "rot": 0
+    },
+    "tail": {
+     "x": 720,
+     "y": 780,
+     "scale": 1.0,
+     "z": "behind",
+     "rot": 0
+    },
+    "wing_l": {
+     "x": 322,
+     "y": 620,
+     "scale": 1.0,
+     "z": "behind",
+     "rot": 0
+    },
+    "wing_r": {
+     "x": 702,
+     "y": 620,
+     "scale": 1.0,
+     "z": "behind",
+     "rot": 0,
+     "mirror": true
+    }
+   },
+   "regions": 7
+  },
+  {
+   "id": "char.body.star",
+   "file": "characters/char.body.star.json",
+   "thumb": "thumbs/char.body.star.webp",
+   "preset": "twirl",
+   "sockets": {
+    "ear_l": {
+     "x": 362,
+     "y": 300,
+     "scale": 0.9,
+     "z": "behind",
+     "rot": -12
+    },
+    "ear_r": {
+     "x": 662,
+     "y": 300,
+     "scale": 0.9,
+     "z": "behind",
+     "rot": 12,
+     "mirror": true
+    },
+    "hat": {
+     "x": 512,
+     "y": 130,
+     "scale": 0.9,
+     "z": "front",
+     "rot": 0
+    },
+    "decor": {
+     "x": 512,
+     "y": 630,
+     "scale": 0.9,
+     "z": "front",
+     "rot": 0
+    },
+    "tail": {
+     "x": 690,
+     "y": 820,
+     "scale": 0.9,
+     "z": "behind",
+     "rot": 0
+    },
+    "wing_l": {
+     "x": 352,
+     "y": 560,
+     "scale": 0.9,
+     "z": "behind",
+     "rot": 0
+    },
+    "wing_r": {
+     "x": 672,
+     "y": 560,
+     "scale": 0.9,
+     "z": "behind",
+     "rot": 0,
+     "mirror": true
+    }
+   },
+   "regions": 2
+  },
+  {
+   "id": "char.body.fluffy",
+   "file": "characters/char.body.fluffy.json",
+   "thumb": "thumbs/char.body.fluffy.webp",
+   "preset": "bounce",
+   "sockets": {
+    "ear_l": {
+     "x": 332,
+     "y": 330,
+     "scale": 1.0,
+     "z": "behind",
+     "rot": -12
+    },
+    "ear_r": {
+     "x": 692,
+     "y": 330,
+     "scale": 1.0,
+     "z": "behind",
+     "rot": 12,
+     "mirror": true
+    },
+    "hat": {
+     "x": 512,
+     "y": 250,
+     "scale": 1.0,
+     "z": "front",
+     "rot": 0
+    },
+    "decor": {
+     "x": 512,
+     "y": 650,
+     "scale": 1.0,
+     "z": "front",
+     "rot": 0
+    },
+    "tail": {
+     "x": 740,
+     "y": 780,
+     "scale": 1.0,
+     "z": "behind",
+     "rot": 0
+    },
+    "wing_l": {
+     "x": 342,
+     "y": 640,
+     "scale": 1.0,
+     "z": "behind",
+     "rot": 0
+    },
+    "wing_r": {
+     "x": 682,
+     "y": 640,
+     "scale": 1.0,
+     "z": "behind",
+     "rot": 0,
+     "mirror": true
+    }
+   },
+   "regions": 3
+  }
+ ],
+ "parts": [
+  {
+   "id": "char.ear.cat",
+   "kind": "ear",
+   "sockets": [
+    "ear_l",
+    "ear_r"
+   ],
+   "file": "characters/char.ear.cat.json",
+   "thumb": "thumbs/char.ear.cat.webp",
+   "minScale": 0.8,
+   "maxScale": 1.2,
+   "regions": 2
+  },
+  {
+   "id": "char.ear.bunny",
+   "kind": "ear",
+   "sockets": [
+    "ear_l",
+    "ear_r"
+   ],
+   "file": "characters/char.ear.bunny.json",
+   "thumb": "thumbs/char.ear.bunny.webp",
+   "minScale": 0.8,
+   "maxScale": 1.2,
+   "regions": 2
+  },
+  {
+   "id": "char.ear.bear",
+   "kind": "ear",
+   "sockets": [
+    "ear_l",
+    "ear_r"
+   ],
+   "file": "characters/char.ear.bear.json",
+   "thumb": "thumbs/char.ear.bear.webp",
+   "minScale": 0.8,
+   "maxScale": 1.2,
+   "regions": 2
+  },
+  {
+   "id": "char.ear.floppy",
+   "kind": "ear",
+   "sockets": [
+    "ear_l",
+    "ear_r"
+   ],
+   "file": "characters/char.ear.floppy.json",
+   "thumb": "thumbs/char.ear.floppy.webp",
+   "minScale": 0.8,
+   "maxScale": 1.2,
+   "regions": 2
+  },
+  {
+   "id": "char.ear.elephant",
+   "kind": "ear",
+   "sockets": [
+    "ear_l",
+    "ear_r"
+   ],
+   "file": "characters/char.ear.elephant.json",
+   "thumb": "thumbs/char.ear.elephant.webp",
+   "minScale": 0.8,
+   "maxScale": 1.2,
+   "regions": 2
+  },
+  {
+   "id": "char.ear.mouse",
+   "kind": "ear",
+   "sockets": [
+    "ear_l",
+    "ear_r"
+   ],
+   "file": "characters/char.ear.mouse.json",
+   "thumb": "thumbs/char.ear.mouse.webp",
+   "minScale": 0.8,
+   "maxScale": 1.2,
+   "regions": 2
+  },
+  {
+   "id": "char.ear.fox",
+   "kind": "ear",
+   "sockets": [
+    "ear_l",
+    "ear_r"
+   ],
+   "file": "characters/char.ear.fox.json",
+   "thumb": "thumbs/char.ear.fox.webp",
+   "minScale": 0.8,
+   "maxScale": 1.2,
+   "regions": 3
+  },
+  {
+   "id": "char.ear.antenna",
+   "kind": "ear",
+   "sockets": [
+    "ear_l",
+    "ear_r"
+   ],
+   "file": "characters/char.ear.antenna.json",
+   "thumb": "thumbs/char.ear.antenna.webp",
+   "minScale": 0.8,
+   "maxScale": 1.2,
+   "regions": 2
+  },
+  {
+   "id": "char.tail.cat",
+   "kind": "tail",
+   "sockets": [
+    "tail"
+   ],
+   "file": "characters/char.tail.cat.json",
+   "thumb": "thumbs/char.tail.cat.webp",
+   "minScale": 0.8,
+   "maxScale": 1.2,
+   "regions": 2
+  },
+  {
+   "id": "char.tail.fox",
+   "kind": "tail",
+   "sockets": [
+    "tail"
+   ],
+   "file": "characters/char.tail.fox.json",
+   "thumb": "thumbs/char.tail.fox.webp",
+   "minScale": 0.8,
+   "maxScale": 1.2,
+   "regions": 2
+  },
+  {
+   "id": "char.tail.puff",
+   "kind": "tail",
+   "sockets": [
+    "tail"
+   ],
+   "file": "characters/char.tail.puff.json",
+   "thumb": "thumbs/char.tail.puff.webp",
+   "minScale": 0.8,
+   "maxScale": 1.2,
+   "regions": 1
+  },
+  {
+   "id": "char.tail.dino",
+   "kind": "tail",
+   "sockets": [
+    "tail"
+   ],
+   "file": "characters/char.tail.dino.json",
+   "thumb": "thumbs/char.tail.dino.webp",
+   "minScale": 0.8,
+   "maxScale": 1.2,
+   "regions": 4
+  },
+  {
+   "id": "char.tail.fin",
+   "kind": "tail",
+   "sockets": [
+    "tail"
+   ],
+   "file": "characters/char.tail.fin.json",
+   "thumb": "thumbs/char.tail.fin.webp",
+   "minScale": 0.8,
+   "maxScale": 1.2,
+   "regions": 2
+  },
+  {
+   "id": "char.tail.lion",
+   "kind": "tail",
+   "sockets": [
+    "tail"
+   ],
+   "file": "characters/char.tail.lion.json",
+   "thumb": "thumbs/char.tail.lion.webp",
+   "minScale": 0.8,
+   "maxScale": 1.2,
+   "regions": 2
+  },
+  {
+   "id": "char.tail.peacock",
+   "kind": "tail",
+   "sockets": [
+    "tail"
+   ],
+   "file": "characters/char.tail.peacock.json",
+   "thumb": "thumbs/char.tail.peacock.webp",
+   "minScale": 0.8,
+   "maxScale": 1.2,
+   "regions": 10
+  },
+  {
+   "id": "char.tail.curly",
+   "kind": "tail",
+   "sockets": [
+    "tail"
+   ],
+   "file": "characters/char.tail.curly.json",
+   "thumb": "thumbs/char.tail.curly.webp",
+   "minScale": 0.8,
+   "maxScale": 1.2,
+   "regions": 1
+  },
+  {
+   "id": "char.wing.feather",
+   "kind": "wing",
+   "sockets": [
+    "wing_l",
+    "wing_r"
+   ],
+   "file": "characters/char.wing.feather.json",
+   "thumb": "thumbs/char.wing.feather.webp",
+   "minScale": 0.8,
+   "maxScale": 1.2,
+   "regions": 4
+  },
+  {
+   "id": "char.wing.butterfly",
+   "kind": "wing",
+   "sockets": [
+    "wing_l",
+    "wing_r"
+   ],
+   "file": "characters/char.wing.butterfly.json",
+   "thumb": "thumbs/char.wing.butterfly.webp",
+   "minScale": 0.8,
+   "maxScale": 1.2,
+   "regions": 3
+  },
+  {
+   "id": "char.wing.bat",
+   "kind": "wing",
+   "sockets": [
+    "wing_l",
+    "wing_r"
+   ],
+   "file": "characters/char.wing.bat.json",
+   "thumb": "thumbs/char.wing.bat.webp",
+   "minScale": 0.8,
+   "maxScale": 1.2,
+   "regions": 2
+  },
+  {
+   "id": "char.wing.fairy",
+   "kind": "wing",
+   "sockets": [
+    "wing_l",
+    "wing_r"
+   ],
+   "file": "characters/char.wing.fairy.json",
+   "thumb": "thumbs/char.wing.fairy.webp",
+   "minScale": 0.8,
+   "maxScale": 1.2,
+   "regions": 2
+  },
+  {
+   "id": "char.wing.dragon",
+   "kind": "wing",
+   "sockets": [
+    "wing_l",
+    "wing_r"
+   ],
+   "file": "characters/char.wing.dragon.json",
+   "thumb": "thumbs/char.wing.dragon.webp",
+   "minScale": 0.8,
+   "maxScale": 1.2,
+   "regions": 2
+  },
+  {
+   "id": "char.wing.leaf",
+   "kind": "wing",
+   "sockets": [
+    "wing_l",
+    "wing_r"
+   ],
+   "file": "characters/char.wing.leaf.json",
+   "thumb": "thumbs/char.wing.leaf.webp",
+   "minScale": 0.8,
+   "maxScale": 1.2,
+   "regions": 1
+  },
+  {
+   "id": "char.hat.party",
+   "kind": "hat",
+   "sockets": [
+    "hat"
+   ],
+   "file": "characters/char.hat.party.json",
+   "thumb": "thumbs/char.hat.party.webp",
+   "minScale": 0.8,
+   "maxScale": 1.2,
+   "regions": 3
+  },
+  {
+   "id": "char.hat.crown",
+   "kind": "hat",
+   "sockets": [
+    "hat"
+   ],
+   "file": "characters/char.hat.crown.json",
+   "thumb": "thumbs/char.hat.crown.webp",
+   "minScale": 0.8,
+   "maxScale": 1.2,
+   "regions": 2
+  },
+  {
+   "id": "char.hat.top_hat",
+   "kind": "hat",
+   "sockets": [
+    "hat"
+   ],
+   "file": "characters/char.hat.top_hat.json",
+   "thumb": "thumbs/char.hat.top_hat.webp",
+   "minScale": 0.8,
+   "maxScale": 1.2,
+   "regions": 3
+  },
+  {
+   "id": "char.hat.beanie",
+   "kind": "hat",
+   "sockets": [
+    "hat"
+   ],
+   "file": "characters/char.hat.beanie.json",
+   "thumb": "thumbs/char.hat.beanie.webp",
+   "minScale": 0.8,
+   "maxScale": 1.2,
+   "regions": 3
+  },
+  {
+   "id": "char.hat.flower_crown",
+   "kind": "hat",
+   "sockets": [
+    "hat"
+   ],
+   "file": "characters/char.hat.flower_crown.json",
+   "thumb": "thumbs/char.hat.flower_crown.webp",
+   "minScale": 0.8,
+   "maxScale": 1.2,
+   "regions": 6
+  },
+  {
+   "id": "char.hat.chef",
+   "kind": "hat",
+   "sockets": [
+    "hat"
+   ],
+   "file": "characters/char.hat.chef.json",
+   "thumb": "thumbs/char.hat.chef.webp",
+   "minScale": 0.8,
+   "maxScale": 1.2,
+   "regions": 2
+  },
+  {
+   "id": "char.hat.cap",
+   "kind": "hat",
+   "sockets": [
+    "hat"
+   ],
+   "file": "characters/char.hat.cap.json",
+   "thumb": "thumbs/char.hat.cap.webp",
+   "minScale": 0.8,
+   "maxScale": 1.2,
+   "regions": 3
+  },
+  {
+   "id": "char.hat.wizard",
+   "kind": "hat",
+   "sockets": [
+    "hat"
+   ],
+   "file": "characters/char.hat.wizard.json",
+   "thumb": "thumbs/char.hat.wizard.webp",
+   "minScale": 0.8,
+   "maxScale": 1.2,
+   "regions": 3
+  },
+  {
+   "id": "char.decor.bow_tie",
+   "kind": "decor",
+   "sockets": [
+    "decor"
+   ],
+   "file": "characters/char.decor.bow_tie.json",
+   "thumb": "thumbs/char.decor.bow_tie.webp",
+   "minScale": 0.8,
+   "maxScale": 1.2,
+   "regions": 3
+  },
+  {
+   "id": "char.decor.scarf",
+   "kind": "decor",
+   "sockets": [
+    "decor"
+   ],
+   "file": "characters/char.decor.scarf.json",
+   "thumb": "thumbs/char.decor.scarf.webp",
+   "minScale": 0.8,
+   "maxScale": 1.2,
+   "regions": 2
+  },
+  {
+   "id": "char.decor.beads",
+   "kind": "decor",
+   "sockets": [
+    "decor"
+   ],
+   "file": "characters/char.decor.beads.json",
+   "thumb": "thumbs/char.decor.beads.webp",
+   "minScale": 0.8,
+   "maxScale": 1.2,
+   "regions": 7
+  },
+  {
+   "id": "char.decor.medal",
+   "kind": "decor",
+   "sockets": [
+    "decor"
+   ],
+   "file": "characters/char.decor.medal.json",
+   "thumb": "thumbs/char.decor.medal.webp",
+   "minScale": 0.8,
+   "maxScale": 1.2,
+   "regions": 3
+  },
+  {
+   "id": "char.decor.bell_collar",
+   "kind": "decor",
+   "sockets": [
+    "decor"
+   ],
+   "file": "characters/char.decor.bell_collar.json",
+   "thumb": "thumbs/char.decor.bell_collar.webp",
+   "minScale": 0.8,
+   "maxScale": 1.2,
+   "regions": 2
+  },
+  {
+   "id": "char.decor.heart_pocket",
+   "kind": "decor",
+   "sockets": [
+    "decor"
+   ],
+   "file": "characters/char.decor.heart_pocket.json",
+   "thumb": "thumbs/char.decor.heart_pocket.webp",
+   "minScale": 0.8,
+   "maxScale": 1.2,
+   "regions": 2
+  },
+  {
+   "id": "char.decor.lei",
+   "kind": "decor",
+   "sockets": [
+    "decor"
+   ],
+   "file": "characters/char.decor.lei.json",
+   "thumb": "thumbs/char.decor.lei.webp",
+   "minScale": 0.8,
+   "maxScale": 1.2,
+   "regions": 6
+  },
+  {
+   "id": "char.decor.bandana",
+   "kind": "decor",
+   "sockets": [
+    "decor"
+   ],
+   "file": "characters/char.decor.bandana.json",
+   "thumb": "thumbs/char.decor.bandana.webp",
+   "minScale": 0.8,
+   "maxScale": 1.2,
+   "regions": 4
+  }
+ ],
+ "scaleLimits": {
+  "char.body.tall|char.ear.bunny|ear_l": 1.16,
+  "char.body.tall|char.ear.bunny|ear_r": 1.16,
+  "char.body.boxy|char.ear.bunny|ear_l": 1.18,
+  "char.body.boxy|char.ear.bunny|ear_r": 1.18,
+  "char.body.star|char.hat.party|hat": 1.16
+ },
+ "comboCheck": {
+  "checked": 312,
+  "cannotFit": []
+ }
+}

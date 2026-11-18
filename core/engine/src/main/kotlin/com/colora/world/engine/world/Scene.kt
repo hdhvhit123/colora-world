@@ -29,6 +29,7 @@ object AttachRules {
         "table_item" to setOf(Caps.TABLE_ITEM, Caps.CARRYABLE),
         "plant" to setOf(Caps.PLANTABLE),
         "water" to setOf(Caps.AQUATIC),
+        "bouquet" to setOf(Caps.PLANTABLE),
     )
 
     fun accepts(anchorType: String, childCaps: Collection<String>): Boolean =

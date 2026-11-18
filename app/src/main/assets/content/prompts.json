@@ -1,0 +1,389 @@
+{
+ "schemaVersion": 1,
+ "prompts": [
+  {
+   "id": "CR-01",
+   "textKey": "prompt.cr01",
+   "suggestedTemplates": [
+    "animals.cat",
+    "animals.rabbit",
+    "animals.dog"
+   ],
+   "altTextKey": null,
+   "altTemplates": [],
+   "paletteId": "bright_basic",
+   "destination": "studio",
+   "illustration": "prompts/CR-01.webp"
+  },
+  {
+   "id": "CR-02",
+   "textKey": "prompt.cr02",
+   "suggestedTemplates": [
+    "animals.cat"
+   ],
+   "altTextKey": "prompt.cr02.alt",
+   "altTemplates": [
+    "animals.dog"
+   ],
+   "paletteId": "bright_basic",
+   "destination": "studio",
+   "illustration": "prompts/CR-02.webp"
+  },
+  {
+   "id": "CR-03",
+   "textKey": "prompt.cr03",
+   "suggestedTemplates": [
+    "vehicles.car"
+   ],
+   "altTextKey": "prompt.cr03.alt",
+   "altTemplates": [
+    "vehicles.bus"
+   ],
+   "paletteId": "rainbow",
+   "destination": "studio",
+   "illustration": "prompts/CR-03.webp"
+  },
+  {
+   "id": "CR-04",
+   "textKey": "prompt.cr04",
+   "suggestedTemplates": [
+    "flowers.sunflower",
+    "flowers.tulip"
+   ],
+   "altTextKey": null,
+   "altTemplates": [],
+   "paletteId": "warm",
+   "destination": "studio",
+   "illustration": "prompts/CR-04.webp"
+  },
+  {
+   "id": "CR-05",
+   "textKey": "prompt.cr05",
+   "suggestedTemplates": [
+    "flowers.lotus",
+    "flowers.daisy",
+    "flowers.hydrangea"
+   ],
+   "altTextKey": null,
+   "altTemplates": [],
+   "paletteId": "cool",
+   "destination": "studio",
+   "illustration": "prompts/CR-05.webp"
+  },
+  {
+   "id": "CR-06",
+   "textKey": "prompt.cr06",
+   "suggestedTemplates": [
+    "nature.rainbow",
+    "nature.cloud",
+    "nature.sun"
+   ],
+   "altTextKey": null,
+   "altTemplates": [],
+   "paletteId": "pastel",
+   "destination": "studio",
+   "illustration": "prompts/CR-06.webp"
+  },
+  {
+   "id": "CR-07",
+   "textKey": "prompt.cr07",
+   "suggestedTemplates": [
+    "family.child",
+    "family.sibling"
+   ],
+   "altTextKey": null,
+   "altTemplates": [],
+   "paletteId": "bright_basic",
+   "destination": "studio",
+   "illustration": "prompts/CR-07.webp"
+  },
+  {
+   "id": "CR-08",
+   "textKey": "prompt.cr08",
+   "suggestedTemplates": [
+    "home_city.house"
+   ],
+   "altTextKey": "prompt.cr08.alt",
+   "altTemplates": [
+    "fantasy.castle"
+   ],
+   "paletteId": "pastel",
+   "destination": "studio",
+   "illustration": "prompts/CR-08.webp"
+  },
+  {
+   "id": "CR-09",
+   "textKey": "prompt.cr09",
+   "suggestedTemplates": [
+    "machines.robot"
+   ],
+   "altTextKey": null,
+   "altTemplates": [],
+   "paletteId": "bright_basic",
+   "destination": "studio",
+   "illustration": "prompts/CR-09.webp"
+  },
+  {
+   "id": "CR-10",
+   "textKey": "prompt.cr10",
+   "suggestedTemplates": [
+    "ocean.clownfish",
+    "ocean.seahorse"
+   ],
+   "altTextKey": null,
+   "altTemplates": [],
+   "paletteId": "cool",
+   "destination": "studio",
+   "illustration": "prompts/CR-10.webp"
+  },
+  {
+   "id": "CR-11",
+   "textKey": "prompt.cr11",
+   "suggestedTemplates": [
+    "dinosaurs.triceratops",
+    "dinosaurs.stegosaurus",
+    "dinosaurs.tyrannosaurus"
+   ],
+   "altTextKey": null,
+   "altTemplates": [],
+   "paletteId": "earth",
+   "destination": "studio",
+   "illustration": "prompts/CR-11.webp"
+  },
+  {
+   "id": "CR-12",
+   "textKey": "prompt.cr12",
+   "suggestedTemplates": [
+    "nature.leaf"
+   ],
+   "altTextKey": "prompt.cr12.alt",
+   "altTemplates": [
+    "nature.tree"
+   ],
+   "paletteId": "nature",
+   "destination": "studio",
+   "illustration": "prompts/CR-12.webp"
+  },
+  {
+   "id": "CR-13",
+   "textKey": "prompt.cr13",
+   "suggestedTemplates": [
+    "space.planet",
+    "space.ringed_planet"
+   ],
+   "altTextKey": null,
+   "altTemplates": [],
+   "paletteId": "cool",
+   "destination": "studio",
+   "illustration": "prompts/CR-13.webp"
+  },
+  {
+   "id": "CR-14",
+   "textKey": "prompt.cr14",
+   "suggestedTemplates": [
+    "home_city.table"
+   ],
+   "altTextKey": null,
+   "altTemplates": [],
+   "paletteId": "warm",
+   "destination": "world",
+   "illustration": "prompts/CR-14.webp"
+  },
+  {
+   "id": "CR-15",
+   "textKey": "prompt.cr15",
+   "suggestedTemplates": [
+    "flowers.rose",
+    "flowers.tulip",
+    "flowers.daisy"
+   ],
+   "altTextKey": null,
+   "altTemplates": [],
+   "paletteId": "pastel",
+   "destination": "world",
+   "illustration": "prompts/CR-15.webp"
+  },
+  {
+   "id": "CR-16",
+   "textKey": "prompt.cr16",
+   "suggestedTemplates": [
+    "home_city.bed",
+    "home_city.chair"
+   ],
+   "altTextKey": null,
+   "altTemplates": [],
+   "paletteId": "bright_basic",
+   "destination": "studio",
+   "illustration": "prompts/CR-16.webp"
+  },
+  {
+   "id": "CR-17",
+   "textKey": "prompt.cr17",
+   "suggestedTemplates": [
+    "vehicles.train"
+   ],
+   "altTextKey": null,
+   "altTemplates": [],
+   "paletteId": "bright_basic",
+   "destination": "world",
+   "illustration": "prompts/CR-17.webp"
+  },
+  {
+   "id": "CR-18",
+   "textKey": "prompt.cr18",
+   "suggestedTemplates": [
+    "animals.butterfly"
+   ],
+   "altTextKey": "prompt.cr18.alt",
+   "altTemplates": [
+    "animals.bird"
+   ],
+   "paletteId": "rainbow",
+   "destination": "studio",
+   "illustration": "prompts/CR-18.webp"
+  },
+  {
+   "id": "CR-19",
+   "textKey": "prompt.cr19",
+   "suggestedTemplates": [
+    "nature.tree",
+    "home_city.house"
+   ],
+   "altTextKey": null,
+   "altTemplates": [],
+   "paletteId": "nature",
+   "destination": "world",
+   "illustration": "prompts/CR-19.webp"
+  },
+  {
+   "id": "CR-20",
+   "textKey": "prompt.cr20",
+   "suggestedTemplates": [],
+   "altTextKey": null,
+   "altTemplates": [],
+   "paletteId": "pastel",
+   "destination": "character",
+   "illustration": "prompts/CR-20.webp"
+  },
+  {
+   "id": "CR-21",
+   "textKey": "prompt.cr21",
+   "suggestedTemplates": [],
+   "altTextKey": null,
+   "altTemplates": [],
+   "paletteId": "pastel",
+   "destination": "album",
+   "illustration": "prompts/CR-21.webp"
+  },
+  {
+   "id": "CR-22",
+   "textKey": "prompt.cr22",
+   "suggestedTemplates": [
+    "animals.cat",
+    "vehicles.car",
+    "flowers.tulip"
+   ],
+   "altTextKey": null,
+   "altTemplates": [],
+   "paletteId": "bright_basic",
+   "destination": "world",
+   "illustration": "prompts/CR-22.webp"
+  },
+  {
+   "id": "CR-23",
+   "textKey": "prompt.cr23",
+   "suggestedTemplates": [
+    "family.caregiver",
+    "family.grandparent"
+   ],
+   "altTextKey": null,
+   "altTemplates": [],
+   "paletteId": "skin",
+   "destination": "book",
+   "illustration": "prompts/CR-23.webp"
+  },
+  {
+   "id": "CR-24",
+   "textKey": "prompt.cr24",
+   "suggestedTemplates": [],
+   "altTextKey": null,
+   "altTemplates": [],
+   "paletteId": "bright_basic",
+   "destination": "world",
+   "illustration": "prompts/CR-24.webp"
+  },
+  {
+   "id": "CR-25",
+   "textKey": "prompt.cr25",
+   "suggestedTemplates": [
+    "nature.moon",
+    "nature.cloud"
+   ],
+   "altTextKey": null,
+   "altTemplates": [],
+   "paletteId": "pastel",
+   "destination": "studio",
+   "illustration": "prompts/CR-25.webp"
+  },
+  {
+   "id": "CR-26",
+   "textKey": "prompt.cr26",
+   "suggestedTemplates": [],
+   "altTextKey": null,
+   "altTemplates": [],
+   "paletteId": "bright_basic",
+   "destination": "lab",
+   "illustration": "prompts/CR-26.webp"
+  },
+  {
+   "id": "CR-27",
+   "textKey": "prompt.cr27",
+   "suggestedTemplates": [
+    "celebrations.greeting_card"
+   ],
+   "altTextKey": null,
+   "altTemplates": [],
+   "paletteId": "warm",
+   "destination": "studio",
+   "illustration": "prompts/CR-27.webp"
+  },
+  {
+   "id": "CR-28",
+   "textKey": "prompt.cr28",
+   "suggestedTemplates": [
+    "nature.moon",
+    "space.star"
+   ],
+   "altTextKey": null,
+   "altTemplates": [],
+   "paletteId": "night",
+   "destination": "studio",
+   "illustration": "prompts/CR-28.webp"
+  },
+  {
+   "id": "CR-29",
+   "textKey": "prompt.cr29",
+   "suggestedTemplates": [
+    "family.picnic",
+    "home_city.park"
+   ],
+   "altTextKey": "prompt.cr29.alt",
+   "altTemplates": [
+    "nature.tree"
+   ],
+   "paletteId": "bright_basic",
+   "destination": "studio",
+   "illustration": "prompts/CR-29.webp"
+  },
+  {
+   "id": "CR-30",
+   "textKey": "prompt.cr30",
+   "suggestedTemplates": [],
+   "altTextKey": null,
+   "altTemplates": [],
+   "paletteId": "bright_basic",
+   "destination": "album",
+   "illustration": "prompts/CR-30.webp"
+  }
+ ]
+}

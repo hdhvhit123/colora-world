@@ -1,0 +1,207 @@
+{
+ "schemaVersion": 1,
+ "palettes": [
+  {
+   "id": "bright_basic",
+   "labelKey": "palette.bright_basic",
+   "colors": [
+    "#F25C54",
+    "#FFA94D",
+    "#FFE066",
+    "#4FB477",
+    "#42C8BD",
+    "#5B8DEF",
+    "#9B6BDE",
+    "#FFA8C5",
+    "#B07A55",
+    "#B9C1CC",
+    "#24324B",
+    "#FFFFFF"
+   ]
+  },
+  {
+   "id": "warm",
+   "labelKey": "palette.warm",
+   "colors": [
+    "#E8453C",
+    "#FF786D",
+    "#FF9F43",
+    "#FFC94D",
+    "#FFE066",
+    "#F7B6A3",
+    "#D9A47E",
+    "#B5652B",
+    "#FFD6A5",
+    "#C2410C"
+   ]
+  },
+  {
+   "id": "cool",
+   "labelKey": "palette.cool",
+   "colors": [
+    "#3E6FC2",
+    "#5B8DEF",
+    "#8BD4F6",
+    "#42C8BD",
+    "#7FD8C7",
+    "#4FB477",
+    "#9B6BDE",
+    "#B8A0F3",
+    "#5A6B8C",
+    "#DDEBFF"
+   ]
+  },
+  {
+   "id": "pastel",
+   "labelKey": "palette.pastel",
+   "colors": [
+    "#FFC8D9",
+    "#FFE6E0",
+    "#FFF3B8",
+    "#D7F5C8",
+    "#C6F1EC",
+    "#CFE7FF",
+    "#E2D6FF",
+    "#F6E3CF",
+    "#FFFFFF",
+    "#E4E7EC"
+   ]
+  },
+  {
+   "id": "rainbow",
+   "labelKey": "palette.rainbow",
+   "colors": [
+    "#F25C54",
+    "#FFA94D",
+    "#FFE066",
+    "#4FB477",
+    "#5B8DEF",
+    "#9B6BDE"
+   ]
+  },
+  {
+   "id": "earth",
+   "labelKey": "palette.earth",
+   "colors": [
+    "#6E4630",
+    "#8A5A3C",
+    "#B07A55",
+    "#D9B48F",
+    "#8DB860",
+    "#5E8C3A",
+    "#C9A227",
+    "#7D8796",
+    "#3B2A23",
+    "#E8C39E"
+   ]
+  },
+  {
+   "id": "nature",
+   "labelKey": "palette.nature",
+   "colors": [
+    "#2E8B57",
+    "#4FB477",
+    "#9DDC86",
+    "#C9E77B",
+    "#8DB860",
+    "#B07A55",
+    "#8BD4F6",
+    "#FFE066",
+    "#FF786D",
+    "#FFFFFF"
+   ]
+  },
+  {
+   "id": "night",
+   "labelKey": "palette.night",
+   "colors": [
+    "#1F2A4D",
+    "#34548D",
+    "#5A6B8C",
+    "#9B6BDE",
+    "#B8A0F3",
+    "#FFE9A8",
+    "#FFD66B",
+    "#DDEBFF",
+    "#24324B",
+    "#FFFFFF"
+   ]
+  },
+  {
+   "id": "skin",
+   "labelKey": "palette.skin",
+   "colors": [
+    "#FBE3D0",
+    "#F6D3B3",
+    "#E8B894",
+    "#D9A47E",
+    "#C08A63",
+    "#A86F4C",
+    "#8A5A3C",
+    "#6E4630",
+    "#4E3324",
+    "#3B2A23"
+   ]
+  }
+ ],
+ "extended": [
+  "#1F2A4D",
+  "#24324B",
+  "#2E8B57",
+  "#34548D",
+  "#3B2A23",
+  "#3E6FC2",
+  "#42C8BD",
+  "#4E3324",
+  "#4FB477",
+  "#5A6B8C",
+  "#5B8DEF",
+  "#5E8C3A",
+  "#6E4630",
+  "#7D8796",
+  "#7FD8C7",
+  "#8A5A3C",
+  "#8BD4F6",
+  "#8DB860",
+  "#9B6BDE",
+  "#9DDC86",
+  "#A86F4C",
+  "#B07A55",
+  "#B5652B",
+  "#B8A0F3",
+  "#B9C1CC",
+  "#C08A63",
+  "#C2410C",
+  "#C6F1EC",
+  "#C9A227",
+  "#C9E77B",
+  "#CFE7FF",
+  "#D7F5C8",
+  "#D9A47E",
+  "#D9B48F",
+  "#DDEBFF",
+  "#E2D6FF",
+  "#E4E7EC",
+  "#E8453C",
+  "#E8B894",
+  "#E8C39E",
+  "#F25C54",
+  "#F6D3B3",
+  "#F6E3CF",
+  "#F7B6A3",
+  "#FBE3D0",
+  "#FF786D",
+  "#FF9F43",
+  "#FFA8C5",
+  "#FFA94D",
+  "#FFC8D9",
+  "#FFC94D",
+  "#FFD66B",
+  "#FFD6A5",
+  "#FFE066",
+  "#FFE6E0",
+  "#FFE9A8",
+  "#FFF3B8",
+  "#FFFFFF"
+ ]
+}

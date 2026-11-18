@@ -1,0 +1,855 @@
+{
+ "schemaVersion": 1,
+ "props": [
+  {
+   "id": "prop.soil_block",
+   "file": "props/prop.soil_block.json",
+   "thumb": "thumbs/prop.soil_block.webp",
+   "capabilities": [
+    "carryable",
+    "soil"
+   ],
+   "anchors": [
+    {
+     "id": "plant",
+     "type": "plant",
+     "x": 512,
+     "y": 540
+    },
+    {
+     "id": "grab",
+     "type": "carry",
+     "x": 512,
+     "y": 560
+    }
+   ],
+   "labelKey": "prop.soil_block"
+  },
+  {
+   "id": "prop.watering_can",
+   "file": "props/prop.watering_can.json",
+   "thumb": "thumbs/prop.watering_can.webp",
+   "capabilities": [
+    "tool_water",
+    "carryable"
+   ],
+   "anchors": [
+    {
+     "id": "pour",
+     "type": "water",
+     "x": 860,
+     "y": 470
+    },
+    {
+     "id": "grab",
+     "type": "carry",
+     "x": 400,
+     "y": 440
+    }
+   ],
+   "labelKey": "prop.watering_can"
+  },
+  {
+   "id": "prop.plant_pot",
+   "file": "props/prop.plant_pot.json",
+   "thumb": "thumbs/prop.plant_pot.webp",
+   "capabilities": [
+    "carryable",
+    "plant_target"
+   ],
+   "anchors": [
+    {
+     "id": "plant",
+     "type": "plant",
+     "x": 512,
+     "y": 520
+    },
+    {
+     "id": "grab",
+     "type": "carry",
+     "x": 512,
+     "y": 560
+    }
+   ],
+   "labelKey": "prop.plant_pot"
+  },
+  {
+   "id": "prop.bouquet_wrap",
+   "file": "props/prop.bouquet_wrap.json",
+   "thumb": "thumbs/prop.bouquet_wrap.webp",
+   "capabilities": [
+    "bouquet",
+    "carryable"
+   ],
+   "anchors": [
+    {
+     "id": "stem0",
+     "type": "bouquet",
+     "x": 420,
+     "y": 420
+    },
+    {
+     "id": "stem1",
+     "type": "bouquet",
+     "x": 512,
+     "y": 420
+    },
+    {
+     "id": "stem2",
+     "type": "bouquet",
+     "x": 604,
+     "y": 420
+    },
+    {
+     "id": "grab",
+     "type": "carry",
+     "x": 512,
+     "y": 760
+    }
+   ],
+   "labelKey": "prop.bouquet_wrap"
+  },
+  {
+   "id": "prop.footprint",
+   "file": "props/prop.footprint.json",
+   "thumb": "thumbs/prop.footprint.webp",
+   "capabilities": [
+    "waypoint",
+    "trail"
+   ],
+   "anchors": [
+    {
+     "id": "step",
+     "type": "waypoint",
+     "x": 512,
+     "y": 620
+    }
+   ],
+   "labelKey": "prop.footprint"
+  },
+  {
+   "id": "prop.stall",
+   "file": "props/prop.stall.json",
+   "thumb": "thumbs/prop.stall.webp",
+   "capabilities": [
+    "surface",
+    "decor"
+   ],
+   "anchors": [
+    {
+     "id": "shelf0",
+     "type": "table_item",
+     "x": 330,
+     "y": 600
+    },
+    {
+     "id": "shelf1",
+     "type": "table_item",
+     "x": 512,
+     "y": 600
+    },
+    {
+     "id": "shelf2",
+     "type": "table_item",
+     "x": 694,
+     "y": 600
+    }
+   ],
+   "labelKey": "prop.stall"
+  },
+  {
+   "id": "prop.basket",
+   "file": "props/prop.basket.json",
+   "thumb": "thumbs/prop.basket.webp",
+   "capabilities": [
+    "carryable",
+    "surface"
+   ],
+   "anchors": [
+    {
+     "id": "in0",
+     "type": "table_item",
+     "x": 420,
+     "y": 550
+    },
+    {
+     "id": "in1",
+     "type": "table_item",
+     "x": 600,
+     "y": 550
+    },
+    {
+     "id": "grab",
+     "type": "carry",
+     "x": 512,
+     "y": 320
+    }
+   ],
+   "labelKey": "prop.basket"
+  },
+  {
+   "id": "prop.lamp",
+   "file": "props/prop.lamp.json",
+   "thumb": "thumbs/prop.lamp.webp",
+   "capabilities": [
+    "light",
+    "decor",
+    "carryable"
+   ],
+   "anchors": [
+    {
+     "id": "light",
+     "type": "light",
+     "x": 512,
+     "y": 270
+    }
+   ],
+   "labelKey": "prop.lamp"
+  },
+  {
+   "id": "prop.path",
+   "file": "props/prop.path.json",
+   "thumb": "thumbs/prop.path.webp",
+   "capabilities": [
+    "path",
+    "decor"
+   ],
+   "anchors": [
+    {
+     "id": "end0",
+     "type": "waypoint",
+     "x": 200,
+     "y": 690
+    },
+    {
+     "id": "end1",
+     "type": "waypoint",
+     "x": 824,
+     "y": 690
+    }
+   ],
+   "labelKey": "prop.path"
+  },
+  {
+   "id": "prop.book",
+   "file": "props/prop.book.json",
+   "thumb": "thumbs/prop.book.webp",
+   "capabilities": [
+    "carryable",
+    "readable",
+    "table_item"
+   ],
+   "anchors": [
+    {
+     "id": "grab",
+     "type": "carry",
+     "x": 512,
+     "y": 560
+    }
+   ],
+   "labelKey": "prop.book"
+  },
+  {
+   "id": "prop.waypoint",
+   "file": "props/prop.waypoint.json",
+   "thumb": "thumbs/prop.waypoint.webp",
+   "capabilities": [
+    "waypoint"
+   ],
+   "anchors": [
+    {
+     "id": "point",
+     "type": "waypoint",
+     "x": 512,
+     "y": 880
+    }
+   ],
+   "labelKey": "prop.waypoint"
+  },
+  {
+   "id": "prop.gift_toy",
+   "file": "props/prop.gift_toy.json",
+   "thumb": "thumbs/prop.gift_toy.webp",
+   "capabilities": [
+    "carryable",
+    "openable",
+    "table_item"
+   ],
+   "anchors": [
+    {
+     "id": "grab",
+     "type": "carry",
+     "x": 512,
+     "y": 520
+    }
+   ],
+   "labelKey": "prop.gift_toy"
+  },
+  {
+   "id": "prop.picnic_mat",
+   "file": "props/prop.picnic_mat.json",
+   "thumb": "thumbs/prop.picnic_mat.webp",
+   "capabilities": [
+    "surface",
+    "seat_furniture"
+   ],
+   "anchors": [
+    {
+     "id": "dish0",
+     "type": "table_item",
+     "x": 340,
+     "y": 700
+    },
+    {
+     "id": "dish1",
+     "type": "table_item",
+     "x": 512,
+     "y": 700
+    },
+    {
+     "id": "dish2",
+     "type": "table_item",
+     "x": 684,
+     "y": 700
+    },
+    {
+     "id": "seat_l",
+     "type": "seat",
+     "x": 200,
+     "y": 760
+    },
+    {
+     "id": "seat_r",
+     "type": "seat",
+     "x": 824,
+     "y": 760
+    }
+   ],
+   "labelKey": "prop.picnic_mat"
+  },
+  {
+   "id": "prop.bridge",
+   "file": "props/prop.bridge.json",
+   "thumb": "thumbs/prop.bridge.webp",
+   "capabilities": [
+    "bridge",
+    "decor"
+   ],
+   "anchors": [
+    {
+     "id": "start",
+     "type": "waypoint",
+     "x": 130,
+     "y": 760
+    },
+    {
+     "id": "top",
+     "type": "waypoint",
+     "x": 512,
+     "y": 560
+    },
+    {
+     "id": "end",
+     "type": "waypoint",
+     "x": 894,
+     "y": 760
+    }
+   ],
+   "labelKey": "prop.bridge"
+  },
+  {
+   "id": "prop.exploration_window",
+   "file": "props/prop.exploration_window.json",
+   "thumb": "thumbs/prop.exploration_window.webp",
+   "capabilities": [
+    "rideable",
+    "aquatic",
+    "carrier"
+   ],
+   "anchors": [
+    {
+     "id": "seat",
+     "type": "passenger",
+     "x": 512,
+     "y": 600
+    }
+   ],
+   "labelKey": "prop.exploration_window"
+  },
+  {
+   "id": "prop.leaf",
+   "file": "props/prop.leaf.json",
+   "thumb": "thumbs/prop.leaf.webp",
+   "capabilities": [
+    "carryable"
+   ],
+   "anchors": [
+    {
+     "id": "grab",
+     "type": "carry",
+     "x": 512,
+     "y": 520
+    }
+   ],
+   "labelKey": "prop.leaf"
+  },
+  {
+   "id": "prop.chair",
+   "file": "props/prop.chair.json",
+   "thumb": "thumbs/prop.chair.webp",
+   "capabilities": [
+    "seat_furniture",
+    "carryable"
+   ],
+   "anchors": [
+    {
+     "id": "seat",
+     "type": "seat",
+     "x": 512,
+     "y": 560
+    }
+   ],
+   "labelKey": "prop.chair"
+  },
+  {
+   "id": "prop.table",
+   "file": "props/prop.table.json",
+   "thumb": "thumbs/prop.table.webp",
+   "capabilities": [
+    "surface",
+    "carryable"
+   ],
+   "anchors": [
+    {
+     "id": "item0",
+     "type": "table_item",
+     "x": 300,
+     "y": 450
+    },
+    {
+     "id": "item1",
+     "type": "table_item",
+     "x": 512,
+     "y": 450
+    },
+    {
+     "id": "item2",
+     "type": "table_item",
+     "x": 724,
+     "y": 450
+    }
+   ],
+   "labelKey": "prop.table"
+  },
+  {
+   "id": "prop.house",
+   "file": "props/prop.house.json",
+   "thumb": "thumbs/prop.house.webp",
+   "capabilities": [
+    "decor",
+    "door",
+    "light"
+   ],
+   "anchors": [
+    {
+     "id": "door",
+     "type": "waypoint",
+     "x": 512,
+     "y": 900
+    },
+    {
+     "id": "light",
+     "type": "light",
+     "x": 370,
+     "y": 620
+    }
+   ],
+   "labelKey": "prop.house"
+  },
+  {
+   "id": "prop.park",
+   "file": "props/prop.park.json",
+   "thumb": "thumbs/prop.park.webp",
+   "capabilities": [
+    "seat_furniture",
+    "decor"
+   ],
+   "anchors": [
+    {
+     "id": "seat_l",
+     "type": "seat",
+     "x": 580,
+     "y": 720
+    },
+    {
+     "id": "seat_r",
+     "type": "seat",
+     "x": 760,
+     "y": 720
+    }
+   ],
+   "labelKey": "prop.park"
+  },
+  {
+   "id": "prop.food_plate",
+   "file": "props/prop.food_plate.json",
+   "thumb": "thumbs/prop.food_plate.webp",
+   "capabilities": [
+    "table_item",
+    "carryable"
+   ],
+   "anchors": [
+    {
+     "id": "grab",
+     "type": "carry",
+     "x": 512,
+     "y": 560
+    }
+   ],
+   "labelKey": "prop.food_plate"
+  }
+ ],
+ "stickers": [
+  {
+   "id": "sticker.sparkle.star",
+   "group": "sparkle",
+   "file": "stickers/sticker.sparkle.star.json",
+   "thumb": "thumbs/sticker.sparkle.star.webp"
+  },
+  {
+   "id": "sticker.sparkle.heart",
+   "group": "sparkle",
+   "file": "stickers/sticker.sparkle.heart.json",
+   "thumb": "thumbs/sticker.sparkle.heart.webp"
+  },
+  {
+   "id": "sticker.sparkle.twinkle",
+   "group": "sparkle",
+   "file": "stickers/sticker.sparkle.twinkle.json",
+   "thumb": "thumbs/sticker.sparkle.twinkle.webp"
+  },
+  {
+   "id": "sticker.sparkle.rainbow_puff",
+   "group": "sparkle",
+   "file": "stickers/sticker.sparkle.rainbow_puff.json",
+   "thumb": "thumbs/sticker.sparkle.rainbow_puff.webp"
+  },
+  {
+   "id": "sticker.sparkle.crescent",
+   "group": "sparkle",
+   "file": "stickers/sticker.sparkle.crescent.json",
+   "thumb": "thumbs/sticker.sparkle.crescent.webp"
+  },
+  {
+   "id": "sticker.sparkle.gem",
+   "group": "sparkle",
+   "file": "stickers/sticker.sparkle.gem.json",
+   "thumb": "thumbs/sticker.sparkle.gem.webp"
+  },
+  {
+   "id": "sticker.nature.flower",
+   "group": "nature",
+   "file": "stickers/sticker.nature.flower.json",
+   "thumb": "thumbs/sticker.nature.flower.webp"
+  },
+  {
+   "id": "sticker.nature.clover",
+   "group": "nature",
+   "file": "stickers/sticker.nature.clover.json",
+   "thumb": "thumbs/sticker.nature.clover.webp"
+  },
+  {
+   "id": "sticker.nature.mushroom",
+   "group": "nature",
+   "file": "stickers/sticker.nature.mushroom.json",
+   "thumb": "thumbs/sticker.nature.mushroom.webp"
+  },
+  {
+   "id": "sticker.nature.ladybug",
+   "group": "nature",
+   "file": "stickers/sticker.nature.ladybug.json",
+   "thumb": "thumbs/sticker.nature.ladybug.webp"
+  },
+  {
+   "id": "sticker.nature.snail",
+   "group": "nature",
+   "file": "stickers/sticker.nature.snail.json",
+   "thumb": "thumbs/sticker.nature.snail.webp"
+  },
+  {
+   "id": "sticker.nature.acorn",
+   "group": "nature",
+   "file": "stickers/sticker.nature.acorn.json",
+   "thumb": "thumbs/sticker.nature.acorn.webp"
+  },
+  {
+   "id": "sticker.weather.cloud",
+   "group": "weather",
+   "file": "stickers/sticker.weather.cloud.json",
+   "thumb": "thumbs/sticker.weather.cloud.webp"
+  },
+  {
+   "id": "sticker.weather.raindrop",
+   "group": "weather",
+   "file": "stickers/sticker.weather.raindrop.json",
+   "thumb": "thumbs/sticker.weather.raindrop.webp"
+  },
+  {
+   "id": "sticker.weather.snowflake",
+   "group": "weather",
+   "file": "stickers/sticker.weather.snowflake.json",
+   "thumb": "thumbs/sticker.weather.snowflake.webp"
+  },
+  {
+   "id": "sticker.weather.sunny",
+   "group": "weather",
+   "file": "stickers/sticker.weather.sunny.json",
+   "thumb": "thumbs/sticker.weather.sunny.webp"
+  },
+  {
+   "id": "sticker.weather.umbrella",
+   "group": "weather",
+   "file": "stickers/sticker.weather.umbrella.json",
+   "thumb": "thumbs/sticker.weather.umbrella.webp"
+  },
+  {
+   "id": "sticker.weather.breeze",
+   "group": "weather",
+   "file": "stickers/sticker.weather.breeze.json",
+   "thumb": "thumbs/sticker.weather.breeze.webp"
+  },
+  {
+   "id": "sticker.treats.cupcake",
+   "group": "treats",
+   "file": "stickers/sticker.treats.cupcake.json",
+   "thumb": "thumbs/sticker.treats.cupcake.webp"
+  },
+  {
+   "id": "sticker.treats.lollipop",
+   "group": "treats",
+   "file": "stickers/sticker.treats.lollipop.json",
+   "thumb": "thumbs/sticker.treats.lollipop.webp"
+  },
+  {
+   "id": "sticker.treats.ice_cream",
+   "group": "treats",
+   "file": "stickers/sticker.treats.ice_cream.json",
+   "thumb": "thumbs/sticker.treats.ice_cream.webp"
+  },
+  {
+   "id": "sticker.treats.cherries",
+   "group": "treats",
+   "file": "stickers/sticker.treats.cherries.json",
+   "thumb": "thumbs/sticker.treats.cherries.webp"
+  },
+  {
+   "id": "sticker.treats.donut",
+   "group": "treats",
+   "file": "stickers/sticker.treats.donut.json",
+   "thumb": "thumbs/sticker.treats.donut.webp"
+  },
+  {
+   "id": "sticker.treats.candy",
+   "group": "treats",
+   "file": "stickers/sticker.treats.candy.json",
+   "thumb": "thumbs/sticker.treats.candy.webp"
+  },
+  {
+   "id": "sticker.party.balloon",
+   "group": "party",
+   "file": "stickers/sticker.party.balloon.json",
+   "thumb": "thumbs/sticker.party.balloon.webp"
+  },
+  {
+   "id": "sticker.party.party_hat",
+   "group": "party",
+   "file": "stickers/sticker.party.party_hat.json",
+   "thumb": "thumbs/sticker.party.party_hat.webp"
+  },
+  {
+   "id": "sticker.party.crown",
+   "group": "party",
+   "file": "stickers/sticker.party.crown.json",
+   "thumb": "thumbs/sticker.party.crown.webp"
+  },
+  {
+   "id": "sticker.party.confetti",
+   "group": "party",
+   "file": "stickers/sticker.party.confetti.json",
+   "thumb": "thumbs/sticker.party.confetti.webp"
+  },
+  {
+   "id": "sticker.party.music_note",
+   "group": "party",
+   "file": "stickers/sticker.party.music_note.json",
+   "thumb": "thumbs/sticker.party.music_note.webp"
+  },
+  {
+   "id": "sticker.party.ribbon_badge",
+   "group": "party",
+   "file": "stickers/sticker.party.ribbon_badge.json",
+   "thumb": "thumbs/sticker.party.ribbon_badge.webp"
+  },
+  {
+   "id": "sticker.friends.bee",
+   "group": "friends",
+   "file": "stickers/sticker.friends.bee.json",
+   "thumb": "thumbs/sticker.friends.bee.webp"
+  },
+  {
+   "id": "sticker.friends.chick",
+   "group": "friends",
+   "file": "stickers/sticker.friends.chick.json",
+   "thumb": "thumbs/sticker.friends.chick.webp"
+  },
+  {
+   "id": "sticker.friends.fish",
+   "group": "friends",
+   "file": "stickers/sticker.friends.fish.json",
+   "thumb": "thumbs/sticker.friends.fish.webp"
+  },
+  {
+   "id": "sticker.friends.bunny_face",
+   "group": "friends",
+   "file": "stickers/sticker.friends.bunny_face.json",
+   "thumb": "thumbs/sticker.friends.bunny_face.webp"
+  },
+  {
+   "id": "sticker.friends.bear_face",
+   "group": "friends",
+   "file": "stickers/sticker.friends.bear_face.json",
+   "thumb": "thumbs/sticker.friends.bear_face.webp"
+  },
+  {
+   "id": "sticker.friends.frog_face",
+   "group": "friends",
+   "file": "stickers/sticker.friends.frog_face.json",
+   "thumb": "thumbs/sticker.friends.frog_face.webp"
+  }
+ ],
+ "mascot": [
+  {
+   "id": "milo.greet",
+   "file": "mascot/milo.greet.json",
+   "thumb": "thumbs/milo.greet.webp"
+  },
+  {
+   "id": "milo.curious",
+   "file": "mascot/milo.curious.json",
+   "thumb": "thumbs/milo.curious.webp"
+  },
+  {
+   "id": "milo.happy",
+   "file": "mascot/milo.happy.json",
+   "thumb": "thumbs/milo.happy.webp"
+  },
+  {
+   "id": "milo.guide",
+   "file": "mascot/milo.guide.json",
+   "thumb": "thumbs/milo.guide.webp"
+  },
+  {
+   "id": "milo.listening",
+   "file": "mascot/milo.listening.json",
+   "thumb": "thumbs/milo.listening.webp"
+  },
+  {
+   "id": "milo.resting",
+   "file": "mascot/milo.resting.json",
+   "thumb": "thumbs/milo.resting.webp"
+  }
+ ],
+ "worlds": [
+  {
+   "id": "garden",
+   "file": "worlds/garden.json",
+   "thumb": "thumbs/world.garden.webp",
+   "labelKey": "world.garden",
+   "anchors": 9,
+   "layers": [
+    "far",
+    "mid",
+    "near"
+   ],
+   "tier": "base"
+  },
+  {
+   "id": "town",
+   "file": "worlds/town.json",
+   "thumb": "thumbs/world.town.webp",
+   "labelKey": "world.town",
+   "anchors": 7,
+   "layers": [
+    "far",
+    "mid",
+    "near"
+   ],
+   "tier": "base"
+  },
+  {
+   "id": "ocean",
+   "file": "worlds/ocean.json",
+   "thumb": "thumbs/world.ocean.webp",
+   "labelKey": "world.ocean",
+   "anchors": 6,
+   "layers": [
+    "far",
+    "mid",
+    "near"
+   ],
+   "tier": "full"
+  },
+  {
+   "id": "dinosaur",
+   "file": "worlds/dinosaur.json",
+   "thumb": "thumbs/world.dinosaur.webp",
+   "labelKey": "world.dinosaur",
+   "anchors": 7,
+   "layers": [
+    "far",
+    "mid",
+    "near"
+   ],
+   "tier": "full"
+  },
+  {
+   "id": "space",
+   "file": "worlds/space.json",
+   "thumb": "thumbs/world.space.webp",
+   "labelKey": "world.space",
+   "anchors": 6,
+   "layers": [
+    "far",
+    "mid",
+    "near"
+   ],
+   "tier": "full"
+  },
+  {
+   "id": "fantasy",
+   "file": "worlds/fantasy.json",
+   "thumb": "thumbs/world.fantasy.webp",
+   "labelKey": "world.fantasy",
+   "anchors": 6,
+   "layers": [
+    "far",
+    "mid",
+    "near"
+   ],
+   "tier": "full"
+  },
+  {
+   "id": "celebration",
+   "file": "worlds/celebration.json",
+   "thumb": "thumbs/world.celebration.webp",
+   "labelKey": "world.celebration",
+   "anchors": 6,
+   "layers": [
+    "far",
+    "mid",
+    "near"
+   ],
+   "tier": "full"
+  }
+ ]
+}
