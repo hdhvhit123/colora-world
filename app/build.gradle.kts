@@ -50,7 +50,7 @@ android {
     buildFeatures { compose = true; buildConfig = true }
     compileOptions { sourceCompatibility = JavaVersion.VERSION_17; targetCompatibility = JavaVersion.VERSION_17 }
     androidResources { noCompress += listOf("ogg", "json") }
-    testOptions { unitTests { isIncludeAndroidResources = true; all { it.maxHeapSize = "3g"; it.systemProperty("colora.shots", rootProject.file("screenshots").absolutePath)
+    testOptions { unitTests { isIncludeAndroidResources = true; all { it.maxHeapSize = "3g"; it.forkEvery = 1 /* fresh JVM per class: Robolectric sandboxes otherwise share Compose state between activities */; it.systemProperty("colora.shots", rootProject.file("screenshots").absolutePath)
         it.systemProperty("robolectric.pixelCopyRenderMode", "hardware")
         it.systemProperty("robolectric.dependency.repo.url", "https://maven-central.storage-download.googleapis.com/maven2/") } } }
     packaging { resources { excludes += "/META-INF/{AL2.0,LGPL2.1}" } }

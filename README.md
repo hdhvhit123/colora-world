@@ -12,6 +12,8 @@ Full product spec: [`docs/MASTER_SPEC.md`](docs/MASTER_SPEC.md). Current state: 
 | `content-tools` | `validateContent` – validates the whole content pack |
 | `tools/art`, `tools/content` | Source of every picture, prop, sticker, character part, world, story, prompt and label (Python + skia) |
 | `tools/audio` | Synthesiser for all sound effects and music loops |
+| `tools/i18n` | Translations (`<lang>.txt`, one `key = text` per line) and `install.py`, which writes UI and content locale files, the content index and `locales_config.xml` |
+| `tools/store`, `play-store/en` | `make_assets.py` builds the English Play Store graphics from real app captures; listing text, privacy policy and policy answers |
 | `app/src/main/assets` | Generated content pack (168 templates, 7 worlds, 28 stories, 30 prompts, 44 character parts, 36 stickers, 21 props, Milo, palettes, EN/VI text, SHA-256 index) and audio |
 | `app/src/main/res/font` | Nunito (OFL) |
 | `docs/contact_sheets` | Review sheets for every asset group |
@@ -42,6 +44,8 @@ See [`docs/CONTENT_PIPELINE.md`](docs/CONTENT_PIPELINE.md):
 pip install skia-python numpy pillow fonttools
 python3 tools/art/build_content.py     # art, catalog, extras, locales, index
 python3 tools/audio/synth.py           # sound effects + music
+python3 tools/i18n/install.py          # after editing a translation
+python3 tools/store/make_assets.py     # after the StoreIconTest / StoreShots*Test captures
 ```
 
 ## Flavors

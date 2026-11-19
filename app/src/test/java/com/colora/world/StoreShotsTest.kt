@@ -25,18 +25,15 @@ import java.io.File
  */
 @RunWith(AndroidJUnit4::class) @Config(qualifiers = "w411dp-h731dp-xxhdpi")
 class StoreShotsPhoneTest { @get:Rule val rule = createAndroidComposeRule<MainActivity>()
-    @Test fun en() = storeShots(rule, "phone", "en", wide = false)
-    @Test fun vi() = storeShots(rule, "phone", "vi", wide = false) }
+    @Test fun en() = storeShots(rule, "phone", "en", wide = false) }
 
 @RunWith(AndroidJUnit4::class) @Config(qualifiers = "w1280dp-h800dp-hdpi")
 class StoreShotsTablet10Test { @get:Rule val rule = createAndroidComposeRule<MainActivity>()
-    @Test fun en() = storeShots(rule, "tablet10", "en", wide = true)
-    @Test fun vi() = storeShots(rule, "tablet10", "vi", wide = true) }
+    @Test fun en() = storeShots(rule, "tablet10", "en", wide = true) }
 
 @RunWith(AndroidJUnit4::class) @Config(qualifiers = "w960dp-h600dp-hdpi")
 class StoreShotsTablet7Test { @get:Rule val rule = createAndroidComposeRule<MainActivity>()
-    @Test fun en() = storeShots(rule, "tablet7", "en", wide = true)
-    @Test fun vi() = storeShots(rule, "tablet7", "vi", wide = true) }
+    @Test fun en() = storeShots(rule, "tablet7", "en", wide = true) }
 
 fun storeShots(rule: com.colora.world.Rule, device: String, lang: String, wide: Boolean) {
     val s = rule.appState()

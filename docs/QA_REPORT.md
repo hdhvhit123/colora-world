@@ -44,13 +44,25 @@ APK checks: `aapt2 dump permissions` → offlineFull requests **no** INTERNET/ne
 
 Visual fixes made after reviewing them: collection tabs scroll, parent profile list loads on the main thread, readable switch states, named paint pots in the lab, book pages scale with screen height, crisp vector hero on tablets.
 
+## Session 3 (2026-11-19): UI upgrade, 13 languages, store graphics
+Run and green:
+```
+./gradlew :content-tools:validateContent            # CONTENT OK (FULL); ui: 13 languages, 264 keys; 613 files verified
+./gradlew :core:engine:test :core:storage:test :content-tools:test   # 59 pass
+./gradlew :app:testOfflineFullDebugUnitTest          # 10 tests: 9 pass, 1 skipped (pdfOnDevice)
+./gradlew assembleOfflineFullDebug assembleStoreDebug assembleOfflineFullRelease
+python3 tools/store/make_assets.py
+```
+New app tests: `LangTest` (explicit switch vi→en; "same as device" follows ja-JP, de-DE, pt-PT, in-ID, zh-Hans-CN and falls back to English for sw-KE; explicit choice wins; home rendered in all 13 languages as `screenshots/lang_home_*.png`), `StoreIconTest` (512 px icon from the launcher layers), `StoreShots{Phone,Tablet7,Tablet10}Test` (8 English captures each).
+Not run this session: `:app:testStoreDebugUnitTest` (store flavor UI tests; the store APK was built). Thai, Devanagari and CJK text is drawn by system font fallback, checked only in Robolectric renders, not on a device.
+
 ## Device checklist (not yet run – needs a phone/tablet)
 1. Install `app-offlineFull-debug.apk`, airplane mode on, cold start < 3 s.
 2. Colour a picture with every tool; rotate; kill the app from recents mid-stroke; reopen → nothing lost.
 3. Toy reveal and world at 60 fps on a low-end phone; drag/attach toys; day/night.
 4. Export PNG, PDF (A4) of a book and an MP4 of a scene; open each file in another app.
 5. Backup → delete all data → restore → profiles come back as new profiles.
-6. TalkBack pass over home, studio, world; Vietnamese language pass.
+6. TalkBack pass over home, studio, world; Vietnamese language pass; change the phone language (and Android 13+ per-app language) and check the app follows it; glance at ja/ko/zh/th/hi text on a real device.
 7. Sound levels and music loop seam (K-04, K-06).
 
 ## Content validation

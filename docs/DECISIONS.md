@@ -87,3 +87,14 @@ Pure-JVM cores keep the risky logic (hit-test, paint replay, attachments, backup
 
 ## ADR-019 Book pages reference immutable revisions
 **Decision.** Book items store `art:<doc>:<rev>` / `chr:<doc>:<rev>` / `scene:<doc>` refs; pages render from the referenced revision so later colouring does not change a finished book. Scene pages crop to fill the page, centred on the placed toys.
+
+## ADR-020 Languages: UI strings as assets, follow the phone
+**Context.** The user asked for more languages and for the app to show the phone's language.
+**Decision.** UI strings moved from Kotlin maps to `assets/ui/<lang>.json`; content labels stay in `assets/content/locales/<lang>.json`. A language ships only when both files exist (`Lang.available()`), and the validator checks key and `{n}` placeholder parity against English. The default preference is "Same as this device" (`Lang.SYSTEM`): `Lang.resolve` maps the system or Android 13+ per-app locale (`res/xml/locales_config.xml`) to a shipped language, falls back to English, and treats legacy `in` as Indonesian; `pt-*` maps to Brazilian Portuguese and `zh-*` to Simplified Chinese. `MainActivity` handles `locale|layoutDirection` config changes and calls `Settings.refreshLocale()`, so a change applies live. An explicit choice in the parent area wins. 13 languages: en, vi, es, fr, de, pt-BR, it, id, ja, ko, zh-Hans, th, hi. Translations are kept as editable `tools/i18n/<lang>.txt` and installed by `tools/i18n/install.py`, which also rewrites the content index and the locales config.
+**Consequences.** Nunito has no CJK, Thai or Devanagari glyphs; Android's system font fallback draws them (checked in `LangTest` screenshots for all 13 languages). Translations were written for this app without a native-speaker review; that review is listed in KNOWN_ISSUES (K-12). No right-to-left language ships yet.
+
+## ADR-021 UI upgrade for pre-readers
+**Decision.** After a design critique (Anthropic design-critique and accessibility-review skills): home destinations are big picture tiles with an illustration each, the hero is the vector garden world, the studio tray sizes tools so all fit and the portrait palette wraps into two rows, the portrait world crops less sky, story cards show coloured cast figures in their world, and the studio top bar shrinks its buttons on narrow phones so the picture name is not cut. Brand tokens from MASTER_SPEC §3.2 are unchanged.
+
+## ADR-022 Test isolation and store graphics
+**Decision.** Unit tests fork a fresh JVM per test class (`forkEvery = 1`): in a shared Robolectric sandbox a second app/activity did not reliably receive settings recompositions, which produced false failures. Play Store graphics are built by `tools/store/make_assets.py` from real captures (`StoreIconTest` renders the adaptive launcher layers; `StoreShots*Test` renders the real screens) and only add caption bands; output in `play-store/en/` (English only, per the user).

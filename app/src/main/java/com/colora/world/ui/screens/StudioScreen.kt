@@ -110,22 +110,26 @@ private fun StudioContent(state: AppState, c: StudioController) {
 
     BoxWithConstraints(Modifier.fillMaxSize().background(C.bgCream).safeDrawingPadding()) {
         val landscape = maxWidth > maxHeight
+        // narrow phones: slightly smaller round buttons so the picture name is not cut off
+        val narrow = maxWidth < 440.dp
+        val bs = if (narrow) 46.dp else 52.dp
+        val gap = if (narrow) 5.dp else 8.dp
         val topBar: @Composable () -> Unit = {
             Row(Modifier.fillMaxWidth().padding(horizontal = 12.dp, vertical = 6.dp), verticalAlignment = Alignment.CenterVertically) {
-                RoundIcon(Ic.Back, t("back"), size = 52.dp) { scope.launch { c.flush(); state.back() } }
-                Spacer(Modifier.width(10.dp))
+                RoundIcon(Ic.Back, t("back"), size = bs) { scope.launch { c.flush(); state.back() } }
+                Spacer(Modifier.width(gap))
                 Column(Modifier.weight(1f)) {
-                    Text(title, style = T.heading, maxLines = 1)
+                    Text(title, style = if (narrow) T.label else T.heading, maxLines = 1, overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis)
                     SaveBadge(c.saveStatus)
                 }
-                RoundIcon(Ic.Undo, t("tool.undo"), enabled = c.doc.canUndo.also { c.version }, size = 52.dp) { c.undo() }
-                Spacer(Modifier.width(8.dp))
-                RoundIcon(Ic.Redo, t("tool.redo"), enabled = c.doc.canRedo.also { c.version }, size = 52.dp) { c.redo() }
+                RoundIcon(Ic.Undo, t("tool.undo"), enabled = c.doc.canUndo.also { c.version }, size = bs) { c.undo() }
+                Spacer(Modifier.width(gap))
+                RoundIcon(Ic.Redo, t("tool.redo"), enabled = c.doc.canRedo.also { c.version }, size = bs) { c.redo() }
                 if (skill != "little") {
-                    Spacer(Modifier.width(8.dp))
-                    RoundIcon(Ic.Trash, t("tool.reset_page"), size = 52.dp) { confirmReset = true }
-                    Spacer(Modifier.width(8.dp))
-                    RoundIcon(Ic.Reset, t("tool.reset_region"), selected = c.tool == Tool.CLEAR_REGION, size = 52.dp) { c.tool = if (c.tool == Tool.CLEAR_REGION) Tool.FILL else Tool.CLEAR_REGION; if (c.tool == Tool.CLEAR_REGION) state.showToast(Strings_get(state, "confirm.reset_region")) }
+                    Spacer(Modifier.width(gap))
+                    RoundIcon(Ic.Trash, t("tool.reset_page"), size = bs) { confirmReset = true }
+                    Spacer(Modifier.width(gap))
+                    RoundIcon(Ic.Reset, t("tool.reset_region"), selected = c.tool == Tool.CLEAR_REGION, size = bs) { c.tool = if (c.tool == Tool.CLEAR_REGION) Tool.FILL else Tool.CLEAR_REGION; if (c.tool == Tool.CLEAR_REGION) state.showToast(Strings_get(state, "confirm.reset_region")) }
                 }
             }
         }

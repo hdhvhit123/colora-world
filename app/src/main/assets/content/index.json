@@ -238,6 +238,11 @@
    "sha256": "97eae3f7bf2315ac39c2e9e061060967ca2de819a4abd8f8af5e14d73a2f097a"
   },
   {
+   "path": "locales/de.json",
+   "size": 18495,
+   "sha256": "ce30c2cdac1c4403d6ac3c8854c7e6094dd97450969e1829f20e06e80fcc6ab1"
+  },
+  {
    "path": "locales/en.json",
    "size": 17610,
    "sha256": "2810c58bd9d88dd6d6edcccc4f208c3aadd62f60f53174473f2ab87dcc705c58"
@@ -253,9 +258,49 @@
    "sha256": "6af80fbdffa984e450796c106ed3a6cf32297b120fc54152acc4bbb988615d01"
   },
   {
+   "path": "locales/hi.json",
+   "size": 27120,
+   "sha256": "4deecd7aad0fe2745afbe200323f442915f0c1701ba3544239536278965f5083"
+  },
+  {
+   "path": "locales/id.json",
+   "size": 17916,
+   "sha256": "1b2e4d12e2ddb75a90c54452912ec8e744fa5886933229a22078011a503f952a"
+  },
+  {
+   "path": "locales/it.json",
+   "size": 18640,
+   "sha256": "976d5969b00e59b9c9f85595cc0cfc2ee3a8d894024b9f78465860e61fb9fe11"
+  },
+  {
+   "path": "locales/ja.json",
+   "size": 21975,
+   "sha256": "0b77534205b5ddc3d2092ccb8fa6a42f6894177349f8281b7f6b6d2cd5402e73"
+  },
+  {
+   "path": "locales/ko.json",
+   "size": 18819,
+   "sha256": "5555cf4d55604321f50f640896d09fd6337bfee5b34260ee71f51f5b0c0ee460"
+  },
+  {
+   "path": "locales/pt.json",
+   "size": 18651,
+   "sha256": "591d6dcdca8637b321f25256c99250efe72ce86800d8419b4d653f766a105342"
+  },
+  {
+   "path": "locales/th.json",
+   "size": 26102,
+   "sha256": "f942ab575c32fa3adaba80d200393763a4bed4049c9a4bc5cb7088b87695d8aa"
+  },
+  {
    "path": "locales/vi.json",
    "size": 19606,
    "sha256": "f45e934ac041d58465acc4def7643811f91da110a076a66d9c63406cb5bb0b6b"
+  },
+  {
+   "path": "locales/zh.json",
+   "size": 17473,
+   "sha256": "45b8b0bcdef8aa3c50af98e29f4fccfe81d13301027e06842db56236c1e70aa8"
   },
   {
    "path": "mascot/milo.curious.json",

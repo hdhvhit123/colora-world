@@ -28,7 +28,7 @@ Last update: 2026-11-18, session 2, branch `claude/project-thread-yx92gq`. Evide
 | REQ-09 | Parent gate + timer | done, device-unverified | hold 2 s + number in words (or PIN, salted SHA-256, lockout); foreground-only budget with warning and rest screen; parent session expires after 2 min |
 | REQ-10 | Offline | done | offlineFull manifest has no INTERNET permission (`aapt2 dump permissions`); all content/audio/fonts bundled |
 | REQ-11 | Accessibility | partial | content descriptions on all controls, swatches named, 56 dp+ targets, reduced motion, studio accessibility actions; TalkBack walk-through not done (device) |
-| REQ-12 | EN/VI | done, device-unverified | UI strings `ui/I18n.kt` (EN/VI parity), content locales, language switch in parent area |
+| REQ-12 | EN/VI (+11 more) | done, device-unverified | 13 languages; UI strings in `assets/ui/<lang>.json`, content in `assets/content/locales`; follows the phone (system or per-app locale) by default; explicit choice in the parent area; ADR-020. `LangTest` checks switching, device following and renders home in all 13 |
 | REQ-13 | Performance | not verified | needs device (K-08). Design: compiled paths, cached paint layer, per-part toy textures (72 MB LRU), no per-frame parsing |
 | REQ-14 | Real purchases | blocked | real Play Billing adapter in `store` flavor (signature check, pending never grants, acknowledge); needs products + key (K-10) |
 | REQ-15 | No unintended data collection | done | no SDKs, no analytics, `allowBackup=false`, data-extraction rules, AD_ID removed; backup excludes PIN and purchases |
