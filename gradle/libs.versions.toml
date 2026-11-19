@@ -1,20 +1,14 @@
-# Versions pinned after checking Maven Central / Gradle Plugin Portal on 2026-11-17.
-# Android/AndroidX artifacts live on Google Maven, which was unreachable from the
-# first build session; they are verified by the first session that has
-# dl.google.com + maven.google.com access (see docs/DECISIONS.md ADR-002).
+# Versions pinned after checking Maven Central / Gradle Plugin Portal (2026-11-17) and
+# Google Maven metadata (2026-11-18, session 2). See docs/DECISIONS.md ADR-002/ADR-015.
 [versions]
 kotlin = "2.3.21"
 coroutines = "1.10.2"
 serialization = "1.10.0"
 junit = "4.13.2"
-agp = "8.13.1"
-composeBom = "2025.10.01"
+agp = "8.13.2"
+composeBom = "2025.12.01"
 activityCompose = "1.11.0"
 lifecycle = "2.9.4"
-navigationCompose = "2.9.5"
-room = "2.8.3"
-ksp = "2.3.2"
-datastore = "1.1.7"
 coreKtx = "1.17.0"
 playBilling = "8.0.0"
 robolectric = "4.16"
@@ -33,7 +27,6 @@ androidx-activity-compose = { module = "androidx.activity:activity-compose", ver
 androidx-lifecycle-runtime = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle" }
 androidx-lifecycle-viewmodel-compose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycle" }
 androidx-lifecycle-process = { module = "androidx.lifecycle:lifecycle-process", version.ref = "lifecycle" }
-androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigationCompose" }
 compose-bom = { module = "androidx.compose:compose-bom", version.ref = "composeBom" }
 compose-ui = { module = "androidx.compose.ui:ui" }
 compose-ui-graphics = { module = "androidx.compose.ui:ui-graphics" }
@@ -43,16 +36,13 @@ compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
 compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview" }
 compose-ui-test-junit4 = { module = "androidx.compose.ui:ui-test-junit4" }
 compose-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest" }
-room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
-room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
-room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
-room-testing = { module = "androidx.room:room-testing", version.ref = "room" }
-datastore-preferences = { module = "androidx.datastore:datastore-preferences", version.ref = "datastore" }
 play-billing = { module = "com.android.billingclient:billing-ktx", version.ref = "playBilling" }
 robolectric = { module = "org.robolectric:robolectric", version.ref = "robolectric" }
 androidx-test-core = { module = "androidx.test:core", version.ref = "androidxTestCore" }
 androidx-test-runner = { module = "androidx.test:runner", version.ref = "androidxTestRunner" }
 androidx-test-junit = { module = "androidx.test.ext:junit", version.ref = "androidxJunit" }
+
+androidx-test-espresso = { module = "androidx.test.espresso:espresso-core", version = "3.7.0" }
 
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
@@ -60,4 +50,3 @@ kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 android-application = { id = "com.android.application", version.ref = "agp" }
-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }

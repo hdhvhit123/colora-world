@@ -88,14 +88,15 @@ class PaintDocumentTest {
         assertFalse("body" in s.fills)
     }
 
-    @Test fun fillAfterEraserRestoresColourInThatRegion() {
+    @Test fun fillAfterEraserKeepsErasedStrokesErased() {
         val s = PaintReducer.replay(listOf(
             PaintCommand.FillRegion("body", 1),
             PaintCommand.AddStroke(stroke("body", BrushId.ERASER)),
             PaintCommand.AddStroke(stroke("head", BrushId.ERASER)),
             PaintCommand.FillRegion("body", 2),
         ))
-        assertEquals(listOf("head"), s.visibleStrokes.map { it.clipRegionId })
+        assertEquals(listOf("body", "head"), s.visibleStrokes.map { it.clipRegionId })
+        assertEquals(2, s.fills["body"])
     }
 
     @Test fun rainbowBrushIsDeterministicPerSeed() {

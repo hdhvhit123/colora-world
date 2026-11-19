@@ -1,58 +1,54 @@
 # Implementation status
 
-Legend: **done** (implemented and verified by the evidence listed) · **partial** · **not started** · **blocked** (external dependency, see KNOWN_ISSUES).
-Last update: 2026-11-18, commit on `main` (see `git log`). Evidence commands are listed in `docs/QA_REPORT.md`.
+Legend: **done** (implemented and verified by the evidence listed) · **done, device-unverified** (implemented, built and exercised in Robolectric, never run on a phone) · **partial** · **blocked** (external, see KNOWN_ISSUES).
+Last update: 2026-11-18, session 2, branch `claude/project-thread-yx92gq`. Evidence commands: `docs/QA_REPORT.md`.
 
 ## Milestone view
 | Milestone | State |
 |-|-|
-| Content for FULL (14 topics / 168 templates / 7 worlds / 28 stories / 30 prompts / 44 parts / 36 stickers / 21 props / mascot / palettes / EN-VI content text) | **done** – `validateContent FULL` passes |
-| Pure-Kotlin engine (hit-test, paint log, brushes, scene graph + attachments, stories, colour lab, character rules, prompts, session budget) | **done** for logic; Android rendering not started |
-| Storage + backup (atomic revisions, recovery, trash, `.colora.zip`) | **done** at file layer; Room index/SAF wiring not started |
-| Original audio (SFX, toy sets, 3 loops) | **done**; voice **blocked** |
-| Android app (Compose UI, renderer Views, features, export, parent area, flavors) | **not started – blocked** on Android SDK/Google Maven in this environment (K-01) |
-| Debug APK, real screenshots, device QA, performance | **blocked** by the above |
-| Store billing / release | **blocked** (Play Console, signing – external, K-05) |
+| Content for FULL (14 topics / 168 templates / 7 worlds / 28 stories / 30 prompts / 44 parts / 36 stickers / 21 props / Milo / palettes / EN-VI) | **done** – `validateContent` → `CONTENT OK (FULL)` |
+| Engine + storage + backup (pure Kotlin) | **done** – 54 JVM tests |
+| Android app, offlineFull flavor (every screen of spec §5–§14) | **done, device-unverified** – builds, 6 Robolectric UI/export tests per flavor, 46 real screenshots |
+| Vertical slice: pick → colour → save → toy keeps strokes → place in world → restart keeps everything | **done** – `VerticalSliceTest` drives the real UI with taps and a crayon stroke, then reopens through a fresh `Library` + recovery and asserts the toy replays exactly the saved commands |
+| Debug APKs | **done** – `app-offlineFull-debug.apk` (no INTERNET permission), `app-store-debug.apk` |
+| Device QA, performance, TalkBack, MP4/PDF files opened | **blocked** – no KVM/emulator here (K-02, K-08, K-09) |
+| Store billing / release | **blocked** – owner's Play Console, products, signing (K-05, K-10) |
 
 ## Requirement matrix (spec §23.1)
 | ID | Requirement | Status | Evidence / gap |
 |-|-|-|-|
-| REQ-01 | Consistent, beautiful art | partial | Style system + all art done: `docs/contact_sheets/*.png` (14 topics, props, stickers, characters, milo, worlds, prompts). UI screens not built yet. |
-| REQ-02 | Accurate fill, no leaks | partial | Visible-region geometry (no overlap within a part); `TemplateGeometryTest` checks every region of all 168 templates is tappable and resolves to itself or a region drawn above. Clip/zoom fixtures on device pending. |
-| REQ-03 | Strokes preserved in toys | partial | Command-log model (ADR-005) + per-part rig; toy renderer and golden images pending app. |
-| REQ-04 | Reliable saving | partial | `DocumentStoreTest`: immutable revisions, corrupt-revision fallback, crash-before-pointer recovery, missing pointer rebuild, 200 concurrent commits without lost updates, GC keeps referenced, trash 7 days. Kill/restart on device pending. |
-| REQ-05 | Cross-theme world | partial | `SceneEditorTest`: rabbit rides car and follows, incompatible/occupied anchors rejected, single parent, no cycles, rocket returns with passenger, store detaches children, 20+ undo, scale clamp, elapsed-time mover. Validator proves every ATTACH story step has a free compatible pair. UI pending. |
-| REQ-06 | FULL content | **done** | `./gradlew :content-tools:validateContent` → `CONTENT OK (FULL)`; similarity report 0 violations; contact sheets. |
-| REQ-07 | Builder + colour lab | partial | 6 bodies + 38 parts, socket scale clamps computed for 228 combos (0 unfit); colour lab tests. Builder UI pending. |
-| REQ-08 | Book + export PNG/PDF/MP4 | not started | Needs Android APIs (PdfDocument, MediaCodec). |
-| REQ-09 | Parent gate + timer | partial | `SessionBudget` tests (foreground-only, restart restore, warn once, extend). Gate UI pending. |
-| REQ-10 | Offline | partial | All content/audio/fonts bundled in `app/src/main/assets` + `res/font`; no network code anywhere. Airplane-mode test pending APK. |
-| REQ-11 | Accessibility | not started | Requires UI + TalkBack test on device. |
-| REQ-12 | EN/VI | partial | 435 content keys in `assets/content/locales/{en,vi}.json`, validator enforces parity and non-empty; Nunito has full Vietnamese glyphs. UI strings pending app. |
-| REQ-13 | Performance | not started | Needs device. |
-| REQ-14 | Real purchases | blocked | Play Console/products (K-05). No fake purchase code exists. |
-| REQ-15 | No unintended data collection | partial | No SDKs/network code; backup excludes entitlements/PIN by construction (tested). Manifest review pending app. |
-| REQ-16 | Continuable handover | **done** for current scope | README, this file, DECISIONS, CONTENT_PIPELINE, KNOWN_ISSUES, CHECKPOINT. |
+| REQ-01 | Consistent, beautiful art | done, device-unverified | One design system (`ui/theme`, hand-drawn icon set, Nunito, Milo); screenshots `screenshots/p_*`, `l_*`, `t_*` |
+| REQ-02 | Accurate fill, no leaks | done | Hit-test tests on all 168 templates; studio fill by real taps in `VerticalSliceTest`; strokes clipped per visible region |
+| REQ-03 | Strokes preserved in toys | done | Toy textures baked from the same command log per part; `06_toy_reveal.png`; command equality asserted after restart |
+| REQ-04 | Reliable saving | done (JVM + Robolectric) | Atomic revisions + recovery tests; 500 ms debounced autosave queue, flush on background/back/exit; restart test |
+| REQ-05 | Cross-theme world | done, device-unverified | `SceneEditorTest`; world screen with play/decorate, drag, attach to anchors, tray, undo/redo, day/night; `p_world.png` |
+| REQ-06 | FULL content | **done** | validator + similarity report |
+| REQ-07 | Builder + colour lab | done, device-unverified | `p_builder.png`, `p_lab_mixed.png` (red+yellow → "Orange", labelled in EN/VI) |
+| REQ-08 | Book + export PNG/PDF/MP4 | PNG **done**; PDF/MP4 implemented, **device-unverified** | `ExporterTest` writes and re-reads PNG (picture, outline, scene) and renders every book page; PDF test skipped under Robolectric; MP4 needs a device (K-09) |
+| REQ-09 | Parent gate + timer | done, device-unverified | hold 2 s + number in words (or PIN, salted SHA-256, lockout); foreground-only budget with warning and rest screen; parent session expires after 2 min |
+| REQ-10 | Offline | done | offlineFull manifest has no INTERNET permission (`aapt2 dump permissions`); all content/audio/fonts bundled |
+| REQ-11 | Accessibility | partial | content descriptions on all controls, swatches named, 56 dp+ targets, reduced motion, studio accessibility actions; TalkBack walk-through not done (device) |
+| REQ-12 | EN/VI | done, device-unverified | UI strings `ui/I18n.kt` (EN/VI parity), content locales, language switch in parent area |
+| REQ-13 | Performance | not verified | needs device (K-08). Design: compiled paths, cached paint layer, per-part toy textures (72 MB LRU), no per-frame parsing |
+| REQ-14 | Real purchases | blocked | real Play Billing adapter in `store` flavor (signature check, pending never grants, acknowledge); needs products + key (K-10) |
+| REQ-15 | No unintended data collection | done | no SDKs, no analytics, `allowBackup=false`, data-extraction rules, AD_ID removed; backup excludes PIN and purchases |
+| REQ-16 | Continuable handover | done | README, DECISIONS (ADR-001…019), this file, QA_REPORT, KNOWN_ISSUES, CHECKPOINT |
 
 ## Feature checklist (spec §5–§14)
-| Area | Status | Notes |
+| Area | Status | Where |
 |-|-|-|
-| 14 topics × 12 templates, tiers (6 base + 6 expansion per topic) | done | `catalog.json`, thumbnails, rig, anchors, capabilities, presets |
-| Coloring tools: fill, crayon, marker, watercolor, rainbow, pattern, eraser, stickers, undo/redo | partial | Command model, seeded rainbow, stroke validation done; Android brush rendering pending |
-| Toy from artwork + 15 interaction presets | partial | Presets assigned to all templates; preset SFX done; animation runtime pending |
-| 7 worlds, 3 layers, ≥5 anchors, zones | done (content) | `worlds/*.json`; world View pending |
-| Play/Decorate modes, undo ≥20 | partial | Engine done; UI pending |
-| 28 stories with free paths | done (content + runtime) | Story runtime tests; UI pending |
-| 30 prompts with illustrations, resolver | done (content + resolver) | UI pending |
-| Character builder ≥44 parts | done (content + rules) | UI pending |
-| Colour lab | partial | Mixer + tests; UI pending |
-| Child's book 4–12 pages | not started | |
-| PNG/PDF/MP4 export | not started | |
-| Local profiles | partial | `ChildProfile` + per-profile storage; UI pending |
-| Parent area, gate, timer, settings | partial | Budget logic; rest pending |
-| Backup/restore | done (file layer) | 17 backup tests incl. zip-slip, symlink, bomb, digest, rollback |
-| Audio: SFX/music | done | 36 SFX + 3 loops (53–69 s), manifest with peak/RMS; no clipping |
-| Voice EN/VI | blocked | K-03 |
-| EN/VI UI | partial | content text done |
-| Milo mascot (6 expressions) | done (art) | |
-| Flavors offlineFull/store, billing adapter | not started | store billing blocked externally |
+| First run, home, topics (14 + blank page), template library with levels, locks (store), favourites, continue/again | done | `LibraryScreens.kt` |
+| Studio: fill, crayon, marker, watercolour, rainbow, pattern, eraser, stickers, clear region, reset page, undo/redo, 1–4× zoom, palettes + "My colours", skill-based tool sets, autosave badge, portrait/landscape | done | `StudioScreen.kt`, `StudioController.kt`, `render/BrushPainter.kt` |
+| Toy reveal, 15 motion presets, toy sounds | done | `RevealScreen`, `render/ToyRig.kt`, `audio/AudioEngine.kt` |
+| 7 worlds, parallax, play/decorate, drag, attach/ride/plant/water/sit, tray, undo/redo, day/night, "use new colours" | done | `WorldScreen.kt`, `WorldController.kt` |
+| 28 stories with steps, skip, progress, rewards | done | `PlayScreens.kt` (Stories), `WorldController` story runtime |
+| 30 ideas with shuffle, free drawing | done | `PlayScreens.kt` (Ideas) |
+| Collection: pictures, friends, scenes, books; continue/play/duplicate/favourite/export/bin | done | `PlayScreens.kt` |
+| Character builder: 6 bodies, 38 parts, none, size clamp, region painting, try moving, undo | done | `CreateScreens.kt` |
+| Colour lab: R/Y/B/white drops, named result, try on paper, keep (24 max) | done | `CreateScreens.kt` |
+| Child's book: pages (one/two/scene layouts), add, reorder, duplicate, remove with undo, cover colour, reader, PDF | done (PDF device-unverified) | `CreateScreens.kt`, `render/BookRenderer.kt` |
+| Export PNG / outline PNG / PDF A4+Letter / MP4 portrait+landscape, progress, cancel, verify, share | done (PDF/MP4 device-unverified) | `export/Exporter.kt`, `ParentScreens.kt` (Export) |
+| Profiles (up to 5, avatars, switch, delete with confirm) | done | `ParentScreens.kt` |
+| Parent area: skill, language, music/effects, mute, reduced motion, vibration, play time, stats, backup/restore (SAF, verified), bin restore/delete, PIN, extra content, off-screen ideas, privacy, content check, take-turns reminder, delete all | done | `ParentScreens.kt` |
+| Audio: SFX, toy sets, 3 music loops with focus handling | done (not listened to on device, K-06) | `AudioEngine.kt` |
+| Voice-over EN/VI | blocked | K-03 |

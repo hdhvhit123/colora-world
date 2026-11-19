@@ -63,3 +63,27 @@ Pure-JVM cores keep the risky logic (hit-test, paint replay, attachments, backup
 
 ## ADR-014 Colour lab model
 **Decision.** Art-directed RYB cube interpolation (after Gossett & Chen 2004) with normalised channel strength and white tinting; documented as illustrative, not a pigment simulation. Tests pin red+yellow→orange, yellow+blue→green, red+blue→purple, all three→brown, tint of red→pink.
+
+## ADR-002b Verified Android stack (session 2, 2026-11-18)
+**Context.** The second session had an Android SDK (cmdline-tools, platform 36, build-tools 36.0.0) and could reach Google Maven.
+**Decision.** Pinned and verified by real builds: Gradle 8.14.3, AGP 8.13.2, Kotlin 2.3.21, Compose BOM 2025.12.01, activity-compose 1.11.0, lifecycle 2.9.4, core-ktx 1.17.0, Play Billing 8.0.0 (store flavor only), Robolectric 4.16, compileSdk/targetSdk 36, minSdk 26. Large Maven Central artifacts redirected to a blocked mirror, so `settings.gradle.kts` lists Google's Maven Central mirror (`maven-central.storage-download.googleapis.com`) first; Robolectric's runtime jars use the same mirror (`robolectric.dependency.repo.url`).
+**Consequences.** `assembleOfflineFullDebug` and `assembleStoreDebug` build; the UNVERIFIED marks from ADR-002 are resolved.
+
+## ADR-015 No Room, no DataStore, no Navigation library
+**Context.** ADR-006 makes the file store the source of truth; a Room index would be a second copy that can disagree.
+**Decision.** Libraries are listed by scanning the store (small per-profile directories); settings use SharedPreferences behind a `StateFlow`; navigation is a small typed back stack (`AppState`). Removed Room, KSP, DataStore and Navigation from the catalog.
+**Consequences.** Fewer moving parts and no migration code; listing cost grows with item count (fine for hundreds of items per child, re-evaluate beyond that).
+
+## ADR-016 Eraser removes strokes only
+**Decision.** `FillRegion` no longer hides erased strokes; the eraser stroke stays in the log and is drawn as DST_OUT over strokes only. Refilling a region never brings erased strokes back, and the fill colour is not erased (children expect the eraser to rub out crayon, not the paint bucket). Test `fillAfterEraserKeepsErasedStrokesErased`.
+
+## ADR-017 Screenshots and UI tests through Robolectric native graphics
+**Context.** No KVM in the cloud container, so no emulator.
+**Decision.** UI tests run the real `MainActivity` under Robolectric 4.16 with `graphicsMode=NATIVE` (real Skia rendering); screenshots are taken with `decorView.draw()` into `screenshots/`. The Compose clock is paused (`autoAdvance=false`) because the world and toys animate forever.
+**Consequences.** Real pixels of the real app for every screen in portrait phone, landscape phone and tablet. Not covered: `PdfDocument` (no native backend in Robolectric; the PDF test is skipped there, `assumeTrue`), MediaCodec (MP4), TalkBack, real touch latency and frame timing. These need a device (K-02).
+
+## ADR-018 Export pipeline
+**Decision.** `Exporter` writes every file to `cache/exports` first, verifies it by reading it back (PNG bounds, `%PDF-` header, MP4 track duration via `MediaExtractor`), then copies it to the SAF destination the parent picked; a failed or cancelled export deletes the half-written document. PNG 2048 or 1024 px with paper or transparent background; outline PNG; PDF A4/Letter via `PdfDocument` (books: cover + pages, pictures: one page with half-inch margins); MP4 H.264 720×1280 or 1280×720, 24 fps, 8 s, YUV420 flexible `Image` input so presentation times are exact (frame/24 s). Scenes pan slowly across the world with toys animating; pictures and characters dance on paper. No codec → the button is disabled with a message.
+
+## ADR-019 Book pages reference immutable revisions
+**Decision.** Book items store `art:<doc>:<rev>` / `chr:<doc>:<rev>` / `scene:<doc>` refs; pages render from the referenced revision so later colouring does not change a finished book. Scene pages crop to fill the page, centred on the placed toys.

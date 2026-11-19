@@ -16,7 +16,17 @@ Full product spec: [`docs/MASTER_SPEC.md`](docs/MASTER_SPEC.md). Current state: 
 | `app/src/main/res/font` | Nunito (OFL) |
 | `docs/contact_sheets` | Review sheets for every asset group |
 
-The Android application module (`:app`) is not written yet: the first build environment could not reach Google Maven or an Android SDK (see `docs/KNOWN_ISSUES.md`, K-01).
+| `app` | Android app (Jetpack Compose + custom Canvas renderers): studio, toys, worlds, stories, ideas, collection, book, colour lab, character builder, parent area, export, backup; flavors `offlineFull` and `store` |
+| `screenshots/` | Real renders of every screen (Robolectric, native graphics) and export samples |
+
+## Build the Android app
+Requirements: JDK 17+ (21 tested), Android SDK with platform 36 and build-tools 36.0.0. Put `sdk.dir=/path/to/sdk` in `local.properties` (or set `ANDROID_HOME`).
+```
+./gradlew assembleOfflineFullDebug        # app/build/outputs/apk/offlineFull/debug/app-offlineFull-debug.apk
+./gradlew assembleStoreDebug              # Play Billing flavor (needs -Pcolora.playLicenseKey=... to grant purchases)
+./gradlew :app:testOfflineFullDebugUnitTest   # Robolectric UI + export tests, writes screenshots/
+adb install -r app/build/outputs/apk/offlineFull/debug/app-offlineFull-debug.apk
+```
 
 ## Build and test (JVM parts)
 Requirements: JDK 17+ (21 tested). The Gradle wrapper downloads Gradle 8.14.3.
@@ -34,7 +44,7 @@ python3 tools/art/build_content.py     # art, catalog, extras, locales, index
 python3 tools/audio/synth.py           # sound effects + music
 ```
 
-## Planned flavors
+## Flavors
 - `offlineFull` – everything unlocked, no billing, no INTERNET permission (handover default).
 - `store` – base content free, three expansion packs through Google Play Billing (needs the owner's Play Console setup).
 

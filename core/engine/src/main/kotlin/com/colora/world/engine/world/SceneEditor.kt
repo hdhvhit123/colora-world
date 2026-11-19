@@ -21,6 +21,9 @@ sealed interface SceneOp {
     data class Attach(val childId: String, val parentId: String, val anchorId: String) : SceneOp
     data class Detach(val childId: String) : SceneOp
     data class SetEnvironment(val env: SceneEnvironment) : SceneOp
+    /** Points a toy at a newer immutable artwork revision ("use the new colours here"). */
+    data class Retarget(val id: String, val artworkRevisionId: String) : SceneOp
+    data class SetState(val id: String, val state: String?) : SceneOp
 }
 
 class SceneRuleException(msg: String) : IllegalStateException(msg)
@@ -70,6 +73,8 @@ class SceneEditor(initial: SceneDocument, private val catalog: ToyCatalog, priva
         is SceneOp.Attach -> attach(d, op)
         is SceneOp.Detach -> detach(d, op.childId)
         is SceneOp.SetEnvironment -> d.copy(environment = op.env)
+        is SceneOp.Retarget -> update(d, op.id) { it.copy(artworkRevisionId = op.artworkRevisionId) }
+        is SceneOp.SetState -> update(d, op.id) { it.copy(state = op.state) }
     }
 
     private fun attach(d: SceneDocument, op: SceneOp.Attach): SceneDocument {
