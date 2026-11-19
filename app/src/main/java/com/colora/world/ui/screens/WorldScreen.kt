@@ -63,7 +63,8 @@ import kotlin.math.sin
 
 /** Portrait phones see ~55% of the world's width; the world sits low with sky above and ground below. */
 fun worldFit(w: Float, h: Float, p: WorldPainter): Pair<Float, Float> {
-    val k = minOf(h / p.height, w / (p.width * 0.55f))
+    // landscape: whole height; portrait: the ground fills ~72% of the screen (pan to see the rest) instead of a band under a tall empty sky
+    val k = minOf(h / p.height, maxOf(w / (p.width * 0.55f), h * 0.72f / p.height))
     val oy = (h - p.height * k) * 0.62f
     return k to oy
 }

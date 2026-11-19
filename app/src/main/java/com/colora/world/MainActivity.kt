@@ -50,6 +50,11 @@ class AppStateHolder(app: android.app.Application) : androidx.lifecycle.AndroidV
 class MainActivity : ComponentActivity() {
     private lateinit var holder: AppStateHolder
 
+    override fun onConfigurationChanged(newConfig: android.content.res.Configuration) {
+        super.onConfigurationChanged(newConfig)
+        graph.settings.refreshLocale() // "follow the phone" picks up a system/per-app language change live
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()

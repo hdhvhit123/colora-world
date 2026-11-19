@@ -74,10 +74,11 @@ fun StoriesScreen(state: AppState) {
                 Panel(Modifier.pressable { start(s.id, s.worldId) }, padding = PaddingValues(10.dp)) {
                     Column {
                         Box {
-                            if (w != null) AssetThumb(w.thumb, null, Modifier.fillMaxWidth().aspectRatio(2.4f).clip(RoundedCornerShape(18.dp)), ContentScale.Crop)
-                            Row(Modifier.align(Alignment.BottomStart).padding(8.dp), horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+                            if (w != null) AssetThumb(w.thumb, null, Modifier.fillMaxWidth().aspectRatio(2.1f).clip(RoundedCornerShape(18.dp)), ContentScale.Crop)
+                            // the story's cast, in colour, standing in its world: each card reads as its own picture
+                            Row(Modifier.align(Alignment.BottomCenter).fillMaxWidth().padding(horizontal = 16.dp), horizontalArrangement = Arrangement.SpaceEvenly, verticalAlignment = Alignment.Bottom) {
                                 s.iconTemplates.take(3).forEach { id ->
-                                    Box(Modifier.size(54.dp).clip(RoundedCornerShape(14.dp)).background(C.paper.copy(alpha = 0.92f)).padding(3.dp)) { AssetThumb("thumbs/$id.webp", null, Modifier.fillMaxSize()) }
+                                    ArtView(remember(id) { g.content.art(id) }, null, Modifier.size(86.dp), useSamples = true, pad = 0.0f)
                                 }
                             }
                             if (p?.second == true) Box(Modifier.align(Alignment.TopEnd).padding(8.dp).clip(CircleShape).background(C.leaf).padding(6.dp)) { ColoraIcon(Ic.Check, size = 20.dp) }

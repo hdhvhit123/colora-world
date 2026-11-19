@@ -39,14 +39,42 @@ class ContentValidator(private val dir: File, private val milestone: String = "F
 
     fun run(): Boolean {
         val en = read<Map<String, String>>("locales/en.json") ?: emptyMap()
-        val vi = read<Map<String, String>>("locales/vi.json") ?: emptyMap()
+        // every shipped content language must be complete (VI is required by the spec; others are optional but all-or-nothing)
+        val langs = (file("locales").listFiles() ?: emptyArray()).filter { it.name.endsWith(".json") }.map { it.name.removeSuffix(".json") }.filter { it != "en" }.sorted()
+        if ("vi" !in langs) err("locales/vi.json missing")
+        val others = langs.associateWith { read<Map<String, String>>("locales/$it.json") ?: emptyMap() }
         fun key(k: String?, where: String) {
             if (k == null) return
             if (en[k].isNullOrBlank()) err("$where: missing EN text for $k")
-            if (vi[k].isNullOrBlank()) err("$where: missing VI text for $k")
+            others.forEach { (l, m) -> if (m[k].isNullOrBlank()) err("$where: missing ${l.uppercase()} text for $k") }
         }
-        (en.keys - vi.keys).forEach { err("locale key only in EN: $it") }
-        (vi.keys - en.keys).forEach { err("locale key only in VI: $it") }
+        others.forEach { (l, m) ->
+            (en.keys - m.keys).forEach { err("locale key only in EN (missing in ${l.uppercase()}): $it") }
+            (m.keys - en.keys).forEach { err("locale key only in ${l.uppercase()}: $it") }
+            m.forEach { (k, v) -> if (v.isBlank()) err("empty ${l.uppercase()} text for $k") }
+        }
+        // UI strings (assets/ui/<lang>.json, next to the content pack): same keys and the same {n} placeholders as English
+        val uiDir = File(dir.parentFile, "ui")
+        if (uiDir.isDirectory) {
+            val uiEn = runCatching { ContentJson.decodeFromString<Map<String, String>>(File(uiDir, "en.json").readText()) }.getOrElse { err("ui/en.json unreadable"); emptyMap() }
+            val ph = Regex("\\{\\d}")
+            val uiLangs = (uiDir.listFiles() ?: emptyArray()).filter { it.name.endsWith(".json") && it.name != "en.json" }
+            for (f in uiLangs) {
+                val l = f.name.removeSuffix(".json")
+                val m = runCatching { ContentJson.decodeFromString<Map<String, String>>(f.readText()) }.getOrElse { err("ui/${f.name} unreadable"); continue }
+                (uiEn.keys - m.keys).forEach { err("ui/$l: missing $it") }
+                (m.keys - uiEn.keys).forEach { err("ui/$l: unknown key $it") }
+                m.forEach { (k, v) ->
+                    if (v.isBlank()) err("ui/$l: empty $k")
+                    val want = ph.findAll(uiEn[k] ?: "").map { it.value }.toSet()
+                    if (ph.findAll(v).map { it.value }.toSet() != want) err("ui/$l: placeholders differ for $k")
+                }
+                if (l !in langs) err("ui/$l has no matching content locale")
+            }
+            langs.filter { !File(uiDir, "$it.json").isFile }.forEach { err("content locale $it has no ui/$it.json") }
+            notes += "ui: ${uiLangs.size + 1} languages, ${uiEn.size} keys"
+        }
+        notes += "content languages: ${(listOf("en") + langs).joinToString()}"
 
         // ---------------------------------------------------------- integrity index
         val index = read<ContentIndex>("index.json")

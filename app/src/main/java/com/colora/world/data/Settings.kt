@@ -17,7 +17,8 @@ class Settings(ctx: Context) {
     private val prefs = ctx.getSharedPreferences("colora.settings", Context.MODE_PRIVATE)
 
     data class Values(
-        val lang: String,
+        /** "system" (follow the phone) or a language code. */
+        val langPref: String,
         val musicVolume: Float,
         val sfxVolume: Float,
         val muted: Boolean,
@@ -29,14 +30,22 @@ class Settings(ctx: Context) {
         val turnReminder: Boolean,
         val exportPaper: Boolean,
         val videoLow: Boolean,
-    )
+        /** Device/per-app locale at the time of reading; part of equality so a system language change recomposes. */
+        val deviceLocale: String = Locale.getDefault().toLanguageTag(),
+    ) {
+        /** The language actually shown. */
+        val lang: String get() = com.colora.world.ui.Lang.resolve(langPref, Locale.forLanguageTag(deviceLocale))
+    }
+
+    /** Call when the system (or per-app) locale changes. */
+    fun refreshLocale() { _values.value = _values.value.copy(deviceLocale = Locale.getDefault().toLanguageTag()) }
 
     private val _values = MutableStateFlow(read())
     val values: StateFlow<Values> = _values
     val v: Values get() = _values.value
 
     private fun read() = Values(
-        lang = prefs.getString("lang", null) ?: if (Locale.getDefault().language == "vi") "vi" else "en",
+        langPref = prefs.getString("lang", null) ?: com.colora.world.ui.Lang.SYSTEM,
         musicVolume = prefs.getFloat("music", 0.45f),
         sfxVolume = prefs.getFloat("sfx", 0.8f),
         muted = prefs.getBoolean("muted", false),
@@ -53,7 +62,7 @@ class Settings(ctx: Context) {
     fun update(f: (Values) -> Values) {
         val n = f(_values.value)
         prefs.edit()
-            .putString("lang", n.lang).putFloat("music", n.musicVolume).putFloat("sfx", n.sfxVolume)
+            .putString("lang", n.langPref).putFloat("music", n.musicVolume).putFloat("sfx", n.sfxVolume)
             .putBoolean("muted", n.muted).putBoolean("reducedMotion", n.reducedMotion).putBoolean("haptics", n.haptics)
             .putInt("limit", n.timeLimitMinutes ?: 0).putString("profile", n.currentProfile).putBoolean("onboarded", n.onboarded)
             .putBoolean("turnReminder", n.turnReminder).putBoolean("exportPaper", n.exportPaper).putBoolean("videoLow", n.videoLow)

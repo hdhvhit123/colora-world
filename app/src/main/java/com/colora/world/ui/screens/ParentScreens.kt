@@ -283,9 +283,11 @@ fun ParentScreen(state: AppState) {
                     }
                 }
                 Section(t("parent.language")) {
-                    Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
-                        Chip("English", v.lang == "en") { touch(); g.settings.update { it.copy(lang = "en") } }
-                        Chip("Tiếng Việt", v.lang == "vi") { touch(); g.settings.update { it.copy(lang = "vi") } }
+                    androidx.compose.foundation.layout.FlowRow(horizontalArrangement = Arrangement.spacedBy(6.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
+                        Chip(t("parent.language.device"), v.langPref == com.colora.world.ui.Lang.SYSTEM) { touch(); g.settings.update { it.copy(langPref = com.colora.world.ui.Lang.SYSTEM) } }
+                        com.colora.world.ui.Lang.available().forEach { (code, name) ->
+                            Chip(name, v.langPref == code) { touch(); g.settings.update { it.copy(langPref = code) } }
+                        }
                     }
                 }
                 Section(t("parent.sound")) {

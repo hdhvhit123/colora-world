@@ -18,152 +18,49 @@ fun t(key: String, vararg args: Any): String = Strings.get(LocalLang.current, ke
 @Composable
 fun cl(key: String): String = LocalContext.current.graph.content.label(key, LocalLang.current)
 
+/** Languages the app ships, with their own names (shown in the parent area). */
+object Lang {
+    const val SYSTEM = "system"
+    val SUPPORTED: List<Pair<String, String>> = listOf(
+        "en" to "English", "vi" to "Tiếng Việt", "es" to "Español", "fr" to "Français", "de" to "Deutsch",
+        "pt" to "Português (Brasil)", "it" to "Italiano", "id" to "Bahasa Indonesia",
+        "ja" to "日本語", "ko" to "한국어", "zh" to "简体中文", "th" to "ไทย", "hi" to "हिन्दी",
+    )
+    private val codes = SUPPORTED.map { it.first }.toSet()
+    /** Shipped languages only (a language is listed once its UI and content files exist). */
+    fun available(): List<Pair<String, String>> = SUPPORTED.filter { Strings.has(it.first) }
+
+    /** "system" follows the phone (or Android 13+ per-app) language, falling back to English. */
+    fun resolve(pref: String?, device: java.util.Locale = java.util.Locale.getDefault()): String {
+        if (pref != null && pref != SYSTEM && Strings.has(pref)) return pref
+        val l = device.language.let { if (it == "in") "id" else it } // legacy Indonesian code
+        return if (l in codes && Strings.has(l)) l else "en"
+    }
+}
+
+/**
+ * UI text, loaded from assets/ui/<lang>.json (English is the fallback for any
+ * missing key). Content text (templates, stories, prompts…) lives in assets/content/locales.
+ */
 object Strings {
-    fun get(lang: String, key: String): String = (if (lang == "vi") VI[key] else EN[key]) ?: EN[key] ?: key
+    private var assets: android.content.res.AssetManager? = null
+    private val cache = java.util.concurrent.ConcurrentHashMap<String, Map<String, String>>()
+    private var present: Set<String> = setOf("en")
 
-    val EN: Map<String, String> = mapOf(
-        "app_name" to "Colora World",
-        "back" to "Back", "close" to "Close", "ok" to "OK", "cancel" to "Cancel", "yes" to "Yes", "no" to "No", "done" to "Done",
-        "home.color" to "Colour", "home.world" to "My world", "home.collection" to "My things", "home.stories" to "Stories", "home.ideas" to "Ideas",
-        "home.continue" to "Keep colouring", "home.hello" to "What shall we make today?", "home.parent" to "For grown-ups",
-        "home.lab" to "Colour lab", "home.builder" to "Make a friend", "home.free" to "Blank page",
-        "first.title" to "Pick one to colour!", "first.cat" to "Cat", "first.flower" to "Flower", "first.car" to "Car", "first.skip" to "Show me everything",
-        "topics.title" to "What do you want to colour?", "templates.new" to "New", "templates.again" to "Colour again", "templates.continue" to "Continue",
-        "lock.parent" to "Ask a grown-up", "level.simple" to "Easy", "level.medium" to "Medium", "level.detailed" to "Detailed",
-        "studio.play" to "Play!", "studio.saved" to "Saved", "studio.saving" to "Saving…", "studio.save_error" to "Not saved yet. Your picture is safe here; a grown-up can try again.",
-        "tool.fill" to "Fill", "tool.crayon" to "Crayon", "tool.marker" to "Marker", "tool.water" to "Watercolour", "tool.rainbow" to "Rainbow",
-        "tool.pattern" to "Pattern", "tool.sticker" to "Stickers", "tool.eraser" to "Eraser", "tool.undo" to "Undo", "tool.redo" to "Redo", "tool.fit" to "Fit to screen",
-        "tool.size" to "Brush size", "tool.reset_region" to "Clear this part", "tool.reset_page" to "Start this page again", "tool.paper" to "Paper",
-        "tool.my_colors" to "My colours", "tool.sticker_delete" to "Remove sticker", "tool.done_sticker" to "Done",
-        "confirm.reset_page" to "Clear the whole page? You can undo it.", "confirm.reset_region" to "Tap a part to clear it.",
-        "pattern.DOTS" to "Dots", "pattern.STRIPES" to "Stripes", "pattern.STARS" to "Stars", "pattern.HEARTS" to "Hearts", "pattern.CHECKS" to "Checks",
-        "reveal.to_world" to "Put in my world", "reveal.color_more" to "Colour more", "reveal.tap" to "Tap me!", "reveal.skip" to "Skip",
-        "world.pick" to "Choose a place", "world.new_scene" to "New scene", "world.recent" to "Your scenes", "world.play" to "Play", "world.decorate" to "Decorate",
-        "world.tray" to "My toys", "world.props" to "Things", "world.characters" to "Friends", "world.store" to "Put away", "world.flip" to "Flip",
-        "world.front" to "Bring to front", "world.back" to "Send to back", "world.bigger" to "Bigger", "world.smaller" to "Smaller", "world.day" to "Day", "world.night" to "Night",
-        "world.full" to "This scene is full. Put something away first.", "world.empty_tray" to "Colour something to see it here!", "world.saved" to "Scene saved",
-        "world.ride" to "Hop on!", "world.save_scene" to "Save scene", "world.use_new" to "Use the new colours here?", "world.keep_old" to "Keep old", "world.use_new_yes" to "Use new",
-        "world.scene_limit" to "You have many scenes. A grown-up can tidy them in the grown-up area.",
-        "stories.title" to "Stories", "stories.steps" to "{0} steps", "stories.reward" to "Reward", "stories.start" to "Start", "stories.continue" to "Continue",
-        "stories.skip" to "Skip step", "stories.exit" to "Leave story", "stories.done" to "The story is finished!", "stories.reward_got" to "You got a reward!",
-        "stories.home" to "Home", "stories.keep_playing" to "Keep playing", "reward.book_page" to "A book page", "reward.sticker" to "A sticker",
-        "ideas.title" to "Ideas", "ideas.try" to "Try it", "ideas.shuffle" to "Other ideas", "ideas.free" to "Free drawing",
-        "collection.title" to "My things", "collection.art" to "Pictures", "collection.characters" to "Friends", "collection.scenes" to "Scenes", "collection.books" to "Books",
-        "collection.empty" to "Nothing here yet.", "collection.make" to "Make something", "collection.open" to "Open", "collection.duplicate" to "Make a copy",
-        "collection.favorite" to "Favourite", "collection.trash" to "Put in the bin", "collection.trashed" to "Moved to the bin. A grown-up can bring it back for 7 days.",
-        "collection.export" to "Save or print", "collection.play" to "Play", "collection.new_book" to "New book",
-        "book.title.my_book" to "My book", "book.add_page" to "Add page", "book.preview" to "Read", "book.layout.one" to "One picture", "book.layout.two" to "Two pictures",
-        "book.layout.scene" to "Scene + stickers", "book.pick" to "Choose a picture", "book.pages" to "{0} pages", "book.draft" to "Draft (4–12 pages makes a whole book)",
-        "book.remove" to "Remove page", "book.undo" to "Undo", "book.cover" to "Cover", "book.page" to "Page {0}", "book.export" to "Save as PDF",
-        "color.white" to "White", "color.black" to "Black", "color.grey" to "Grey", "color.brown" to "Brown", "color.pink" to "Pink", "color.red" to "Red", "color.orange" to "Orange", "color.yellow" to "Yellow", "color.green" to "Green", "color.teal" to "Teal", "color.blue" to "Blue", "color.purple" to "Purple",
-        "lab.title" to "Colour lab", "lab.mix" to "Mix", "lab.reset" to "Empty the bowl", "lab.save" to "Keep this colour", "lab.try" to "Try it on paper",
-        "lab.kept" to "Kept in My colours", "lab.full" to "My colours is full (24). The oldest one makes room.", "lab.white" to "White", "lab.names" to "Colour names",
-        "builder.title" to "Make a friend", "builder.body" to "Body", "builder.ear" to "Ears", "builder.tail" to "Tail", "builder.wing" to "Wings",
-        "builder.hat" to "Hat", "builder.decor" to "Decoration", "builder.none" to "None", "builder.size" to "Size", "builder.try" to "Try moving", "builder.save" to "Save friend",
-        "builder.saved" to "Your friend is saved!", "builder.paint" to "Tap a colour, then tap your friend",
-        "gate.title" to "For grown-ups", "gate.hold" to "Grown-ups: press and hold", "gate.question" to "Type this number:", "gate.pin" to "Enter your PIN",
-        "gate.wrong" to "That's not right. Tries left: {0}", "gate.locked" to "Too many tries. Try again later.", "gate.note" to "This check helps prevent accidental taps. It is not age verification.",
-        "rest.title" to "Time for a rest!", "rest.saved" to "Your pictures are put away safely.", "rest.not_saved" to "Some work was not saved. A grown-up can retry.", "rest.extend" to "Grown-ups: more time",
-        "budget.warn" to "One more minute of play, then we rest.",
-        "export.title" to "Save or print", "export.png" to "Picture (PNG)", "export.outline" to "Outline to print", "export.pdf_a4" to "PDF (A4)", "export.pdf_letter" to "PDF (Letter)",
-        "export.mp4" to "Video (MP4)", "export.paper" to "Paper background", "export.transparent" to "Transparent", "export.size" to "Size",
-        "export.working" to "Making your file…", "export.ok" to "Saved: {0}", "export.fail" to "Could not save the file: {0}", "export.cancel" to "Cancel",
-        "export.no_codec" to "This device cannot make videos. Try PNG or PDF.", "export.share" to "Share", "export.preview" to "Preview", "export.portrait" to "Portrait", "export.landscape" to "Landscape",
-        "parent.title" to "Grown-up area", "parent.profiles" to "Profiles", "parent.add_profile" to "Add profile", "parent.switch" to "Use this profile", "parent.delete_profile" to "Delete profile…",
-        "parent.delete_confirm" to "Delete this profile and all its pictures, scenes and books on this device? Make a backup first if you want to keep them.",
-        "parent.skill" to "Skill level", "skill.little" to "Little artist", "skill.explorer" to "Creative explorer", "skill.master" to "Colour master",
-        "parent.language" to "Language", "parent.sound" to "Sound", "parent.music" to "Music", "parent.effects" to "Effects", "parent.mute" to "Mute all",
-        "parent.motion" to "Reduce motion", "parent.haptics" to "Vibration", "parent.time" to "Play time", "parent.time.none" to "No limit", "parent.time.min" to "{0} min",
-        "parent.time_note" to "Counts only play time on screen. This is an app option, not a system parental control.",
-        "parent.stats" to "On this device", "parent.stats.art" to "Pictures: {0}", "parent.stats.scenes" to "Scenes: {0}", "parent.stats.books" to "Books: {0}", "parent.stats.storage" to "Storage used: {0}",
-        "parent.backup" to "Backup", "parent.backup.export" to "Save backup (.colora.zip)", "parent.backup.import" to "Restore from backup", "parent.backup.ok" to "Backup saved ({0})",
-        "parent.backup.imported" to "Restored {0} profile(s) as new profiles", "parent.backup.fail" to "Backup failed: {0}",
-        "parent.backup_note" to "Backups contain your child's drawings. Keep them somewhere private. PIN and purchases are never included.",
-        "parent.trash" to "Bin (7 days)", "parent.trash.empty" to "The bin is empty.", "parent.restore" to "Bring back", "parent.delete_forever" to "Delete forever",
-        "parent.pin" to "PIN", "parent.pin.set" to "Set PIN", "parent.pin.clear" to "Remove PIN", "parent.pin.saved" to "PIN saved", "parent.pin.hint" to "4–8 digits. If you forget it, remove app data in system settings (this deletes local work; back up first).",
-        "parent.content" to "Extra content", "parent.content.offline" to "This build includes all content.", "parent.content.restore" to "Restore purchases",
-        "parent.content.unavailable" to "Google Play is not available right now. Everything already made keeps working.", "parent.content.owned" to "Owned",
-        "parent.privacy" to "Privacy and licences", "parent.privacy.text" to "Colora World works offline. It has no ads, no analytics and no accounts. Drawings stay on this device unless you save a backup or export a file yourself. Fonts: Nunito (SIL Open Font License 1.1). All pictures, sounds and music are original to this app.",
-        "parent.offscreen" to "Ideas away from the screen", "parent.offscreen.text" to "Print an outline and colour it together · Find three things at home with today's favourite colour · Tell a story about the toy your child made.",
-        "parent.turns" to "Take-turns reminder", "parent.done" to "Close grown-up area", "parent.delete_all" to "Delete all data…",
-        "parent.delete_all_confirm" to "This permanently deletes every profile and drawing on this device.", "parent.check" to "Check content files",
-        "parent.check_ok" to "All content files are intact.", "parent.check_bad" to "{0} content files are damaged. Reinstall the app to repair them.",
-        "turn.next" to "Next person's turn!",
-        "avatar.pick" to "Pick a picture for this profile",
-        "error.asset" to "This picture is missing. Try another one!", "error.generic" to "Something went wrong. Your saved work is safe.",
-        "ui.free_page" to "Blank page",
-    )
+    fun init(ctx: android.content.Context) {
+        assets = ctx.assets
+        present = (ctx.assets.list("ui") ?: emptyArray()).filter { it.endsWith(".json") }.map { it.removeSuffix(".json") }.toSet()
+    }
 
-    val VI: Map<String, String> = mapOf(
-        "app_name" to "Colora World",
-        "back" to "Quay lại", "close" to "Đóng", "ok" to "Đồng ý", "cancel" to "Hủy", "yes" to "Có", "no" to "Không", "done" to "Xong",
-        "home.color" to "Tô màu", "home.world" to "Thế giới", "home.collection" to "Bộ sưu tập", "home.stories" to "Câu chuyện", "home.ideas" to "Ý tưởng",
-        "home.continue" to "Tô tiếp", "home.hello" to "Hôm nay mình làm gì nhỉ?", "home.parent" to "Dành cho người lớn",
-        "home.lab" to "Phòng thử màu", "home.builder" to "Tạo nhân vật", "home.free" to "Trang trắng",
-        "first.title" to "Chọn một bức để tô nhé!", "first.cat" to "Mèo", "first.flower" to "Hoa", "first.car" to "Xe", "first.skip" to "Xem tất cả",
-        "topics.title" to "Con muốn tô gì?", "templates.new" to "Mới", "templates.again" to "Tô bản mới", "templates.continue" to "Tô tiếp",
-        "lock.parent" to "Hỏi người lớn", "level.simple" to "Dễ", "level.medium" to "Vừa", "level.detailed" to "Chi tiết",
-        "studio.play" to "Chơi!", "studio.saved" to "Đã cất", "studio.saving" to "Đang cất…", "studio.save_error" to "Chưa lưu được. Tranh vẫn ở đây; người lớn có thể thử lại.",
-        "tool.fill" to "Đổ màu", "tool.crayon" to "Bút sáp", "tool.marker" to "Bút dạ", "tool.water" to "Màu nước", "tool.rainbow" to "Cầu vồng",
-        "tool.pattern" to "Họa tiết", "tool.sticker" to "Nhãn dán", "tool.eraser" to "Tẩy", "tool.undo" to "Hoàn tác", "tool.redo" to "Làm lại", "tool.fit" to "Vừa màn hình",
-        "tool.size" to "Cỡ bút", "tool.reset_region" to "Xóa màu một phần", "tool.reset_page" to "Tô lại cả trang", "tool.paper" to "Giấy",
-        "tool.my_colors" to "Màu của bé", "tool.sticker_delete" to "Bỏ nhãn dán", "tool.done_sticker" to "Xong",
-        "confirm.reset_page" to "Xóa màu cả trang? Con vẫn có thể hoàn tác.", "confirm.reset_region" to "Chạm vào phần muốn xóa màu.",
-        "pattern.DOTS" to "Chấm bi", "pattern.STRIPES" to "Sọc", "pattern.STARS" to "Ngôi sao", "pattern.HEARTS" to "Trái tim", "pattern.CHECKS" to "Ca rô",
-        "reveal.to_world" to "Đưa vào thế giới", "reveal.color_more" to "Tô tiếp", "reveal.tap" to "Chạm vào mình nào!", "reveal.skip" to "Bỏ qua",
-        "world.pick" to "Chọn nơi chơi", "world.new_scene" to "Cảnh mới", "world.recent" to "Cảnh của con", "world.play" to "Chơi", "world.decorate" to "Trang trí",
-        "world.tray" to "Đồ chơi", "world.props" to "Đồ vật", "world.characters" to "Bạn bè", "world.store" to "Cất đi", "world.flip" to "Lật",
-        "world.front" to "Đưa lên trước", "world.back" to "Đưa ra sau", "world.bigger" to "To hơn", "world.smaller" to "Nhỏ hơn", "world.day" to "Ban ngày", "world.night" to "Ban đêm",
-        "world.full" to "Cảnh đã đầy. Cất bớt một món nhé.", "world.empty_tray" to "Tô một bức tranh để thấy ở đây nhé!", "world.saved" to "Đã cất cảnh",
-        "world.ride" to "Lên xe nào!", "world.save_scene" to "Cất cảnh", "world.use_new" to "Dùng màu mới trong cảnh này?", "world.keep_old" to "Giữ bản cũ", "world.use_new_yes" to "Dùng bản mới",
-        "world.scene_limit" to "Con có nhiều cảnh rồi. Người lớn có thể sắp xếp trong khu người lớn.",
-        "stories.title" to "Câu chuyện", "stories.steps" to "{0} bước", "stories.reward" to "Phần thưởng", "stories.start" to "Bắt đầu", "stories.continue" to "Chơi tiếp",
-        "stories.skip" to "Bỏ qua bước", "stories.exit" to "Rời câu chuyện", "stories.done" to "Câu chuyện xong rồi!", "stories.reward_got" to "Con nhận được phần thưởng!",
-        "stories.home" to "Về nhà", "stories.keep_playing" to "Chơi tiếp", "reward.book_page" to "Một trang sách", "reward.sticker" to "Một nhãn dán",
-        "ideas.title" to "Ý tưởng", "ideas.try" to "Thử nhé", "ideas.shuffle" to "Đổi ý tưởng", "ideas.free" to "Tự do sáng tạo",
-        "collection.title" to "Bộ sưu tập", "collection.art" to "Tranh", "collection.characters" to "Nhân vật", "collection.scenes" to "Cảnh", "collection.books" to "Sách",
-        "collection.empty" to "Chưa có gì ở đây.", "collection.make" to "Tạo ngay", "collection.open" to "Mở", "collection.duplicate" to "Tạo bản sao",
-        "collection.favorite" to "Yêu thích", "collection.trash" to "Bỏ vào thùng", "collection.trashed" to "Đã bỏ vào thùng. Người lớn có thể lấy lại trong 7 ngày.",
-        "collection.export" to "Lưu hoặc in", "collection.play" to "Chơi", "collection.new_book" to "Sách mới",
-        "book.title.my_book" to "Sách của bé", "book.add_page" to "Thêm trang", "book.preview" to "Đọc sách", "book.layout.one" to "Một tranh", "book.layout.two" to "Hai tranh",
-        "book.layout.scene" to "Cảnh + nhãn dán", "book.pick" to "Chọn tranh", "book.pages" to "{0} trang", "book.draft" to "Bản nháp (4–12 trang là một cuốn sách)",
-        "book.remove" to "Bỏ trang", "book.undo" to "Hoàn tác", "book.cover" to "Bìa", "book.page" to "Trang {0}", "book.export" to "Lưu thành PDF",
-        "color.white" to "Trắng", "color.black" to "Đen", "color.grey" to "Xám", "color.brown" to "Nâu", "color.pink" to "Hồng", "color.red" to "Đỏ", "color.orange" to "Cam", "color.yellow" to "Vàng", "color.green" to "Xanh lá", "color.teal" to "Xanh ngọc", "color.blue" to "Xanh dương", "color.purple" to "Tím",
-        "lab.title" to "Phòng thử màu", "lab.mix" to "Trộn", "lab.reset" to "Đổ khay", "lab.save" to "Giữ màu này", "lab.try" to "Thử trên giấy",
-        "lab.kept" to "Đã cất vào Màu của bé", "lab.full" to "Màu của bé đã đủ 24. Màu cũ nhất sẽ nhường chỗ.", "lab.white" to "Trắng", "lab.names" to "Tên màu",
-        "builder.title" to "Tạo nhân vật", "builder.body" to "Thân", "builder.ear" to "Tai", "builder.tail" to "Đuôi", "builder.wing" to "Cánh",
-        "builder.hat" to "Mũ", "builder.decor" to "Trang trí", "builder.none" to "Không có", "builder.size" to "Kích thước", "builder.try" to "Thử chuyển động", "builder.save" to "Lưu bạn mới",
-        "builder.saved" to "Đã lưu bạn mới!", "builder.paint" to "Chọn màu rồi chạm vào bạn nhé",
-        "gate.title" to "Dành cho người lớn", "gate.hold" to "Người lớn: nhấn giữ", "gate.question" to "Nhập số sau:", "gate.pin" to "Nhập mã PIN",
-        "gate.wrong" to "Chưa đúng. Còn {0} lần thử", "gate.locked" to "Thử sai quá nhiều. Hãy thử lại sau.", "gate.note" to "Bước này giúp tránh chạm nhầm, không phải xác minh tuổi.",
-        "rest.title" to "Đến giờ nghỉ rồi!", "rest.saved" to "Tranh của con đã được cất cẩn thận.", "rest.not_saved" to "Một phần chưa lưu được. Người lớn có thể thử lại.", "rest.extend" to "Người lớn: thêm thời gian",
-        "budget.warn" to "Còn một phút chơi nữa rồi mình nghỉ nhé.",
-        "export.title" to "Lưu hoặc in", "export.png" to "Ảnh (PNG)", "export.outline" to "Nét để in", "export.pdf_a4" to "PDF (A4)", "export.pdf_letter" to "PDF (Letter)",
-        "export.mp4" to "Video (MP4)", "export.paper" to "Nền giấy", "export.transparent" to "Nền trong suốt", "export.size" to "Kích thước",
-        "export.working" to "Đang tạo tệp…", "export.ok" to "Đã lưu: {0}", "export.fail" to "Không lưu được tệp: {0}", "export.cancel" to "Hủy",
-        "export.no_codec" to "Thiết bị này không tạo được video. Hãy chọn PNG hoặc PDF.", "export.share" to "Chia sẻ", "export.preview" to "Xem trước", "export.portrait" to "Dọc", "export.landscape" to "Ngang",
-        "parent.title" to "Khu người lớn", "parent.profiles" to "Hồ sơ", "parent.add_profile" to "Thêm hồ sơ", "parent.switch" to "Dùng hồ sơ này", "parent.delete_profile" to "Xóa hồ sơ…",
-        "parent.delete_confirm" to "Xóa hồ sơ này cùng toàn bộ tranh, cảnh và sách trên thiết bị? Hãy sao lưu trước nếu muốn giữ lại.",
-        "parent.skill" to "Mức kỹ năng", "skill.little" to "Họa sĩ nhí", "skill.explorer" to "Nhà khám phá", "skill.master" to "Bậc thầy màu sắc",
-        "parent.language" to "Ngôn ngữ", "parent.sound" to "Âm thanh", "parent.music" to "Nhạc", "parent.effects" to "Hiệu ứng", "parent.mute" to "Tắt hết tiếng",
-        "parent.motion" to "Giảm chuyển động", "parent.haptics" to "Rung nhẹ", "parent.time" to "Thời lượng chơi", "parent.time.none" to "Không giới hạn", "parent.time.min" to "{0} phút",
-        "parent.time_note" to "Chỉ tính thời gian chơi trên màn hình. Đây là tùy chọn của ứng dụng, không phải kiểm soát của hệ điều hành.",
-        "parent.stats" to "Trên thiết bị này", "parent.stats.art" to "Tranh: {0}", "parent.stats.scenes" to "Cảnh: {0}", "parent.stats.books" to "Sách: {0}", "parent.stats.storage" to "Dung lượng: {0}",
-        "parent.backup" to "Sao lưu", "parent.backup.export" to "Lưu bản sao lưu (.colora.zip)", "parent.backup.import" to "Khôi phục từ bản sao lưu", "parent.backup.ok" to "Đã sao lưu ({0})",
-        "parent.backup.imported" to "Đã khôi phục {0} hồ sơ thành hồ sơ mới", "parent.backup.fail" to "Sao lưu lỗi: {0}",
-        "parent.backup_note" to "Bản sao lưu chứa tranh của bé. Hãy cất ở nơi riêng tư. PIN và giao dịch mua không bao giờ nằm trong bản sao lưu.",
-        "parent.trash" to "Thùng rác (7 ngày)", "parent.trash.empty" to "Thùng rác trống.", "parent.restore" to "Lấy lại", "parent.delete_forever" to "Xóa vĩnh viễn",
-        "parent.pin" to "Mã PIN", "parent.pin.set" to "Đặt PIN", "parent.pin.clear" to "Bỏ PIN", "parent.pin.saved" to "Đã lưu PIN", "parent.pin.hint" to "4–8 chữ số. Nếu quên, hãy xóa dữ liệu ứng dụng trong cài đặt hệ thống (sẽ xóa tranh trên máy; nên sao lưu trước).",
-        "parent.content" to "Nội dung mở rộng", "parent.content.offline" to "Bản này đã có toàn bộ nội dung.", "parent.content.restore" to "Khôi phục giao dịch mua",
-        "parent.content.unavailable" to "Google Play hiện không khả dụng. Mọi thứ đã tạo vẫn dùng bình thường.", "parent.content.owned" to "Đã sở hữu",
-        "parent.privacy" to "Quyền riêng tư và giấy phép", "parent.privacy.text" to "Colora World chạy ngoại tuyến. Không quảng cáo, không phân tích, không tài khoản. Tranh chỉ ở trên thiết bị này trừ khi bạn tự sao lưu hoặc xuất tệp. Phông chữ: Nunito (SIL Open Font License 1.1). Toàn bộ hình, âm thanh và nhạc là tài nguyên gốc của ứng dụng.",
-        "parent.offscreen" to "Gợi ý chơi ngoài màn hình", "parent.offscreen.text" to "In nét tranh và cùng tô · Tìm ba đồ vật trong nhà có màu bé thích hôm nay · Kể chuyện về món đồ chơi bé vừa tạo.",
-        "parent.turns" to "Nhắc đổi lượt", "parent.done" to "Đóng khu người lớn", "parent.delete_all" to "Xóa toàn bộ dữ liệu…",
-        "parent.delete_all_confirm" to "Thao tác này xóa vĩnh viễn mọi hồ sơ và tranh trên thiết bị.", "parent.check" to "Kiểm tra tệp nội dung",
-        "parent.check_ok" to "Tệp nội dung nguyên vẹn.", "parent.check_bad" to "{0} tệp nội dung bị hỏng. Hãy cài lại ứng dụng để sửa.",
-        "turn.next" to "Đến lượt bạn tiếp theo!",
-        "avatar.pick" to "Chọn hình cho hồ sơ",
-        "error.asset" to "Thiếu bức tranh này. Thử bức khác nhé!", "error.generic" to "Có lỗi xảy ra. Tranh đã lưu vẫn an toàn.",
-        "ui.free_page" to "Trang trắng",
-    )
+    fun has(lang: String) = lang in present
+
+    private fun table(lang: String): Map<String, String> = cache.getOrPut(lang) {
+        val am = assets ?: return@getOrPut emptyMap()
+        runCatching {
+            val obj = kotlinx.serialization.json.Json.parseToJsonElement(am.open("ui/$lang.json").bufferedReader().use { it.readText() }) as kotlinx.serialization.json.JsonObject
+            obj.mapValues { (it.value as kotlinx.serialization.json.JsonPrimitive).content }
+        }.getOrElse { emptyMap() }
+    }
+
+    fun get(lang: String, key: String): String = table(lang)[key] ?: table("en")[key] ?: key
 }

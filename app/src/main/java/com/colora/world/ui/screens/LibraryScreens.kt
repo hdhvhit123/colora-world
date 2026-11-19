@@ -22,6 +22,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -116,17 +117,28 @@ fun HomeScreen(state: AppState) {
         val actions: @Composable (Modifier) -> Unit = { mod ->
             Column(mod, verticalArrangement = Arrangement.spacedBy(12.dp)) {
                 BigButton(t("home.color"), Modifier.fillMaxWidth(), icon = Ic.Crayon, height = 84.dp) { state.go(Screen.Topics) }
-                Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-                    HomeCard(t("home.world"), Ic.World, C.turquoise.copy(alpha = 0.35f), Modifier.weight(1f)) { state.go(Screen.WorldPicker()) }
-                    HomeCard(t("home.collection"), Ic.Collection, C.lavender.copy(alpha = 0.45f), Modifier.weight(1f)) { state.go(Screen.Collection) }
-                }
-                Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-                    SmallCard(t("home.stories"), Ic.Story, Modifier.weight(1f)) { state.go(Screen.Stories) }
-                    SmallCard(t("home.ideas"), Ic.Star, Modifier.weight(1f)) { state.go(Screen.Ideas) }
-                }
-                Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-                    SmallCard(t("home.lab"), Ic.Lab, Modifier.weight(1f)) { state.go(Screen.Lab) }
-                    SmallCard(t("home.builder"), Ic.Character, Modifier.weight(1f)) { state.go(Screen.Builder()) }
+                // picture-book tiles: every destination shows its own illustration, so pre-readers can choose by picture
+                val tiles = listOf<Pair<String, () -> Unit>>(
+                    "world" to { state.go(Screen.WorldPicker()) }, "collection" to { state.go(Screen.Collection) },
+                    "stories" to { state.go(Screen.Stories) }, "ideas" to { state.go(Screen.Ideas) },
+                    "lab" to { state.go(Screen.Lab) }, "builder" to { state.go(Screen.Builder()) },
+                )
+                tiles.chunked(2).forEach { row ->
+                    Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+                        row.forEach { (key, go) ->
+                            val col = when (key) { "world" -> C.turquoise; "collection" -> C.lavender; "stories" -> C.sky; "ideas" -> C.sunshine; "lab" -> C.rose; else -> C.leaf }
+                            PictureTile(t("home.$key"), col, Modifier.weight(1f), go) {
+                                when (key) {
+                                    "world" -> WorldTileArt("world.garden")
+                                    "collection" -> TileArt("animals.cat")
+                                    "stories" -> { WorldTileArt("world.town"); TileArt("animals.rabbit", Modifier.align(Alignment.BottomCenter).fillMaxHeight(0.85f)) }
+                                    "ideas" -> AssetThumb("thumbs/milo.curious.webp", null, Modifier.align(Alignment.Center).fillMaxHeight(0.9f))
+                                    "lab" -> PotsArt()
+                                    else -> AssetThumb("thumbs/char.body.fluffy.webp", null, Modifier.align(Alignment.Center).fillMaxHeight(0.9f))
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -152,24 +164,34 @@ fun HomeScreen(state: AppState) {
     }
 }
 
+/** A home tile: a coloured "page" with its own illustration and a big label underneath. */
 @Composable
-private fun HomeCard(text: String, ic: Ic, color: Color, modifier: Modifier, onClick: () -> Unit) {
-    Panel(modifier.height(118.dp).pressable(onClick = onClick), color = C.paper) {
-        Box(Modifier.fillMaxSize().clip(RoundedCornerShape(18.dp)).background(color)) {
-            Column(Modifier.align(Alignment.Center), horizontalAlignment = Alignment.CenterHorizontally) {
-                ColoraIcon(ic, size = 44.dp)
-                Spacer(Modifier.height(6.dp))
-                Text(text, style = T.heading, textAlign = TextAlign.Center)
-            }
-        }
+private fun PictureTile(label: String, color: Color, modifier: Modifier, onClick: () -> Unit, art: @Composable BoxScope.() -> Unit) {
+    Column(modifier.semantics(mergeDescendants = true) { contentDescription = label }.pressable(onClick = onClick)
+        .shadow(4.dp, RoundedCornerShape(26.dp), ambientColor = C.shadow, spotColor = C.shadow)
+        .clip(RoundedCornerShape(26.dp)).background(C.paper).border(3.dp, color, RoundedCornerShape(26.dp)).padding(6.dp)) {
+        Box(Modifier.fillMaxWidth().height(96.dp).clip(RoundedCornerShape(20.dp)).background(color.copy(alpha = 0.32f)), content = art)
+        Text(label, style = T.heading, textAlign = TextAlign.Center, maxLines = 2, modifier = Modifier.fillMaxWidth().padding(top = 6.dp, bottom = 4.dp))
     }
 }
 
 @Composable
-private fun SmallCard(text: String, ic: Ic, modifier: Modifier, onClick: () -> Unit) {
-    Row(modifier.heightIn(min = 64.dp).pressable(onClick = onClick).clip(RoundedCornerShape(20.dp)).background(C.paper).border(2.dp, C.line, RoundedCornerShape(20.dp)).padding(horizontal = 14.dp, vertical = 8.dp),
-        verticalAlignment = Alignment.CenterVertically) {
-        ColoraIcon(ic, size = 32.dp); Spacer(Modifier.width(10.dp)); Text(text, style = T.label)
+private fun BoxScope.TileArt(templateId: String, modifier: Modifier = Modifier.align(Alignment.Center).fillMaxHeight()) {
+    val g = LocalContext.current.graph
+    ArtView(remember(templateId) { g.content.art(templateId) }, null, modifier.aspectRatio(1f), useSamples = true, pad = 0.02f)
+}
+
+@Composable
+private fun BoxScope.WorldTileArt(thumb: String) {
+    AssetThumb("thumbs/$thumb.webp", null, Modifier.matchParentSize(), androidx.compose.ui.layout.ContentScale.Crop)
+}
+
+@Composable
+private fun BoxScope.PotsArt() {
+    Row(Modifier.align(Alignment.Center), horizontalArrangement = Arrangement.spacedBy(8.dp), verticalAlignment = Alignment.Bottom) {
+        listOf(0xFFEE4036, 0xFFFFD933, 0xFF3373D9).forEachIndexed { i, c ->
+            Box(Modifier.size(if (i == 1) 54.dp else 44.dp).clip(RoundedCornerShape(16.dp, 16.dp, 22.dp, 22.dp)).background(Color(c.toInt())).border(3.dp, C.ink, RoundedCornerShape(16.dp, 16.dp, 22.dp, 22.dp)))
+        }
     }
 }
 

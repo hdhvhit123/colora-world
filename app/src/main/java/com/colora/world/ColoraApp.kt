@@ -19,6 +19,7 @@ class ColoraApp : Application() {
 
     override fun onCreate() {
         super.onCreate()
+        com.colora.world.ui.Strings.init(this)
         graph = AppGraph(this)
         graph.appScope.launch(Dispatchers.IO) {
             val report = graph.library.recover()

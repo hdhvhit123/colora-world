@@ -135,7 +135,11 @@ private fun StudioContent(state: AppState, c: StudioController) {
                 tools.forEach { tl -> ToolButton(tl, c) }
             }
             if (vertical) Column(Modifier.verticalScroll(rememberScrollState()).padding(6.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) { items() }
-            else Row(Modifier.horizontalScroll(rememberScrollState()).padding(horizontal = 10.dp, vertical = 4.dp), horizontalArrangement = Arrangement.spacedBy(8.dp)) { items() }
+            else BoxWithConstraints(Modifier.fillMaxWidth().padding(horizontal = 8.dp, vertical = 4.dp)) {
+                // every tool visible at once: buttons shrink (never below 52 dp) instead of hiding off-screen
+                val sz = ((maxWidth - 6.dp * (tools.size - 1)) / tools.size).coerceIn(52.dp, 64.dp)
+                Row(Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()), horizontalArrangement = Arrangement.spacedBy(6.dp, Alignment.CenterHorizontally)) { tools.forEach { tl -> ToolButton(tl, c, sz) } }
+            }
         }
         val playButton: @Composable (Modifier) -> Unit = { mod ->
             BigButton(t("studio.play"), mod, icon = Ic.Play, color = C.turquoise, height = 68.dp) { play() }
@@ -188,7 +192,7 @@ private fun SaveBadge(s: SaveStatus) {
 }
 
 @Composable
-private fun ToolButton(tl: Tool, c: StudioController) {
+private fun ToolButton(tl: Tool, c: StudioController, size: androidx.compose.ui.unit.Dp = 64.dp) {
     val (ic, key) = when (tl) {
         Tool.FILL -> Ic.Fill to "tool.fill"; Tool.CRAYON -> Ic.Crayon to "tool.crayon"; Tool.MARKER -> Ic.Marker to "tool.marker"
         Tool.WATER -> Ic.Water to "tool.water"; Tool.RAINBOW -> Ic.Rainbow to "tool.rainbow"; Tool.PATTERN -> Ic.Pattern to "tool.pattern"
@@ -197,12 +201,12 @@ private fun ToolButton(tl: Tool, c: StudioController) {
     val selected = c.tool == tl
     val label = t(key)
     Box(
-        Modifier.size(64.dp).semantics { contentDescription = label; this.selected = selected; role = Role.RadioButton }
+        Modifier.size(size).semantics { contentDescription = label; this.selected = selected; role = Role.RadioButton }
             .pressable { c.tool = tl; c.graph.audio.sfx("ui.select_color") }
             .clip(RoundedCornerShape(20.dp)).background(if (selected) C.butter else C.paper)
             .border(if (selected) 3.dp else 2.dp, if (selected) C.focus else C.line, RoundedCornerShape(20.dp)),
         contentAlignment = Alignment.Center,
-    ) { ColoraIcon(ic, size = 40.dp, accent = Color(c.color)) }
+    ) { ColoraIcon(ic, size = size * 0.62f, accent = Color(c.color)) }
 }
 
 @Composable private fun cTool(key: String) = t(key)
@@ -291,7 +295,14 @@ private fun PaletteBar(c: StudioController, state: AppState, vertical: Boolean) 
                 items(colors.size) { i -> swatch(colors[i]) }
             }
         } else {
-            LazyRow(contentPadding = PaddingValues(horizontal = 10.dp), horizontalArrangement = Arrangement.spacedBy(2.dp)) { items(colors.size) { i -> swatch(colors[i]) } }
+            // wrap into rows so every colour of the palette is visible without scrolling
+            BoxWithConstraints(Modifier.fillMaxWidth().padding(horizontal = 8.dp)) {
+                val perRow = maxOf(1, ((maxWidth + 2.dp) / 54.dp).toInt())
+                val rows = colors.chunked(if (colors.size > perRow) minOf(perRow, (colors.size + 1) / 2) else perRow)
+                Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
+                    rows.forEach { r -> Row(horizontalArrangement = Arrangement.spacedBy(2.dp)) { r.forEach { swatch(it) } } }
+                }
+            }
         }
     }
 }

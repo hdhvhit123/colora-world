@@ -243,6 +243,16 @@
    "sha256": "2810c58bd9d88dd6d6edcccc4f208c3aadd62f60f53174473f2ab87dcc705c58"
   },
   {
+   "path": "locales/es.json",
+   "size": 18639,
+   "sha256": "26c60328b04418abd9a1c16d65c42b5e526deb3efa802a88563405979d461e10"
+  },
+  {
+   "path": "locales/fr.json",
+   "size": 18988,
+   "sha256": "6af80fbdffa984e450796c106ed3a6cf32297b120fc54152acc4bbb988615d01"
+  },
+  {
    "path": "locales/vi.json",
    "size": 19606,
    "sha256": "f45e934ac041d58465acc4def7643811f91da110a076a66d9c63406cb5bb0b6b"
